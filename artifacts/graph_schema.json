@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "generated_at": "static-schema-v1",
+  "nodes": [
+    {
+      "id": "BidNotice",
+      "label_ko": "입찰공고 식별자 및 차수",
+      "candidate_field_count": 45
+    },
+    {
+      "id": "Contract",
+      "label_ko": "계약 식별자 및 계약 금액/일자",
+      "candidate_field_count": 135
+    },
+    {
+      "id": "ContractProcess",
+      "label_ko": "계약과정 통합공개 detail 정보",
+      "candidate_field_count": 23
+    },
+    {
+      "id": "DemandOrganization",
+      "label_ko": "수요기관/발주기관 식별자와 명칭",
+      "candidate_field_count": 132
+    },
+    {
+      "id": "OfficialStatistics",
+      "label_ko": "공공조달통계정보서비스 공식 통계 concept",
+      "candidate_field_count": 70
+    },
+    {
+      "id": "PriorSpecification",
+      "label_ko": "사전규격/규격공개 및 의견 정보",
+      "candidate_field_count": 93
+    },
+    {
+      "id": "PrivateBidNotice",
+      "label_ko": "누리장터 민간입찰공고 식별자 및 차수",
+      "candidate_field_count": 48
+    },
+    {
+      "id": "PrivateSuccessfulBid",
+      "label_ko": "누리장터 민간 낙찰/개찰 결과",
+      "candidate_field_count": 59
+    },
+    {
+      "id": "ProcurementCompany",
+      "label_ko": "조달 참여 업체/공급업체 식별자와 명칭",
+      "candidate_field_count": 82
+    },
+    {
+      "id": "Product",
+      "label_ko": "물품/제품 분류와 식별 정보",
+      "candidate_field_count": 156
+    },
+    {
+      "id": "ProductClassification",
+      "label_ko": "물품분류번호 기준 상품/품목 taxonomy",
+      "candidate_field_count": 84
+    },
+    {
+      "id": "ReconstructedStatistics",
+      "label_ko": "17개 row-available API에서 재구성한 통계",
+      "candidate_field_count": 19
+    },
+    {
+      "id": "Region",
+      "label_ko": "지역 코드/명칭 및 주소 기반 지역 정보",
+      "candidate_field_count": 51
+    },
+    {
+      "id": "SuccessfulBid",
+      "label_ko": "낙찰/개찰 결과 정보",
+      "candidate_field_count": 77
+    }
+  ],
+  "edges": [
+    {
+      "id": "bid_notice_to_successful_bid",
+      "source": "BidNotice",
+      "target": "SuccessfulBid",
+      "relationship": "may_have_successful_bid",
+      "relationship_ko": "입찰공고는 낙찰/개찰 결과와 연결됨",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "bid_public_info",
+        "target": "scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 71113,
+        "left_distinct": 323286,
+        "right_distinct": 82665,
+        "left_match_rate": 0.22,
+        "right_match_rate": 0.86
+      }
+    },
+    {
+      "id": "private_bid_notice_to_private_successful_bid",
+      "source": "PrivateBidNotice",
+      "target": "PrivateSuccessfulBid",
+      "relationship": "may_have_private_successful_bid",
+      "relationship_ko": "민간입찰공고는 민간 낙찰/개찰 결과와 연결됨",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "prvt_bid_ntce",
+        "target": "prvt_scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 6874,
+        "left_distinct": 25885,
+        "right_distinct": 8743,
+        "left_match_rate": 0.266,
+        "right_match_rate": 0.786
+      }
+    },
+    {
+      "id": "product_classification_dictionary",
+      "source": "ProductClassification",
+      "target": "Product",
+      "relationship": "classifies_product_or_procurement_item",
+      "relationship_ko": "물품분류번호는 조달 품목/상품을 분류함",
+      "status": "probable",
+      "join_keys": [
+        "prdctClsfcNo"
+      ],
+      "default_services": {
+        "dictionary": "thng_list_info",
+        "source": "thng_list_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap_dictionary",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 2643,
+        "left_match_rate": 0.938,
+        "right_match_rate": null,
+        "note": "Multiple services matched thng_list_info by prdctClsfcNo at high rates."
+      }
+    },
+    {
+      "id": "prior_specification_to_bid_notice",
+      "source": "PriorSpecification",
+      "target": "BidNotice",
+      "relationship": "may_feed_bid_notice",
+      "relationship_ko": "사전규격은 입찰공고로 이어질 수 있음",
+      "status": "probable",
+      "join_keys": [
+        "bfSpecRgstNo"
+      ],
+      "default_services": {
+        "source": "hrcsp_ssstndrd_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 8294,
+        "left_distinct": 82550,
+        "right_distinct": 49945,
+        "left_match_rate": 0.101,
+        "right_match_rate": 0.166
+      }
+    },
+    {
+      "id": "bid_notice_to_contract_process",
+      "source": "BidNotice",
+      "target": "ContractProcess",
+      "relationship": "has_contract_process_detail",
+      "relationship_ko": "입찰공고 seed는 계약과정통합공개 detail을 조회함",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "bid_public_info",
+        "target": "cntrct_procss_intg_open"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "seed_derived_sample_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 1131,
+        "left_match_rate": null,
+        "right_match_rate": 0.328,
+        "note": "cntrct_procss_intg_open is seed-detail; pub_data_opn_std notice overlap was stronger in the audit."
+      }
+    },
+    {
+      "id": "contract_to_bid_notice",
+      "source": "Contract",
+      "target": "BidNotice",
+      "relationship": "may_derive_from_bid_notice",
+      "relationship_ko": "계약은 원 입찰공고와 연결될 수 있으나 bridge key 미해결",
+      "status": "candidate",
+      "join_keys": [
+        "untyCntrctNo",
+        "dcsnCntrctNo",
+        "cntrctRefNo",
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "cntrct_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_field_gap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 0,
+        "note": "Sampled cntrct_info list operations did not expose populated bidNtceNo+bidNtceOrd."
+      },
+      "resolver_task": "Investigate pub_data_opn_std contract fields and contract identifiers such as untyCntrctNo, dcsnCntrctNo, cntrctRefNo."
+    },
+    {
+      "id": "private_contract_to_private_bid_notice",
+      "source": "Contract",
+      "target": "PrivateBidNotice",
+      "relationship": "may_derive_from_private_bid_notice",
+      "relationship_ko": "민간계약은 민간입찰공고와 연결될 수 있으나 bridge key 미해결",
+      "status": "candidate",
+      "join_keys": [
+        "untyCntrctNo",
+        "dcsnCntrctNo",
+        "cntrctRefNo",
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "prvt_cntrct_info",
+        "target": "prvt_bid_ntce"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_field_gap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 0,
+        "note": "Sampled private contract rows did not expose bid notice composite keys."
+      },
+      "resolver_task": "Investigate private contract bridge keys: untyCntrctNo, dcsnCntrctNo, cntrctRefNo."
+    },
+    {
+      "id": "demand_organization_lookup",
+      "source": "DemandOrganization",
+      "target": "BidNotice",
+      "relationship": "normalizes_demand_organization_fields",
+      "relationship_ko": "사용자정보 수요기관 master는 공고/계약 기관 필드를 정규화하는 lookup 후보",
+      "status": "lookup_candidate",
+      "join_keys": [
+        "dminsttCd",
+        "dminsttNm",
+        "ntceInsttCd",
+        "ntceInsttNm"
+      ],
+      "default_services": {
+        "source": "usr_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_lookup_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 2330,
+        "left_match_rate": 0.1565
+      },
+      "resolver_task": "Expand/seed usr_info demand organization master before treating as complete verified lookup."
+    },
+    {
+      "id": "procurement_company_lookup",
+      "source": "ProcurementCompany",
+      "target": "SuccessfulBid",
+      "relationship": "normalizes_procurement_company_fields",
+      "relationship_ko": "사용자정보 업체 master는 낙찰업체/계약업체 필드를 정규화하는 lookup 후보",
+      "status": "lookup_candidate",
+      "join_keys": [
+        "bizno",
+        "bidwinnrBizno",
+        "corpNm",
+        "bidwinnrNm"
+      ],
+      "default_services": {
+        "source": "usr_info",
+        "target": "scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_lookup_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 1734,
+        "left_match_rate": 0.0404
+      },
+      "resolver_task": "Improve company aliasing and seed-driven usr_info expansion by bizno."
+    },
+    {
+      "id": "official_statistics_source",
+      "source": "OfficialStatistics",
+      "target": "ReconstructedStatistics",
+      "relationship": "contrasted_with_reconstructed_statistics",
+      "relationship_ko": "공식 공공조달통계 API는 현재 public row source로 미검증이며 재구성 통계와 구분해야 함",
+      "status": "unresolved",
+      "join_keys": [],
+      "default_services": {
+        "source": "pub_prcrmnt_stat_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/pub_prcrmnt_stat_info_report_catalog_review_2026-05-10.md",
+        "validation_mode": "public_api_rows_unverified",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 0,
+        "note": "HTTP 200/resultCode=00 with totalCount=0 was observed across tested period-stat probes."
+      },
+      "resolver_task": "Revalidate with exact demand organization code and known contract month before promoting official statistics."
+    },
+    {
+      "id": "reconstructed_statistics",
+      "source": "ReconstructedStatistics",
+      "target": "BidNotice",
+      "relationship": "computed_from_row_available_apis",
+      "relationship_ko": "재구성 통계는 row 확보된 17개 API에서 계산됨",
+      "status": "reconstructed",
+      "join_keys": [],
+      "default_services": {
+        "sources": "17 row-available APIs excluding pub_prcrmnt_stat_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "derived_policy",
+        "privacy": "counts only; raw values are not stored",
+        "note": "Label derived statistics as reconstructed, not official PubPrcrmntStatInfoService output."
+      }
+    }
+  ]
+}

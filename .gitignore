@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+.env
+.env.*
+cache/
+data/
+raw/
+bronze/
+silver/
+gold/
+.DS_Store

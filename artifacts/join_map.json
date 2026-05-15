@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "generated_at": "static-schema-v1",
+  "default_sample_size": 50,
+  "first_mvp": {
+    "entity": "BidNotice",
+    "target_entity": "SuccessfulBid",
+    "source_service": "bid_public_info",
+    "target_service": "scsbid_info",
+    "key_fields": [
+      "bidNtceNo",
+      "bidNtceOrd"
+    ]
+  },
+  "mappings": [
+    {
+      "id": "bid_public_info.bidNtceNo->scsbid_info.bidNtceNo",
+      "entity": "BidNotice",
+      "target_entity": "SuccessfulBid",
+      "source": {
+        "service": "bid_public_info",
+        "field": "bidNtceNo",
+        "operation": "getBidPblancListBidPrceCalclAInfo",
+        "direction": "request"
+      },
+      "target": {
+        "service": "scsbid_info",
+        "field": "bidNtceNo",
+        "operation": "getOpengResultListInfoCnstwk",
+        "direction": "request"
+      },
+      "join_type": "exact_field",
+      "schema_score": 1.0,
+      "status": "candidate",
+      "evidence": {
+        "validation_mode": "schema_only",
+        "sample_size_requested": 50,
+        "privacy": "raw API response values are not stored in this artifact"
+      }
+    },
+    {
+      "id": "bid_public_info.bidNtceOrd->scsbid_info.bidNtceOrd",
+      "entity": "BidNotice",
+      "target_entity": "SuccessfulBid",
+      "source": {
+        "service": "bid_public_info",
+        "field": "bidNtceOrd",
+        "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct",
+        "direction": "request"
+      },
+      "target": {
+        "service": "scsbid_info",
+        "field": "bidNtceOrd",
+        "operation": "getOpengResultListInfoFailing",
+        "direction": "request"
+      },
+      "join_type": "exact_field",
+      "schema_score": 1.0,
+      "status": "candidate",
+      "evidence": {
+        "validation_mode": "schema_only",
+        "sample_size_requested": 50,
+        "privacy": "raw API response values are not stored in this artifact"
+      }
+    },
+    {
+      "id": "bid_public_info.bidNtceNo+bidNtceOrd->scsbid_info.bidNtceNo+bidNtceOrd",
+      "entity": "BidNotice",
+      "target_entity": "SuccessfulBid",
+      "source": {
+        "service": "bid_public_info",
+        "fields": [
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "target": {
+        "service": "scsbid_info",
+        "fields": [
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "join_type": "composite_key",
+      "schema_score": 1.0,
+      "status": "probable",
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 71113,
+        "left_distinct": 323286,
+        "right_distinct": 82665,
+        "left_match_rate": 0.22,
+        "right_match_rate": 0.86
+      }
+    },
+    {
+      "id": "prvt_bid_ntce.bidNtceNo+bidNtceOrd->prvt_scsbid_info.bidNtceNo+bidNtceOrd",
+      "entity": "PrivateBidNotice",
+      "target_entity": "PrivateSuccessfulBid",
+      "source": {
+        "service": "prvt_bid_ntce",
+        "fields": [
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "target": {
+        "service": "prvt_scsbid_info",
+        "fields": [
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "join_type": "composite_key",
+      "schema_score": 1.0,
+      "status": "probable",
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 6874,
+        "left_distinct": 25885,
+        "right_distinct": 8743,
+        "left_match_rate": 0.266,
+        "right_match_rate": 0.786
+      }
+    },
+    {
+      "id": "cntrct_info.contract_bridge->bid_public_info.notice_bridge",
+      "entity": "Contract",
+      "target_entity": "BidNotice",
+      "source": {
+        "service": "cntrct_info",
+        "fields": [
+          "untyCntrctNo",
+          "dcsnCntrctNo",
+          "cntrctRefNo",
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "target": {
+        "service": "bid_public_info",
+        "fields": [
+          "untyCntrctNo",
+          "dcsnCntrctNo",
+          "cntrctRefNo",
+          "bidNtceNo",
+          "bidNtceOrd"
+        ]
+      },
+      "join_type": "composite_key",
+      "schema_score": 0.65,
+      "status": "candidate",
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_field_gap",
+        "privacy": "counts only; raw values are not stored",
+        "matches": 0,
+        "note": "Sampled cntrct_info list operations did not expose populated bidNtceNo+bidNtceOrd."
+      },
+      "resolver_task": "Investigate pub_data_opn_std contract fields and contract identifiers such as untyCntrctNo, dcsnCntrctNo, cntrctRefNo."
+    }
+  ],
+  "thresholds": {
+    "exact_key_verified_confidence": 0.95,
+    "name_based_probable_confidence": 0.85,
+    "max_ambiguous_rate": 0.05,
+    "max_unmatched_rate": 0.15
+  }
+}

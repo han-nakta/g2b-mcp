@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "g2b-procurement-intelligence"
+version = "0.1.0"
+description = "Privacy-safe G2B OpenAPI catalog, relationship evidence, ontology, and MCP package skeleton."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "han.nakta"}]
+dependencies = []
+
+[project.optional-dependencies]
+mcp = ["mcp"]
+test = ["pytest"]
+
+[project.scripts]
+g2b-mcp = "g2b_mcp.server:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

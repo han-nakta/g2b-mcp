@@ -1,0 +1,2086 @@
+{
+  "version": 1,
+  "generated_at": "static-schema-v1",
+  "pack": {
+    "id": "g2b-procurement-ontology",
+    "name_ko": "조달청/G2B 조달 온톨로지",
+    "description_ko": "입찰공고, 낙찰, 계약, 업체, 기관, 지역, 물품 관계를 MCP에서 질의하기 위한 schema-first 온톨로지 pack"
+  },
+  "source_catalog": "skills/g2b-openapi/references/catalog.json",
+  "summary": {
+    "node_count": 14,
+    "edge_count": 11,
+    "source_count": 18,
+    "artifact_mode": "schema_only"
+  },
+  "nodes": {
+    "BidNotice": {
+      "id": "BidNotice",
+      "type": "procurement_entity",
+      "label_ko": "입찰공고 식별자 및 차수",
+      "aliases": [
+        "입찰공고",
+        "공고",
+        "bid notice",
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "candidate_field_count": 45,
+      "sources": [
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 9,
+          "fields": [
+            "bidNtceDt",
+            "bidNtceDtlUrl",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidNtceUrl"
+          ]
+        },
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 9,
+          "fields": [
+            "bidNtceBgn",
+            "bidNtceBgnDt",
+            "bidNtceDate",
+            "bidNtceEndDt",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidNtceSttusNm"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 7,
+          "fields": [
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "rbidNtceNo"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceDt",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceClsfc",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 1,
+          "fields": [
+            "bidNtceNoList"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 1,
+          "fields": [
+            "bidNtceNoList"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "입찰공고 식별자 및 차수"
+    },
+    "Contract": {
+      "id": "Contract",
+      "type": "procurement_entity",
+      "label_ko": "계약 식별자 및 계약 금액/일자",
+      "aliases": [
+        "계약",
+        "contract",
+        "cntrct"
+      ],
+      "candidate_field_count": 135,
+      "sources": [
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 37,
+          "fields": [
+            "IntlCntrctDlvrReqDate",
+            "cntrctBgnDate",
+            "cntrctChgOrd",
+            "cntrctCnclsStleNm",
+            "cntrctCorpBizno",
+            "cntrctCorpNm",
+            "cntrctCorpNo",
+            "cntrctDate"
+          ]
+        },
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 30,
+          "fields": [
+            "cmmnCntrctYn",
+            "cntrctAmt",
+            "cntrctCnclsBgnDate",
+            "cntrctCnclsDate",
+            "cntrctCnclsEndDate",
+            "cntrctCnclsMthdNm",
+            "cntrctCnclsSttusNm",
+            "cntrctDtlInfoUrl"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 28,
+          "fields": [
+            "cmmnCntrctYn",
+            "cntrctCnclsDate",
+            "cntrctCnclsMthdNm",
+            "cntrctDate",
+            "cntrctDivCd",
+            "cntrctDtlInfoUrl",
+            "cntrctInfoUrl",
+            "cntrctInsttCd"
+          ]
+        },
+        {
+          "service": "prvt_cntrct_info",
+          "service_name_ko": "누리장터 민간계약정보서비스",
+          "field_count": 22,
+          "fields": [
+            "cmmnCntrctYn",
+            "cntrctCnclsDate",
+            "cntrctCnclsMthdNm",
+            "cntrctDtlInfoUrl",
+            "cntrctInfoUrl",
+            "cntrctInsttCd",
+            "cntrctInsttChrgDeptNm",
+            "cntrctInsttNm"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 8,
+          "fields": [
+            "bidCntrctTotamt",
+            "cnstwkCntrctTotamt",
+            "cntrctTotamt",
+            "prvtcntrctArsltAmt",
+            "prvtcntrctArsltNum",
+            "rgnDutyCmmnCntrctTotamt",
+            "rgnDutyCmmnCntrctTotamtRt",
+            "unBidCntrctTotamt"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 5,
+          "fields": [
+            "cntrctCnclsMthdNm",
+            "cntrctCnclsStleNm",
+            "cntrctDisposNm",
+            "frgncptlCntrctCnclsMthdNm",
+            "frstyearUntyCntrctIdntNo"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 2,
+          "fields": [
+            "cntrctCnclsMthdNm",
+            "cntrctInfoList"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 1,
+          "fields": [
+            "cntrctCnclsMthdNm"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 1,
+          "fields": [
+            "cntrctMthdNm"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 1,
+          "fields": [
+            "cntrctMthdNm"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "계약 식별자 및 계약 금액/일자"
+    },
+    "ContractProcess": {
+      "id": "ContractProcess",
+      "type": "procurement_entity",
+      "label_ko": "계약과정 통합공개 detail 정보",
+      "aliases": [
+        "계약과정",
+        "계약과정통합공개",
+        "contract process",
+        "cntrct_procss_intg_open"
+      ],
+      "candidate_field_count": 23,
+      "sources": [
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 5,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "cntrctInfoList"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 4,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 4,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 4,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 4,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 2,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "계약과정 통합공개 detail 정보"
+    },
+    "DemandOrganization": {
+      "id": "DemandOrganization",
+      "type": "procurement_entity",
+      "label_ko": "수요기관/발주기관 식별자와 명칭",
+      "aliases": [
+        "수요기관",
+        "발주기관",
+        "기관",
+        "dminstt",
+        "ntceInstt"
+      ],
+      "candidate_field_count": 132,
+      "sources": [
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 22,
+          "fields": [
+            "cntrctInsttCd",
+            "cntrctInsttChrgDeptNm",
+            "cntrctInsttDivNm",
+            "cntrctInsttNm",
+            "cntrctInsttOfcl",
+            "cntrctInsttOfclFaxNo",
+            "cntrctInsttOfclNm",
+            "cntrctInsttOfclTel"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 15,
+          "fields": [
+            "cntryInsttArsltAmt",
+            "cntryInsttArsltNum",
+            "dminsttCd",
+            "dminsttNm",
+            "eduAdministInsttArsltAmt",
+            "eduAdministInsttArsltNum",
+            "etcPubInsttArsltAmt",
+            "etcPubInsttArsltNum"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 12,
+          "fields": [
+            "cntrctInsttCd",
+            "cntrctInsttChrgDeptNm",
+            "cntrctInsttJrsdctnDivNm",
+            "cntrctInsttNm",
+            "cntrctInsttOfclFaxNo",
+            "cntrctInsttOfclNm",
+            "cntrctInsttOfclTelNo",
+            "dminsttList"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 11,
+          "fields": [
+            "dminsttCd",
+            "dminsttNm",
+            "ntceInsttCd",
+            "ntceInsttNm",
+            "ntceInsttOfclEmailAdrs",
+            "ntceInsttOfclNm",
+            "ntceInsttOfclTelNo"
+          ]
+        },
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 11,
+          "fields": [
+            "acptncInsttNm",
+            "dminsttCd",
+            "dminsttNm",
+            "dminsttRgnNm",
+            "dmndInsttDivCd",
+            "dmndInsttDivNm",
+            "inspctInsttNm"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 8,
+          "fields": [
+            "dminsttCd",
+            "dminsttNm",
+            "ntceInsttCd",
+            "ntceInsttNm",
+            "orderInsttNm",
+            "rlDminsttNm"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 8,
+          "fields": [
+            "dminsttCd",
+            "dminsttNm",
+            "orderInsttCd",
+            "orderInsttNm"
+          ]
+        },
+        {
+          "service": "prvt_cntrct_info",
+          "service_name_ko": "누리장터 민간계약정보서비스",
+          "field_count": 8,
+          "fields": [
+            "cntrctInsttCd",
+            "cntrctInsttChrgDeptNm",
+            "cntrctInsttNm",
+            "cntrctInsttOfclFaxNo",
+            "cntrctInsttOfclNm",
+            "cntrctInsttOfclTelNo",
+            "insttCd",
+            "insttNm"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 8,
+          "fields": [
+            "dminsttCd",
+            "dminsttNm",
+            "ntceInsttCd",
+            "ntceInsttNm"
+          ]
+        },
+        {
+          "service": "usr_info",
+          "service_name_ko": "나라장터 사용자정보서비스",
+          "field_count": 8,
+          "fields": [
+            "dminsttAbrvtNm",
+            "dminsttCd",
+            "dminsttEngNm",
+            "dminsttNm",
+            "toplvlInsttCd",
+            "toplvlInsttNm"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 6,
+          "fields": [
+            "insttLctNm",
+            "orderInsttCd",
+            "orderInsttNm",
+            "totlmngInsttNm"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 6,
+          "fields": [
+            "dminsttCd",
+            "dminsttNm",
+            "ntceInsttCd",
+            "ntceInsttNm"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "수요기관/발주기관 식별자와 명칭"
+    },
+    "OfficialStatistics": {
+      "id": "OfficialStatistics",
+      "type": "procurement_entity",
+      "label_ko": "공공조달통계정보서비스 공식 통계 concept",
+      "aliases": [
+        "공식통계",
+        "공공조달통계",
+        "PubPrcrmntStatInfoService"
+      ],
+      "candidate_field_count": 70,
+      "sources": [
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 70,
+          "fields": [
+            "bidCntrctTotamt",
+            "centrPrcrmntArsltAmt",
+            "centrPrcrmntArsltNum",
+            "cnstwkArsltAmt",
+            "cnstwkArsltNum",
+            "cnstwkCntrctTotamt",
+            "cntrctTotamt",
+            "cntryInsttArsltAmt"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "공공조달통계정보서비스 공식 통계 concept"
+    },
+    "PriorSpecification": {
+      "id": "PriorSpecification",
+      "type": "procurement_entity",
+      "label_ko": "사전규격/규격공개 및 의견 정보",
+      "aliases": [
+        "사전규격",
+        "규격공개",
+        "prior specification",
+        "bfSpecRgstNo"
+      ],
+      "candidate_field_count": 93,
+      "sources": [
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 21,
+          "fields": [
+            "ntceSpecDocUrl1",
+            "ntceSpecDocUrl10",
+            "ntceSpecDocUrl2",
+            "ntceSpecDocUrl3",
+            "ntceSpecDocUrl4",
+            "ntceSpecDocUrl5",
+            "ntceSpecDocUrl6",
+            "ntceSpecDocUrl7"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 20,
+          "fields": [
+            "ntceSpecDocNm1",
+            "ntceSpecDocNm10",
+            "ntceSpecDocNm2",
+            "ntceSpecDocNm3",
+            "ntceSpecDocNm4",
+            "ntceSpecDocNm5",
+            "ntceSpecDocNm6",
+            "ntceSpecDocNm7"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 14,
+          "fields": [
+            "bfSpecRgstNo",
+            "rlDminsttNm",
+            "specDocFileUrl1",
+            "specDocFileUrl2",
+            "specDocFileUrl3",
+            "specDocFileUrl4",
+            "specDocFileUrl5",
+            "specDocOpninFileUrl1"
+          ]
+        },
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 13,
+          "fields": [
+            "prdctIdntNoNm",
+            "prdctSpecNm",
+            "specDocAtchFileNm1",
+            "specDocAtchFileNm2",
+            "specDocAtchFileNm3",
+            "specDocAtchFileNm4",
+            "specDocAtchFileNm5",
+            "specDocAtchFileNmUrl1"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 11,
+          "fields": [
+            "specCntnts",
+            "specItemCntnts1",
+            "specItemCntnts2",
+            "specItemCntnts3",
+            "specItemCntnts4",
+            "specItemCntnts5",
+            "specItemNm1",
+            "specItemNm2"
+          ]
+        },
+        {
+          "service": "price_info",
+          "service_name_ko": "나라장터 가격정보현황서비스",
+          "field_count": 6,
+          "fields": [
+            "SpectnYn",
+            "krnPrdctNm",
+            "rsceSpecNm",
+            "spec",
+            "specRootDmLen"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 5,
+          "fields": [
+            "bfSpecBizNm",
+            "bfSpecDminsttNm",
+            "bfSpecNtceInsttNm",
+            "bfSpecRgstNo"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 2,
+          "fields": [
+            "rprsntSpecDtlsCntnts",
+            "specDocYn"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 1,
+          "fields": [
+            "prdctClsfcNoNmNdSpec"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "사전규격/규격공개 및 의견 정보"
+    },
+    "PrivateBidNotice": {
+      "id": "PrivateBidNotice",
+      "type": "procurement_entity",
+      "label_ko": "누리장터 민간입찰공고 식별자 및 차수",
+      "aliases": [
+        "민간입찰공고",
+        "누리장터 공고",
+        "private bid notice",
+        "prvt_bid_ntce"
+      ],
+      "candidate_field_count": 48,
+      "sources": [
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 10,
+          "fields": [
+            "bidNtceBgn",
+            "bidNtceBgnDt",
+            "bidNtceDate",
+            "bidNtceEndDt",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidNtceSttusNm"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 9,
+          "fields": [
+            "bidNtceDt",
+            "bidNtceDtlUrl",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidNtceUrl"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 7,
+          "fields": [
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "rbidNtceNo"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceDt",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceClsfc",
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 6,
+          "fields": [
+            "bidNtceNm",
+            "bidNtceNo",
+            "bidNtceOrd"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 2,
+          "fields": [
+            "prvtcntrctArsltAmt",
+            "prvtcntrctArsltNum"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 1,
+          "fields": [
+            "bidNtceNoList"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 1,
+          "fields": [
+            "bidNtceNoList"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "누리장터 민간입찰공고 식별자 및 차수"
+    },
+    "PrivateSuccessfulBid": {
+      "id": "PrivateSuccessfulBid",
+      "type": "procurement_entity",
+      "label_ko": "누리장터 민간 낙찰/개찰 결과",
+      "aliases": [
+        "민간낙찰",
+        "민간개찰",
+        "private successful bid",
+        "prvt_scsbid_info"
+      ],
+      "candidate_field_count": 59,
+      "sources": [
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 15,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinrDcsnMthdNm",
+            "fnlSucsfAmt",
+            "fnlSucsfCorpAdrs",
+            "fnlSucsfCorpBizrno",
+            "fnlSucsfCorpCeoNm",
+            "fnlSucsfCorpContactTel"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 14,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinnrAdrs",
+            "bidwinnrBizno",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "bidwinrSlctnAplBssCntnts"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 10,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinnrAdrs",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "sucsfbidAmt",
+            "sucsfbidRate"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 8,
+          "fields": [
+            "BidwinrSlctnBssCd",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "sucsfbidLwltRate",
+            "sucsfbidMthdCd",
+            "sucsfbidMthdNm"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 5,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinrInfoList"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 5,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "sucsfbidMthdNm"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 2,
+          "fields": [
+            "prvtcntrctArsltAmt",
+            "prvtcntrctArsltNum"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "누리장터 민간 낙찰/개찰 결과"
+    },
+    "ProcurementCompany": {
+      "id": "ProcurementCompany",
+      "type": "procurement_entity",
+      "label_ko": "조달 참여 업체/공급업체 식별자와 명칭",
+      "aliases": [
+        "업체",
+        "회사",
+        "공급업체",
+        "사업자",
+        "company",
+        "bizno"
+      ],
+      "candidate_field_count": 82,
+      "sources": [
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 17,
+          "fields": [
+            "bidprcCorpBizrno",
+            "bidprcCorpCeoNm",
+            "bidprcCorpNm",
+            "corpList",
+            "dmstcCorpYn",
+            "fnlSucsfCorpAdrs",
+            "fnlSucsfCorpBizrno",
+            "fnlSucsfCorpCeoNm"
+          ]
+        },
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 15,
+          "fields": [
+            "bizno",
+            "cntrctCorpBizno",
+            "cntrctCorpNm",
+            "cntrctCorpNo",
+            "corpBizno",
+            "corpEntrprsDivNmNm",
+            "corpLocplcNm",
+            "corpNm"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 12,
+          "fields": [
+            "corpNm",
+            "corpUntyNo",
+            "lcltyPblcorpArsltAmt",
+            "lcltyPblcorpArsltNum",
+            "nonPrftmkCorprtArsltAmt",
+            "nonPrftmkCorprtArsltNum",
+            "pblcorpArsltAmt",
+            "pblcorpArsltNum"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 11,
+          "fields": [
+            "bidwinnrAdrs",
+            "bidwinnrBizno",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "fnlSucsfCorpOfcl",
+            "opengCorpInfo",
+            "prcbdrBizno"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 9,
+          "fields": [
+            "bidwinnrAdrs",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "opengCorpInfo",
+            "prcbdrBizno",
+            "prcbdrCeoNm",
+            "prcbdrNm"
+          ]
+        },
+        {
+          "service": "usr_info",
+          "service_name_ko": "나라장터 사용자정보서비스",
+          "field_count": 8,
+          "fields": [
+            "bizno",
+            "corpBsnsDivCd",
+            "corpBsnsDivNm",
+            "corpNm",
+            "corprtRgstNo",
+            "engCorpNm"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 4,
+          "fields": [
+            "corpList",
+            "makeCorpNm",
+            "rltnCorpNm",
+            "splyCorpNm"
+          ]
+        },
+        {
+          "service": "thng_list_info",
+          "service_name_ko": "조달청 물품목록정보서비스",
+          "field_count": 3,
+          "fields": [
+            "mnfctCorpNm",
+            "prcrmntCorpRgstNo"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 1,
+          "fields": [
+            "cmmnSpldmdCorpRgnLmtYn"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 1,
+          "fields": [
+            "mkngCorpNm"
+          ]
+        },
+        {
+          "service": "prvt_cntrct_info",
+          "service_name_ko": "누리장터 민간계약정보서비스",
+          "field_count": 1,
+          "fields": [
+            "corpList"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "조달 참여 업체/공급업체 식별자와 명칭"
+    },
+    "Product": {
+      "id": "Product",
+      "type": "procurement_entity",
+      "label_ko": "물품/제품 분류와 식별 정보",
+      "aliases": [
+        "물품",
+        "제품",
+        "품목",
+        "product",
+        "prdct"
+      ],
+      "candidate_field_count": 156,
+      "sources": [
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 44,
+          "fields": [
+            "bndeFlawGrntyPrdctYn",
+            "drctPrdctnCnfrmCertHoldCorpYn",
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "exclcProdctYn",
+            "exclncPrcrmntPrdctYn",
+            "inqryPrdctDiv",
+            "prdctAmt"
+          ]
+        },
+        {
+          "service": "thng_list_info",
+          "service_name_ko": "조달청 물품목록정보서비스",
+          "field_count": 38,
+          "fields": [
+            "afchgPrdctAttrbtVal",
+            "afchgPrdctClsfcNm",
+            "afchgPrdctClsfcNo",
+            "afchgPrdctClsfcNoNm",
+            "bfchgPrdctAttrbtVal",
+            "bfchgPrdctClsfcNo",
+            "bfchgPrdctClsfcNoNm",
+            "dtilPrdctClsfcNo"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 15,
+          "fields": [
+            "engRprsntPrdctNm",
+            "krnPrdctNm",
+            "prdctAccotAsignAmt",
+            "prdctAmt",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "prdctIdntNo",
+            "prdctQty"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 12,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcLmtYn",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "prdctQty",
+            "prdctSno",
+            "prdctSpecNm"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 10,
+          "fields": [
+            "adiPrdctClsfcNo",
+            "krnPrdctNm",
+            "prdctAmt",
+            "prdctAmtCrncy",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "prdctClsfcNoNmNdSpec",
+            "prdctIdntNo"
+          ]
+        },
+        {
+          "service": "price_info",
+          "service_name_ko": "나라장터 가격정보현황서비스",
+          "field_count": 9,
+          "fields": [
+            "krnPrdctNm",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "prdctIdntNo",
+            "prdctMngDivNm"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 6,
+          "fields": [
+            "prdctArsltAmt",
+            "prdctArsltNum",
+            "prdctClsfcNm",
+            "prdctClsfcNo"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 5,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcNoNm",
+            "prdctDtlList"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 5,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "prdct_mng_info",
+          "service_name_ko": "조달청 물품관리정보서비스",
+          "field_count": 5,
+          "fields": [
+            "prdctClsfcNo",
+            "prdctClsfcNoBgnNo",
+            "prdctClsfcNoEndNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "usr_info",
+          "service_name_ko": "나라장터 사용자정보서비스",
+          "field_count": 3,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "rprsntPrdctClsfcNoNmYn"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 2,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "prdctDtlList"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "물품/제품 분류와 식별 정보"
+    },
+    "ProductClassification": {
+      "id": "ProductClassification",
+      "type": "procurement_entity",
+      "label_ko": "물품분류번호 기준 상품/품목 taxonomy",
+      "aliases": [
+        "물품분류",
+        "상품분류",
+        "prdctClsfcNo",
+        "classification"
+      ],
+      "candidate_field_count": 84,
+      "sources": [
+        {
+          "service": "thng_list_info",
+          "service_name_ko": "조달청 물품목록정보서비스",
+          "field_count": 28,
+          "fields": [
+            "afchgPrdctClsfcNm",
+            "afchgPrdctClsfcNo",
+            "afchgPrdctClsfcNoNm",
+            "bfchgPrdctClsfcNo",
+            "bfchgPrdctClsfcNoNm",
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoBgnNo",
+            "dtilPrdctClsfcNoEndNo"
+          ]
+        },
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 12,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "rprsntDtilPrdctClsfcNo",
+            "rprsntDtilPrdctClsfcNoNm",
+            "rprsntPrdctClsfcNo",
+            "rprsntPrdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 6,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcLmtYn",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 5,
+          "fields": [
+            "adiPrdctClsfcNo",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "prdctClsfcNoNmNdSpec"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 5,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 5,
+          "fields": [
+            "prdctClsfcNo",
+            "prdctClsfcNoNm",
+            "rprsntPrdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "prdct_mng_info",
+          "service_name_ko": "조달청 물품관리정보서비스",
+          "field_count": 5,
+          "fields": [
+            "prdctClsfcNo",
+            "prdctClsfcNoBgnNo",
+            "prdctClsfcNoEndNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 4,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "price_info",
+          "service_name_ko": "나라장터 가격정보현황서비스",
+          "field_count": 4,
+          "fields": [
+            "prdctClsfcNo",
+            "prdctClsfcNoNm"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 4,
+          "fields": [
+            "prdctClsfcNm",
+            "prdctClsfcNo"
+          ]
+        },
+        {
+          "service": "usr_info",
+          "service_name_ko": "나라장터 사용자정보서비스",
+          "field_count": 3,
+          "fields": [
+            "dtilPrdctClsfcNo",
+            "dtilPrdctClsfcNoNm",
+            "rprsntPrdctClsfcNoNmYn"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 1,
+          "fields": [
+            "dtilPrdctClsfcNo"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "물품분류번호 기준 상품/품목 taxonomy"
+    },
+    "ReconstructedStatistics": {
+      "id": "ReconstructedStatistics",
+      "type": "procurement_entity",
+      "label_ko": "17개 row-available API에서 재구성한 통계",
+      "aliases": [
+        "재구성통계",
+        "17개 API 통계",
+        "reconstructed statistics"
+      ],
+      "candidate_field_count": 19,
+      "sources": [
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 2,
+          "fields": [
+            "statDivNm",
+            "totalCount"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "hrcsp_ssstndrd_info",
+          "service_name_ko": "나라장터 사전규격정보서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "indstryty_base_lawrglt_info",
+          "service_name_ko": "나라장터 업종 및 근거법규서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "prdct_mng_info",
+          "service_name_ko": "조달청 물품관리정보서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "price_info",
+          "service_name_ko": "나라장터 가격정보현황서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        },
+        {
+          "service": "prvt_cntrct_info",
+          "service_name_ko": "누리장터 민간계약정보서비스",
+          "field_count": 1,
+          "fields": [
+            "totalCount"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "17개 row-available API에서 재구성한 통계"
+    },
+    "Region": {
+      "id": "Region",
+      "type": "procurement_entity",
+      "label_ko": "지역 코드/명칭 및 주소 기반 지역 정보",
+      "aliases": [
+        "지역",
+        "주소",
+        "region",
+        "rgn"
+      ],
+      "candidate_field_count": 51,
+      "sources": [
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 11,
+          "fields": [
+            "cmmnSpldmdCorpRgnLmtYn",
+            "incntvRgnNm1",
+            "incntvRgnNm4",
+            "jntcontrctDutyRgnNm1",
+            "jntcontrctDutyRgnNm2",
+            "jntcontrctDutyRgnNm3",
+            "ntceInsttOfclEmailAdrs",
+            "prtcptLmtRgnCd"
+          ]
+        },
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 7,
+          "fields": [
+            "cntrctInsttOfcl",
+            "dmndInsttOfclEmailAdrs",
+            "fnlSucsfCorpAdrs",
+            "ntceInsttOfclEmailAdrs",
+            "prtcptPsblRgnNm",
+            "rgnLmtYn",
+            "rprsntCorpAdrs"
+          ]
+        },
+        {
+          "service": "pub_prcrmnt_stat_info",
+          "service_name_ko": "공공조달통계정보서비스",
+          "field_count": 6,
+          "fields": [
+            "frgncntryEntrprsArsltAmt",
+            "frgncntryEntrprsArsltNum",
+            "rgnDutyCmmnCntrctTotamt",
+            "rgnDutyCmmnCntrctTotamtRt",
+            "rgnLmtTotamt",
+            "rgnLmtTotamtRt"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 5,
+          "fields": [
+            "aptCeoAdrs",
+            "prtcptLmtRgnCd",
+            "prtcptLmtRgnNm",
+            "prtcptPsblRgnNm",
+            "rgnLmtDivNm"
+          ]
+        },
+        {
+          "service": "shopping_mall_prdct_info",
+          "service_name_ko": "종합 쇼핑몰 품목정보 서비스",
+          "field_count": 5,
+          "fields": [
+            "dminsttRgnNm",
+            "prdctSplyRgnNm",
+            "qltyMngmtPrgnCorpYn",
+            "splyJrsdctRgnNm"
+          ]
+        },
+        {
+          "service": "usr_info",
+          "service_name_ko": "나라장터 사용자정보서비스",
+          "field_count": 4,
+          "fields": [
+            "adrs",
+            "dtlAdrs",
+            "rgnCd",
+            "rgnNm"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 3,
+          "fields": [
+            "bidwinnrAdrs",
+            "prtcptLmtRgnCd",
+            "prtcptLmtRgnNm"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 3,
+          "fields": [
+            "bidwinnrAdrs",
+            "prtcptLmtRgnCd",
+            "prtcptLmtRgnNm"
+          ]
+        },
+        {
+          "service": "prcrmnt_req_info",
+          "service_name_ko": "나라장터 조달요청서비스",
+          "field_count": 2,
+          "fields": [
+            "cnstrtsiteRgnNm",
+            "frgncptlCntrctCnclsMthdNm"
+          ]
+        },
+        {
+          "service": "thng_list_info",
+          "service_name_ko": "조달청 물품목록정보서비스",
+          "field_count": 2,
+          "fields": [
+            "rgnCd"
+          ]
+        },
+        {
+          "service": "cntrct_info",
+          "service_name_ko": "나라장터 계약정보서비스",
+          "field_count": 1,
+          "fields": [
+            "cnstrtsiteRgnNm"
+          ]
+        },
+        {
+          "service": "order_plan_sttus",
+          "service_name_ko": "나라장터 발주계획현황서비스",
+          "field_count": 1,
+          "fields": [
+            "cnstwkRgnNm"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored"
+    },
+    "SuccessfulBid": {
+      "id": "SuccessfulBid",
+      "type": "procurement_entity",
+      "label_ko": "낙찰/개찰 결과 정보",
+      "aliases": [
+        "낙찰",
+        "개찰",
+        "successful bid",
+        "scsbid",
+        "sucsfbid"
+      ],
+      "candidate_field_count": 77,
+      "sources": [
+        {
+          "service": "pub_data_opn_std",
+          "service_name_ko": "나라장터 공공데이터개방표준서비스",
+          "field_count": 21,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinrDcsnMthdNm",
+            "fnlSucsfAmt",
+            "fnlSucsfCorpAdrs",
+            "fnlSucsfCorpBizrno",
+            "fnlSucsfCorpCeoNm",
+            "fnlSucsfCorpContactTel"
+          ]
+        },
+        {
+          "service": "scsbid_info",
+          "service_name_ko": "나라장터 낙찰정보서비스",
+          "field_count": 19,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinnrAdrs",
+            "bidwinnrBizno",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "bidwinrSlctnAplBssCntnts"
+          ]
+        },
+        {
+          "service": "prvt_scsbid_info",
+          "service_name_ko": "누리장터 민간낙찰정보서비스",
+          "field_count": 15,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinnrAdrs",
+            "bidwinnrCeoNm",
+            "bidwinnrNm",
+            "bidwinnrTelNo",
+            "opengCorpInfo",
+            "opengDt"
+          ]
+        },
+        {
+          "service": "bid_public_info",
+          "service_name_ko": "나라장터 입찰공고정보서비스",
+          "field_count": 10,
+          "fields": [
+            "BidwinrSlctnBssCd",
+            "bidNtceNo",
+            "bidNtceOrd",
+            "opengDt",
+            "opengPlce",
+            "sucsfbidLwltRate",
+            "sucsfbidMthdCd",
+            "sucsfbidMthdNm"
+          ]
+        },
+        {
+          "service": "prvt_bid_ntce",
+          "service_name_ko": "누리장터 민간입찰공고서비스",
+          "field_count": 7,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "opengDt",
+            "opengPlce",
+            "sucsfbidMthdNm"
+          ]
+        },
+        {
+          "service": "cntrct_procss_intg_open",
+          "service_name_ko": "나라장터 계약과정통합공개서비스",
+          "field_count": 5,
+          "fields": [
+            "bidNtceNo",
+            "bidNtceOrd",
+            "bidwinrInfoList"
+          ]
+        }
+      ],
+      "privacy": "schema-derived node; raw API response values are not stored",
+      "description_ko": "낙찰/개찰 결과 정보"
+    }
+  },
+  "edges": [
+    {
+      "id": "bid_notice_to_successful_bid",
+      "source": "BidNotice",
+      "target": "SuccessfulBid",
+      "relationship": "may_have_successful_bid",
+      "relationship_ko": "입찰공고는 낙찰/개찰 결과와 연결됨",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "bid_public_info",
+        "target": "scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 71113,
+        "left_distinct": 323286,
+        "right_distinct": 82665,
+        "left_match_rate": 0.22,
+        "right_match_rate": 0.86
+      }
+    },
+    {
+      "id": "private_bid_notice_to_private_successful_bid",
+      "source": "PrivateBidNotice",
+      "target": "PrivateSuccessfulBid",
+      "relationship": "may_have_private_successful_bid",
+      "relationship_ko": "민간입찰공고는 민간 낙찰/개찰 결과와 연결됨",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "prvt_bid_ntce",
+        "target": "prvt_scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 6874,
+        "left_distinct": 25885,
+        "right_distinct": 8743,
+        "left_match_rate": 0.266,
+        "right_match_rate": 0.786
+      }
+    },
+    {
+      "id": "product_classification_dictionary",
+      "source": "ProductClassification",
+      "target": "Product",
+      "relationship": "classifies_product_or_procurement_item",
+      "relationship_ko": "물품분류번호는 조달 품목/상품을 분류함",
+      "status": "probable",
+      "join_keys": [
+        "prdctClsfcNo"
+      ],
+      "default_services": {
+        "dictionary": "thng_list_info",
+        "source": "thng_list_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap_dictionary",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 2643,
+        "left_match_rate": 0.938,
+        "right_match_rate": null,
+        "note": "Multiple services matched thng_list_info by prdctClsfcNo at high rates."
+      }
+    },
+    {
+      "id": "prior_specification_to_bid_notice",
+      "source": "PriorSpecification",
+      "target": "BidNotice",
+      "relationship": "may_feed_bid_notice",
+      "relationship_ko": "사전규격은 입찰공고로 이어질 수 있음",
+      "status": "probable",
+      "join_keys": [
+        "bfSpecRgstNo"
+      ],
+      "default_services": {
+        "source": "hrcsp_ssstndrd_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_value_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 8294,
+        "left_distinct": 82550,
+        "right_distinct": 49945,
+        "left_match_rate": 0.101,
+        "right_match_rate": 0.166
+      }
+    },
+    {
+      "id": "bid_notice_to_contract_process",
+      "source": "BidNotice",
+      "target": "ContractProcess",
+      "relationship": "has_contract_process_detail",
+      "relationship_ko": "입찰공고 seed는 계약과정통합공개 detail을 조회함",
+      "status": "probable",
+      "join_keys": [
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "bid_public_info",
+        "target": "cntrct_procss_intg_open"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "seed_derived_sample_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 1131,
+        "left_match_rate": null,
+        "right_match_rate": 0.328,
+        "note": "cntrct_procss_intg_open is seed-detail; pub_data_opn_std notice overlap was stronger in the audit."
+      }
+    },
+    {
+      "id": "contract_to_bid_notice",
+      "source": "Contract",
+      "target": "BidNotice",
+      "relationship": "may_derive_from_bid_notice",
+      "relationship_ko": "계약은 원 입찰공고와 연결될 수 있으나 bridge key 미해결",
+      "status": "candidate",
+      "join_keys": [
+        "untyCntrctNo",
+        "dcsnCntrctNo",
+        "cntrctRefNo",
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "cntrct_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_field_gap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 0,
+        "note": "Sampled cntrct_info list operations did not expose populated bidNtceNo+bidNtceOrd."
+      },
+      "resolver_task": "Investigate pub_data_opn_std contract fields and contract identifiers such as untyCntrctNo, dcsnCntrctNo, cntrctRefNo."
+    },
+    {
+      "id": "private_contract_to_private_bid_notice",
+      "source": "Contract",
+      "target": "PrivateBidNotice",
+      "relationship": "may_derive_from_private_bid_notice",
+      "relationship_ko": "민간계약은 민간입찰공고와 연결될 수 있으나 bridge key 미해결",
+      "status": "candidate",
+      "join_keys": [
+        "untyCntrctNo",
+        "dcsnCntrctNo",
+        "cntrctRefNo",
+        "bidNtceNo",
+        "bidNtceOrd"
+      ],
+      "default_services": {
+        "source": "prvt_cntrct_info",
+        "target": "prvt_bid_ntce"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_field_gap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 0,
+        "note": "Sampled private contract rows did not expose bid notice composite keys."
+      },
+      "resolver_task": "Investigate private contract bridge keys: untyCntrctNo, dcsnCntrctNo, cntrctRefNo."
+    },
+    {
+      "id": "demand_organization_lookup",
+      "source": "DemandOrganization",
+      "target": "BidNotice",
+      "relationship": "normalizes_demand_organization_fields",
+      "relationship_ko": "사용자정보 수요기관 master는 공고/계약 기관 필드를 정규화하는 lookup 후보",
+      "status": "lookup_candidate",
+      "join_keys": [
+        "dminsttCd",
+        "dminsttNm",
+        "ntceInsttCd",
+        "ntceInsttNm"
+      ],
+      "default_services": {
+        "source": "usr_info",
+        "target": "bid_public_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_lookup_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 2330,
+        "left_match_rate": 0.1565
+      },
+      "resolver_task": "Expand/seed usr_info demand organization master before treating as complete verified lookup."
+    },
+    {
+      "id": "procurement_company_lookup",
+      "source": "ProcurementCompany",
+      "target": "SuccessfulBid",
+      "relationship": "normalizes_procurement_company_fields",
+      "relationship_ko": "사용자정보 업체 master는 낙찰업체/계약업체 필드를 정규화하는 lookup 후보",
+      "status": "lookup_candidate",
+      "join_keys": [
+        "bizno",
+        "bidwinnrBizno",
+        "corpNm",
+        "bidwinnrNm"
+      ],
+      "default_services": {
+        "source": "usr_info",
+        "target": "scsbid_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "sample_lookup_overlap",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 1734,
+        "left_match_rate": 0.0404
+      },
+      "resolver_task": "Improve company aliasing and seed-driven usr_info expansion by bizno."
+    },
+    {
+      "id": "official_statistics_source",
+      "source": "OfficialStatistics",
+      "target": "ReconstructedStatistics",
+      "relationship": "contrasted_with_reconstructed_statistics",
+      "relationship_ko": "공식 공공조달통계 API는 현재 public row source로 미검증이며 재구성 통계와 구분해야 함",
+      "status": "unresolved",
+      "join_keys": [],
+      "default_services": {
+        "source": "pub_prcrmnt_stat_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/pub_prcrmnt_stat_info_report_catalog_review_2026-05-10.md",
+        "validation_mode": "public_api_rows_unverified",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "matches": 0,
+        "note": "HTTP 200/resultCode=00 with totalCount=0 was observed across tested period-stat probes."
+      },
+      "resolver_task": "Revalidate with exact demand organization code and known contract month before promoting official statistics."
+    },
+    {
+      "id": "reconstructed_statistics",
+      "source": "ReconstructedStatistics",
+      "target": "BidNotice",
+      "relationship": "computed_from_row_available_apis",
+      "relationship_ko": "재구성 통계는 row 확보된 17개 API에서 계산됨",
+      "status": "reconstructed",
+      "join_keys": [],
+      "default_services": {
+        "sources": "17 row-available APIs excluding pub_prcrmnt_stat_info"
+      },
+      "evidence": {
+        "source_artifact": "skills/g2b-openapi/references/mcp_relationship_audit_from_samples_2026-05-14.md",
+        "validation_mode": "derived_policy",
+        "privacy": "counts only; raw API response values are not stored in this artifact",
+        "note": "Label derived statistics as reconstructed, not official PubPrcrmntStatInfoService output."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "service": "shopping_mall_prdct_info",
+      "name_ko": "종합 쇼핑몰 품목정보 서비스",
+      "operation_count": 9,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "price_info",
+      "name_ko": "나라장터 가격정보현황서비스",
+      "operation_count": 11,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "cntrct_procss_intg_open",
+      "name_ko": "나라장터 계약과정통합공개서비스",
+      "operation_count": 4,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "prdct_mng_info",
+      "name_ko": "조달청 물품관리정보서비스",
+      "operation_count": 1,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "thng_list_info",
+      "name_ko": "조달청 물품목록정보서비스",
+      "operation_count": 12,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "indstryty_base_lawrglt_info",
+      "name_ko": "나라장터 업종 및 근거법규서비스",
+      "operation_count": 1,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "scsbid_info",
+      "name_ko": "나라장터 낙찰정보서비스",
+      "operation_count": 23,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "cntrct_info",
+      "name_ko": "나라장터 계약정보서비스",
+      "operation_count": 21,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "order_plan_sttus",
+      "name_ko": "나라장터 발주계획현황서비스",
+      "operation_count": 8,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "hrcsp_ssstndrd_info",
+      "name_ko": "나라장터 사전규격정보서비스",
+      "operation_count": 20,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "bid_public_info",
+      "name_ko": "나라장터 입찰공고정보서비스",
+      "operation_count": 25,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "prcrmnt_req_info",
+      "name_ko": "나라장터 조달요청서비스",
+      "operation_count": 12,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "pub_prcrmnt_stat_info",
+      "name_ko": "공공조달통계정보서비스",
+      "operation_count": 14,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "prvt_bid_ntce",
+      "name_ko": "누리장터 민간입찰공고서비스",
+      "operation_count": 10,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "usr_info",
+      "name_ko": "나라장터 사용자정보서비스",
+      "operation_count": 5,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "prvt_scsbid_info",
+      "name_ko": "누리장터 민간낙찰정보서비스",
+      "operation_count": 7,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "prvt_cntrct_info",
+      "name_ko": "누리장터 민간계약정보서비스",
+      "operation_count": 4,
+      "source_type": "g2b_openapi_catalog_service"
+    },
+    {
+      "service": "pub_data_opn_std",
+      "name_ko": "나라장터 공공데이터개방표준서비스",
+      "operation_count": 4,
+      "source_type": "g2b_openapi_catalog_service"
+    }
+  ],
+  "query_hints": [
+    "입찰공고에서 낙찰까지 생애주기 추적",
+    "업체-낙찰-계약 관계 탐색",
+    "수요기관/지역/품목 기반 조달 패턴 탐색"
+  ],
+  "privacy": "No API keys, raw API response values, 담당자 연락처, 이메일, 전화번호, or raw row samples are stored in this ontology artifact."
+}
