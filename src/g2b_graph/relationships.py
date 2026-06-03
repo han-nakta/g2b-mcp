@@ -1,16 +1,13 @@
-"""Relationship evidence helper placeholders.
-
-Future implementation should wrap artifacts/relationship_evidence_graph.json
-without exposing raw rows or PII.
-"""
+"""Relationship evidence helpers over packaged public-safe artifacts."""
 from __future__ import annotations
 
-from g2b_openapi.catalog import load_artifact
+from typing import Any
+
+from g2b_mcp.server import g2b_graph_get_edge_evidence, g2b_graph_list_relationships
 
 
-def list_relationships(status: str = "") -> list[dict]:
-    graph = load_artifact("relationship_evidence_graph.json")
-    edges = graph.get("relationships") or graph.get("edges") or []
-    if status:
-        edges = [edge for edge in edges if edge.get("status") == status]
-    return edges
+def list_relationships(status: str = "") -> list[dict[str, Any]]:
+    return g2b_graph_list_relationships(status=status)["edges"]
+
+
+__all__ = ["list_relationships", "g2b_graph_get_edge_evidence", "g2b_graph_list_relationships"]

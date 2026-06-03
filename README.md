@@ -1,18 +1,61 @@
 # G2B Procurement Intelligence
 
-Privacy-safe package skeleton for a G2B/Nara procurement OpenAPI catalog, relationship evidence graph, ontology artifacts, and future MCP server.
+Privacy-safe MCP/package boundary for a G2B/Nara procurement OpenAPI catalog, relationship evidence graph, ontology artifacts, and dataset-status surface.
 
-## Status
+> **Status: v0.2 public MCP alpha.** This repository is not the private live operator workspace. It packages public-safe artifacts and serves them through read-only MCP tools. It does not include raw rows, credentials, operator cache, or live backfill execution.
 
-This repository is a **Ver.1.0 publication skeleton**, not the live operator workspace. The source-of-truth implementation currently remains in the private Hermes/Eva workspace. This skeleton freezes the public package boundary before porting runtime code.
+## What this does
 
-Current baseline:
+Ask an MCP-capable assistant questions like:
+
+```text
+"What G2B OpenAPI services are available?"
+"Show operations for bid_public_info."
+"Describe getBidPblancListInfoThng without exposing credentials."
+"Which relationship edges are unresolved?"
+"What is this repo allowed to expose publicly?"
+```
+
+The server answers from packaged, public-safe artifacts. It is useful for API discovery, schema explanation, relationship-evidence inspection, and publication-boundary checks.
+
+## Current baseline
 
 - 18 G2B-related OpenAPI services / 191 operations cataloged.
-- API-01~17 representative evidence phase closed.
-- API-18 `pub_prcrmnt_stat_info` remains `unresolved_period_stat` for public OpenAPI rows.
-- MCP readiness in the source workspace: 100/100, verdict `mcp_ready_after_restart`.
-- Vercel/Supabase are deferred until the local MCP tool contract and artifact schema are stable.
+- API-01~17 representative evidence phase closed in the private operator workspace.
+- API-18 `pub_prcrmnt_stat_info` remains `unresolved_period_stat` until public OpenAPI rows are verified.
+- Public MCP server exposes packaged catalog/schema/evidence summaries only.
+- Vercel/Supabase-style product surfaces remain deferred until the MCP and public/private boundaries stay stable.
+
+## Example flows
+
+### 1. Explore the API catalog
+
+```text
+g2b_list_services()
+g2b_list_operations(service="bid_public_info")
+g2b_describe_operation(service="bid_public_info", operation="getBidPblancListInfoThng")
+```
+
+Use this when an agent needs to understand which G2B operation, date format, or response schema applies before writing code.
+
+### 2. Inspect relationship evidence
+
+```text
+g2b_graph_list_relationships(status="unresolved")
+g2b_graph_get_edge_evidence(edge_id="...")
+g2b_graph_query_join_map(entity="BidNotice")
+```
+
+Use this to see how bid notices, successful bids, contracts, organizations, products, and related entities are connected without exposing row-level values.
+
+### 3. Check publication safety
+
+```text
+g2b_privacy_boundary()
+g2b_dataset_status()
+```
+
+Use this to confirm that the public server is not reading private operator cache or returning raw rows. If no sanitized dataset-status artifact is packaged, `g2b_dataset_status()` returns a `not_packaged` marker.
 
 ## What is included
 
@@ -30,9 +73,9 @@ docs/
   publication-plan.md
   runbooks/api-01-bid-public-info-operator.md
 src/
+  g2b_mcp/server.py
   g2b_openapi/
   g2b_graph/
-  g2b_mcp/
 tests/
 ```
 
@@ -49,47 +92,88 @@ Included:
 Excluded:
 
 - API keys or credentials
-- `.env` files
+- `.env` files with real values
 - full authenticated request URLs
 - raw G2B response rows
 - `cache/`, raw/bronze/silver/gold data
 - 담당자명, 전화번호, 이메일, 주소, 사업자등록번호 등 PII 가능 field values
 
-## MCP Ver.1.0 contract
+See [DATA_BOUNDARY.md](DATA_BOUNDARY.md) and [SECURITY.md](SECURITY.md).
 
-The first MCP line is read-only and privacy-safe by default:
+## Install
 
-- API catalog/status
-- operation schema/quirk description
-- dependency-aware collection plan summary
-- dataset/readiness summary
-- relationship evidence graph query
-- ontology node/edge/query summary
-- stabilization/readiness criteria
+From a local checkout:
 
-Live fetch, smoke tests, and backfill are local operator workflows, not public default MCP behavior.
+```bash
+python3 -m pip install -e .
+# Optional MCP runtime support:
+python3 -m pip install -e '.[mcp]'
+```
 
-## Relationship status vocabulary
+## Run as MCP server
 
-- `verified`: strong live value evidence and stable join key
-- `probable`: useful value support with remaining validation caveats
-- `candidate`: schema/value candidate before promotion
-- `lookup_candidate`: master/reference normalization candidate
-- `unresolved`: blocker remains, such as bridge key or public row mismatch
-- `reconstructed`: derived from the 17 collected APIs, not the official statistics API
+STDIO mode:
+
+```bash
+g2b-mcp --mode stdio
+```
+
+Streamable HTTP mode:
+
+```bash
+g2b-mcp --mode streamable-http --host 127.0.0.1 --port 8000
+# endpoint: http://127.0.0.1:8000/mcp
+```
+
+Use a custom artifact directory if needed:
+
+```bash
+G2B_ARTIFACT_DIR=/path/to/public-safe/artifacts g2b-mcp --mode stdio
+```
+
+## Docker
+
+```bash
+docker build -t g2b-procurement-intelligence .
+docker run --rm -p 8000:8000 g2b-procurement-intelligence
+```
+
+## Public MCP tools
+
+Initial v0.2 public-safe tool surface:
+
+- `g2b_list_services`
+- `g2b_list_operations`
+- `g2b_describe_operation`
+- `g2b_graph_list_entities`
+- `g2b_graph_query_join_map`
+- `g2b_graph_list_relationships`
+- `g2b_graph_get_edge_evidence`
+- `g2b_graph_list_unresolved_edges`
+- `g2b_dataset_status`
+- `g2b_ontology_list_nodes`
+- `g2b_ontology_list_edges`
+- `g2b_privacy_boundary`
+
+Live fetch, smoke tests, and backfill remain local/private operator workflows, not public default MCP behavior.
 
 ## Local checks
 
 ```bash
-python3 -m json.tool artifacts/catalog.json >/dev/null
-python3 -m pytest
+python3 -m unittest discover -s tests -v
+# Run transport integration too when the optional MCP dependency is installed:
+python3 -m pip install -e '.[mcp]'
+python3 -m unittest tests/test_mcp_transport.py -v
+python3 -m py_compile src/g2b_mcp/server.py src/g2b_openapi/catalog.py src/g2b_graph/relationships.py
+uv build
+git diff --check
 ```
 
 ## Deployment posture
 
-Do not attach Vercel/Supabase first. The recommended order is:
+Recommended order:
 
-1. Freeze MCP tool contract and artifact schema.
-2. Port runtime code from the Hermes workspace into `src/`.
-3. Keep live credentials and raw cache local-only.
-4. Add a read-only Vercel dashboard or Supabase public-safe metadata mirror only after the MCP layer is stable.
+1. Keep this public MCP artifact server stable and privacy-safe.
+2. Add only public-safe derived dataset status or aggregate artifacts.
+3. Add HTTP hosting only after credential and raw-row boundaries remain green in tests.
+4. Add supplier-oriented recommendation chain tools after the aggregate/query layer is public-safe.

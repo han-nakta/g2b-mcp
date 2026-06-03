@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "g2b-procurement-intelligence"
-version = "0.1.0"
-description = "Privacy-safe G2B OpenAPI catalog, relationship evidence, ontology, and MCP package skeleton."
+version = "0.2.0"
+description = "Public-safe G2B OpenAPI catalog, relationship evidence, ontology, and MCP server."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
@@ -13,12 +13,17 @@ authors = [{name = "han.nakta"}]
 dependencies = []
 
 [project.optional-dependencies]
-mcp = ["mcp"]
-test = ["pytest"]
+mcp = ["mcp>=1.0"]
+test = []
 
 [project.scripts]
 g2b-mcp = "g2b_mcp.server:main"
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
+[tool.hatch.build.targets.wheel]
+packages = ["src/g2b_mcp", "src/g2b_openapi", "src/g2b_graph"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"artifacts" = "g2b_mcp/artifacts"
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "artifacts", "docs", "tests", "README.md", "LICENSE", "SECURITY.md", "DATA_BOUNDARY.md", ".env.example"]
