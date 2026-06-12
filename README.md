@@ -110,6 +110,12 @@ python3 -m pip install -e .
 python3 -m pip install -e '.[mcp]'
 ```
 
+## API keys
+
+You do **not** need a G2B/data.go.kr API key to use the current public MCP alpha. The default server is a read-only artifact server: it answers from packaged catalog/evidence JSON and does not perform live API calls.
+
+Users need their own API key only for future or separate opt-in live workflows, such as live smoke checks or private local collection. Those credentials should be provided through local environment variables, never committed files or shared prompts. See [docs/user-api-key.md](docs/user-api-key.md).
+
 ## Run as MCP server
 
 STDIO mode:
