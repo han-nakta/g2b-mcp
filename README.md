@@ -57,6 +57,18 @@ g2b_dataset_status()
 
 Use this to confirm that the public server is not reading private operator cache or returning raw rows. If no sanitized dataset-status artifact is packaged, `g2b_dataset_status()` returns a `not_packaged` marker.
 
+### 4. Run opt-in live summaries with your own key
+
+After `g2b-mcp --setup-api-key` and starting the server with `--enable-live-fetch`, ask for small sanitized summaries:
+
+```text
+g2b_search_bid_notices(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
+g2b_search_successful_bids(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
+g2b_search_contracts(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
+```
+
+These tools return counts, field coverage, and sanitized item previews only. They do not return raw rows, key values, authenticated URLs, contacts, business identifiers, or full request URLs.
+
 ## What is included
 
 ```text
@@ -196,6 +208,8 @@ Artifact/catalog tools:
 - `g2b_build_safe_request_preview`
 - `g2b_call_operation_summary`
 - `g2b_search_bid_notices`
+- `g2b_search_successful_bids`
+- `g2b_search_contracts`
 - `g2b_graph_list_entities`
 - `g2b_graph_query_join_map`
 - `g2b_graph_list_relationships`

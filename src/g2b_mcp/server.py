@@ -547,32 +547,99 @@ def _date_yyyymmddhhmm(value: str, end: bool = False) -> str:
     return digits[:12]
 
 
+def _date_yyyymmdd(value: str) -> str:
+    digits = re.sub(r"\D", "", str(value))
+    return digits[:8]
+
+
+def _category_operation_suffix(category: str) -> tuple[str, str]:
+    normalized = (category or "goods").strip().lower()
+    if normalized in {"services", "service", "servc"}:
+        return "services", "Servc"
+    if normalized in {"works", "construction", "cnstwk"}:
+        return "works", "Cnstwk"
+    return "goods", "Thng"
+
+
+def _date_window_params_for_allowed(allowed: set[str], start_date: str, end_date: str) -> dict[str, Any]:
+    params: dict[str, Any] = {}
+    if "inqryBgnDt" in allowed:
+        params["inqryBgnDt"] = _date_yyyymmddhhmm(start_date)
+    if "inqryEndDt" in allowed:
+        params["inqryEndDt"] = _date_yyyymmddhhmm(end_date, end=True)
+    if "inqryBgnDate" in allowed:
+        params["inqryBgnDate"] = _date_yyyymmdd(start_date)
+    if "inqryEndDate" in allowed:
+        params["inqryEndDate"] = _date_yyyymmdd(end_date)
+    return params
+
+
+def _add_first_supported_keyword(params: dict[str, Any], allowed: set[str], keyword: str, candidates: list[str]) -> bool:
+    if not keyword:
+        return False
+    for candidate in candidates:
+        if candidate in allowed:
+            params[candidate] = keyword
+            return True
+    return False
+
+
 def g2b_search_bid_notices(keyword: str, start_date: str, end_date: str, category: str = "goods", limit: int = 10) -> dict[str, Any]:
     """Small opt-in live bid notice search over common notice categories."""
-    normalized = (category or "goods").strip().lower()
-    operation_by_category = {
-        "goods": "getBidPblancListInfoThng",
-        "things": "getBidPblancListInfoThng",
-        "services": "getBidPblancListInfoServc",
-        "service": "getBidPblancListInfoServc",
-        "works": "getBidPblancListInfoCnstwk",
-        "construction": "getBidPblancListInfoCnstwk",
-    }
-    operation = operation_by_category.get(normalized, "getBidPblancListInfoThng")
+    normalized, suffix = _category_operation_suffix(category)
+    operation = f"getBidPblancListInfo{suffix}"
     svc = _find_service("bid_public_info")
     op = _find_operation(svc, operation)
     allowed = _operation_param_names(op)
-    params: dict[str, Any] = {"inqryDiv": "1", "inqryBgnDt": _date_yyyymmddhhmm(start_date), "inqryEndDt": _date_yyyymmddhhmm(end_date, end=True), "numOfRows": _coerce_num_rows(limit), "pageNo": 1, "type": "json"}
+    params: dict[str, Any] = {"inqryDiv": "1", "numOfRows": _coerce_num_rows(limit), "pageNo": 1, "type": "json"}
+    params.update(_date_window_params_for_allowed(allowed, start_date, end_date))
     keyword_candidates = ["bidNtceNm", "ntceInsttNm", "dminsttNm", "prdctClsfcNoNm"]
-    for candidate in keyword_candidates:
-        if candidate in allowed and keyword:
-            params[candidate] = keyword
-            break
+    keyword_added = _add_first_supported_keyword(params, allowed, keyword, keyword_candidates)
     result = g2b_call_operation_summary("bid_public_info", operation, params, num_rows=limit)
     result.setdefault("service", "bid_public_info")
     result.setdefault("operation", operation)
-    result["category"] = "goods" if normalized in {"goods", "things"} else normalized
-    if keyword and not any(k in allowed for k in keyword_candidates):
+    result["category"] = normalized
+    if keyword and not keyword_added:
+        result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
+    return result
+
+
+def g2b_search_successful_bids(keyword: str = "", start_date: str = "", end_date: str = "", category: str = "goods", limit: int = 10) -> dict[str, Any]:
+    """Small opt-in live successful-bid search over goods/services/works summaries."""
+    normalized, suffix = _category_operation_suffix(category)
+    operation = f"getScsbidListSttus{suffix}PPSSrch"
+    svc = _find_service("scsbid_info")
+    op = _find_operation(svc, operation)
+    allowed = _operation_param_names(op)
+    params: dict[str, Any] = {"inqryDiv": "1", "numOfRows": _coerce_num_rows(limit), "pageNo": 1, "type": "json"}
+    params.update(_date_window_params_for_allowed(allowed, start_date, end_date))
+    keyword_candidates = ["bidNtceNm", "ntceInsttNm", "dminsttNm", "prdctClsfcNoNm"]
+    keyword_added = _add_first_supported_keyword(params, allowed, keyword, keyword_candidates)
+    result = g2b_call_operation_summary("scsbid_info", operation, params, num_rows=limit)
+    result.setdefault("service", "scsbid_info")
+    result.setdefault("operation", operation)
+    result["category"] = normalized
+    if keyword and not keyword_added:
+        result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
+    return result
+
+
+def g2b_search_contracts(keyword: str = "", start_date: str = "", end_date: str = "", category: str = "goods", limit: int = 10) -> dict[str, Any]:
+    """Small opt-in live contract search over goods/services/works summaries."""
+    normalized, suffix = _category_operation_suffix(category)
+    operation = f"getCntrctInfoList{suffix}PPSSrch"
+    svc = _find_service("cntrct_info")
+    op = _find_operation(svc, operation)
+    allowed = _operation_param_names(op)
+    params: dict[str, Any] = {"inqryDiv": "1", "numOfRows": _coerce_num_rows(limit), "pageNo": 1, "type": "json"}
+    params.update(_date_window_params_for_allowed(allowed, start_date, end_date))
+    keyword_candidates = ["cntrctNm", "cnstwkNm", "prdctClsfcNoNm", "insttNm"]
+    keyword_added = _add_first_supported_keyword(params, allowed, keyword, keyword_candidates)
+    result = g2b_call_operation_summary("cntrct_info", operation, params, num_rows=limit)
+    result.setdefault("service", "cntrct_info")
+    result.setdefault("operation", operation)
+    result["category"] = normalized
+    if keyword and not keyword_added:
         result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
     return result
 
@@ -727,6 +794,8 @@ def _tool_functions() -> list[Callable[..., dict[str, Any]]]:
         g2b_build_safe_request_preview,
         g2b_call_operation_summary,
         g2b_search_bid_notices,
+        g2b_search_successful_bids,
+        g2b_search_contracts,
         g2b_graph_list_entities,
         g2b_graph_query_join_map,
         g2b_graph_list_relationships,

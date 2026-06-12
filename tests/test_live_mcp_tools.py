@@ -205,6 +205,33 @@ class LiveMcpToolTests(unittest.TestCase):
         self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
         self.assertNotIn("TOPSECRET", repr(result))
 
+    def test_search_successful_bids_and_contracts_are_specialized_safe_tools(self):
+        os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        payload = {
+            "response": {
+                "header": {"resultCode": "00", "resultMsg": "OK"},
+                "body": {
+                    "totalCount": 1,
+                    "items": [{"bidNtceNm": "Laptop", "dminsttNm": "Seoul Office", "fnlSucsfCorpBizrno": "123-45-67890"}],
+                },
+            }
+        }
+        with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)) as urlopen:
+            bids = server.g2b_search_successful_bids("laptop", "20240601", "20240602", category="goods", limit=25)
+            contracts = server.g2b_search_contracts("laptop", "20240601", "20240602", category="goods", limit=25)
+        self.assertEqual(bids["service"], "scsbid_info")
+        self.assertEqual(bids["operation"], "getScsbidListSttusThngPPSSrch")
+        self.assertEqual(contracts["service"], "cntrct_info")
+        self.assertEqual(contracts["operation"], "getCntrctInfoListThngPPSSrch")
+        for result in (bids, contracts):
+            self.assertEqual(result["category"], "goods")
+            self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
+            serialized = repr(result)
+            self.assertNotIn("TOPSECRET", serialized)
+            self.assertNotIn("123-45-67890", serialized)
+        self.assertEqual(urlopen.call_count, 2)
+
 
 if __name__ == "__main__":
     unittest.main()

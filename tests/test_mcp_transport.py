@@ -44,7 +44,10 @@ class McpTransportIntegrationTests(unittest.TestCase):
                     self.assertIn("g2b_api_key_setup_instructions", names)
                     self.assertIn("g2b_check_api_key", names)
                     self.assertIn("g2b_call_operation_summary", names)
-                    self.assertGreaterEqual(len(names), 18)
+                    self.assertIn("g2b_search_bid_notices", names)
+                    self.assertIn("g2b_search_successful_bids", names)
+                    self.assertIn("g2b_search_contracts", names)
+                    self.assertGreaterEqual(len(names), 20)
 
                     result = await session.call_tool("g2b_list_services", {})
                     self.assertFalse(result.isError)

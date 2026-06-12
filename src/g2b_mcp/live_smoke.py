@@ -95,21 +95,15 @@ def run_smoke(env_file: Path | None, days: int, limit: int, include_items: bool)
 
     today = dt.date.today()
     start = today - dt.timedelta(days=days)
-    date_params = {
-        "inqryDiv": "1",
-        "inqryBgnDt": _yyyymmddhhmm(start),
-        "inqryEndDt": _yyyymmddhhmm(today, end=True),
-        "numOfRows": limit,
-        "pageNo": 1,
-        "type": "json",
-    }
+    start_yyyymmdd = start.strftime("%Y%m%d")
+    end_yyyymmdd = today.strftime("%Y%m%d")
 
     raw_cases: dict[str, dict[str, Any]] = {
-        "bid_goods": server.g2b_search_bid_notices("", start.strftime("%Y%m%d"), today.strftime("%Y%m%d"), "goods", limit),
-        "bid_services": server.g2b_search_bid_notices("", start.strftime("%Y%m%d"), today.strftime("%Y%m%d"), "services", limit),
-        "bid_works": server.g2b_search_bid_notices("", start.strftime("%Y%m%d"), today.strftime("%Y%m%d"), "works", limit),
-        "scsbid_goods": server.g2b_call_operation_summary("scsbid_info", "getScsbidListSttusThng", date_params, num_rows=limit),
-        "contract_goods": server.g2b_call_operation_summary("cntrct_info", "getCntrctInfoListThng", date_params, num_rows=limit),
+        "bid_goods": server.g2b_search_bid_notices("", start_yyyymmdd, end_yyyymmdd, "goods", limit),
+        "bid_services": server.g2b_search_bid_notices("", start_yyyymmdd, end_yyyymmdd, "services", limit),
+        "bid_works": server.g2b_search_bid_notices("", start_yyyymmdd, end_yyyymmdd, "works", limit),
+        "scsbid_goods": server.g2b_search_successful_bids("", start_yyyymmdd, end_yyyymmdd, "goods", limit),
+        "contract_goods": server.g2b_search_contracts("", start_yyyymmdd, end_yyyymmdd, "goods", limit),
     }
 
     statuses = {
