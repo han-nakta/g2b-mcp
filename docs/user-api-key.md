@@ -1,6 +1,6 @@
 # User API key and live-fetch posture
 
-This repository's current public MCP alpha is a **public-safe artifact server**. It does not need a user's G2B/data.go.kr API key for the default MCP tools.
+This repository's default MCP alpha is a **public-safe artifact server**. It does not need a user's G2B/data.go.kr API key for the default MCP tools. v0.3 also includes an explicit opt-in live-read alpha for small user-owned lookups.
 
 ## Default alpha behavior
 
@@ -12,29 +12,29 @@ The packaged server answers from JSON artifacts included in the package:
 - ontology summary artifacts
 - a public-safe dataset-status marker, when packaged
 
-It intentionally does **not** perform live API requests, read private operator caches, or expose raw rows. Therefore, a user can install and run the alpha MCP server without any API key.
+It intentionally does **not** perform live API requests, read private operator caches, or expose raw rows. Therefore, a user can install and run the default alpha MCP server without any API key.
 
 ## When a user needs an API key
 
-A user needs their own API key only for future or separate **opt-in live workflows**, such as:
+A user needs their own API key only for **opt-in live workflows**, such as:
 
 - live smoke checks against data.go.kr/G2B OpenAPI endpoints
 - collecting or refreshing local private cache
 - generating private derived artifacts from newly fetched data
 
-Those workflows should run in the user's local/private environment, not in the public default MCP server mode.
+Those workflows must run in the user's local/private environment and require `--enable-live-fetch`. Without that flag, live tools return `LIVE_FETCH_DISABLED` and do not make network requests.
 
 ## Recommended credential model
 
 Use environment variables rather than CLI arguments, config files committed to git, or full request URLs.
 
-Recommended variable name for future live tooling:
+Recommended variable name for live tooling:
 
 ```text
 G2B_SERVICE_KEY
 ```
 
-If an operation or service later requires separate credentials, use service-specific variables documented by that tool, but keep them in the same local-only pattern.
+`G2B_SERVICE_KEY` is preferred. If it is not set, v0.3 may use a service-specific catalog variable such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present. Tool output reports only whether a key is configured and which env name was used; it never returns the key value.
 
 Do not commit real values to this repository. Keep real values in one of:
 
@@ -54,7 +54,7 @@ mcp_servers:
     args: ["--mode", "stdio"]
 ```
 
-If a future opt-in live-fetch mode is added, pass the key explicitly to that trusted local process through the MCP client's environment configuration. Example shape:
+For v0.3 opt-in live-read mode, pass the key explicitly to that trusted local process through the MCP client's environment configuration:
 
 ```yaml
 mcp_servers:
@@ -65,7 +65,7 @@ mcp_servers:
       G2B_SERVICE_KEY: "put-your-own-local-key-here"
 ```
 
-The `--enable-live-fetch` flag above is an example for a future opt-in mode; it is not part of the current alpha server.
+The `--enable-live-fetch` flag sets `G2B_ENABLE_LIVE_FETCH=1` inside the server process. Live summaries are bounded (`numOfRows` capped at 10), sanitized, and never include full authenticated URLs or raw rows.
 
 ## Safety rules for future live tools
 

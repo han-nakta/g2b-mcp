@@ -2,7 +2,7 @@
 
 Privacy-safe MCP/package boundary for a G2B/Nara procurement OpenAPI catalog, relationship evidence graph, ontology artifacts, and dataset-status surface.
 
-> **Status: v0.2 public MCP alpha.** This repository is not the private live operator workspace. It packages public-safe artifacts and serves them through read-only MCP tools. It does not include raw rows, credentials, operator cache, or live backfill execution.
+> **Status: v0.2 public MCP artifact alpha + v0.3 opt-in live-read alpha.** Default mode is still the keyless, public-safe artifact server. v0.3 adds bounded live lookup tools only when the local user explicitly starts the server with `--enable-live-fetch` and provides their own API key through environment variables. The repo does not include raw rows, credentials, operator cache, or live backfill execution.
 
 ## What this does
 
@@ -112,9 +112,11 @@ python3 -m pip install -e '.[mcp]'
 
 ## API keys
 
-You do **not** need a G2B/data.go.kr API key to use the current public MCP alpha. The default server is a read-only artifact server: it answers from packaged catalog/evidence JSON and does not perform live API calls.
+You do **not** need a G2B/data.go.kr API key to use the default MCP alpha. The default server is a read-only artifact server: it answers from packaged catalog/evidence JSON and does not perform live API calls.
 
-Users need their own API key only for future or separate opt-in live workflows, such as live smoke checks or private local collection. Those credentials should be provided through local environment variables, never committed files or shared prompts. See [docs/user-api-key.md](docs/user-api-key.md).
+v0.3 includes an opt-in live-read alpha for small user-owned lookups. To use it, run the local MCP process with `--enable-live-fetch` and set `G2B_SERVICE_KEY` in the process environment. If `G2B_SERVICE_KEY` is absent, the server may use a service-specific catalog env name such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present. Tool outputs never return key values or full authenticated URLs.
+
+See [docs/user-api-key.md](docs/user-api-key.md).
 
 ## Run as MCP server
 
@@ -144,13 +146,28 @@ docker build -t g2b-procurement-intelligence .
 docker run --rm -p 8000:8000 g2b-procurement-intelligence
 ```
 
+### Opt-in live-read mode
+
+Bounded live reads require both a user-owned key and an explicit flag:
+
+```bash
+G2B_SERVICE_KEY="your-local-data-go-kr-key" g2b-mcp --mode stdio --enable-live-fetch
+```
+
+Without `--enable-live-fetch`, live tools return `LIVE_FETCH_DISABLED` and make no network request. Live responses are capped, summarized, and sanitized; they do not return raw rows, key values, or authenticated URLs.
+
 ## Public MCP tools
 
-Initial v0.2 public-safe tool surface:
+Artifact/catalog tools:
 
 - `g2b_list_services`
 - `g2b_list_operations`
 - `g2b_describe_operation`
+- `g2b_check_api_key`
+- `g2b_validate_operation_params`
+- `g2b_build_safe_request_preview`
+- `g2b_call_operation_summary`
+- `g2b_search_bid_notices`
 - `g2b_graph_list_entities`
 - `g2b_graph_query_join_map`
 - `g2b_graph_list_relationships`
@@ -161,7 +178,7 @@ Initial v0.2 public-safe tool surface:
 - `g2b_ontology_list_edges`
 - `g2b_privacy_boundary`
 
-Live fetch, smoke tests, and backfill remain local/private operator workflows, not public default MCP behavior.
+Live read tools are opt-in and bounded. Broad smoke-test campaigns, cache refresh, and backfill remain local/private operator workflows, not public default MCP behavior.
 
 ## Local checks
 

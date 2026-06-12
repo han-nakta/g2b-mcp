@@ -9,9 +9,9 @@ This repository is a public-safe MCP/package boundary for G2B procurement intell
 - 담당자명, 전화번호, 이메일, 주소, 사업자등록번호, or other PII-like values.
 - Supplier/award-party raw identifiers beyond packaged evidence summaries.
 
-The MCP server defaults to packaged artifact reads only. It does not perform live fetches or broad collection, and the current public alpha does not need a user API key.
+The MCP server defaults to packaged artifact reads only. It does not perform live fetches or broad collection in default mode, and the default public alpha does not need a user API key.
 
-If future opt-in live workflows are added, user-owned API keys must be passed through local environment variables or a secret manager. Do not put real keys in committed files, examples, logs, issue bodies, prompts, or MCP tool responses.
+v0.3 opt-in live-read workflows require `--enable-live-fetch` and user-owned API keys passed through local environment variables or a secret manager. Do not put real keys in committed files, examples, logs, issue bodies, prompts, or MCP tool responses. Live tool responses must remain bounded, sanitized, and free of raw rows, authenticated URLs, contact values, and credential values.
 
 ## Reporting issues
 

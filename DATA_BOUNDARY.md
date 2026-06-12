@@ -18,6 +18,6 @@
 
 ## Runtime behavior
 
-The public MCP server reads packaged JSON artifacts from `./artifacts` or `G2B_ARTIFACT_DIR`. It does not execute live API fetches or backfill jobs, and it does not need a user API key in default alpha mode. If dataset status is not packaged, the server returns a `not_packaged` marker instead of reading private local state.
+The public MCP server reads packaged JSON artifacts from `./artifacts` or `G2B_ARTIFACT_DIR` by default, and it does not need a user API key in default alpha mode. v0.3 live-read tools require explicit `--enable-live-fetch` opt-in plus a user-owned local environment key, and return only bounded sanitized summaries. If dataset status is not packaged, the server returns a `not_packaged` marker instead of reading private local state.
 
-User-owned G2B/data.go.kr API keys are only for future or separate opt-in live workflows. They must stay in the user's local environment or secret manager and must never be committed, logged, or returned in MCP tool output. See `docs/user-api-key.md` for the intended credential model.
+User-owned G2B/data.go.kr API keys are only for opt-in live workflows. They must stay in the user's local environment or secret manager and must never be committed, logged, or returned in MCP tool output. See `docs/user-api-key.md` for the intended credential model.
