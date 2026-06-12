@@ -8,6 +8,7 @@ expose raw rows, credentials, or authenticated URLs.
 from __future__ import annotations
 
 import argparse
+import getpass
 import json
 import os
 import re
@@ -54,6 +55,8 @@ LIVE_PRIVACY_NOTICE = {
     "sanitized_items_only": True,
 }
 
+DEFAULT_API_KEY_ENV_FILE = Path.home() / ".config" / "g2b-mcp" / ".env"
+
 
 def artifact_dir() -> Path:
     """Return artifact directory, preferring explicit env override."""
@@ -77,6 +80,93 @@ def artifact_dir() -> Path:
 def load_artifact(name: str) -> Any:
     path = artifact_dir() / name
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _parse_simple_env_line(line: str) -> tuple[str, str] | None:
+    stripped = line.strip()
+    if not stripped or stripped.startswith("#") or "=" not in stripped:
+        return None
+    key, value = stripped.split("=", 1)
+    key = key.strip()
+    value = value.strip().strip('"').strip("'")
+    if not key or not re.match(r"^[A-Za-z_][A-Za-z0-9_]*$", key):
+        return None
+    return key, value
+
+
+def load_env_file(path: str | Path | None = None, override: bool = False) -> dict[str, str]:
+    """Load a local env file without returning secret values.
+
+    Process environment variables win by default. Return values are status-only
+    markers so callers/tests can verify behavior without exposing credentials.
+    """
+    env_path = Path(path).expanduser() if path else DEFAULT_API_KEY_ENV_FILE
+    if not env_path.exists():
+        return {}
+    loaded: dict[str, str] = {}
+    for line in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+        parsed = _parse_simple_env_line(line)
+        if not parsed:
+            continue
+        key, value = parsed
+        allowed_key = key == "G2B_SERVICE_KEY" or (key.startswith("G2B_") and key.endswith("_API_KEY"))
+        if not allowed_key:
+            continue
+        if override or not os.environ.get(key):
+            os.environ[key] = value
+        loaded[key] = "loaded"
+    return loaded
+
+
+def setup_api_key_env_file(api_key: str, path: str | Path | None = None, env_name: str = "G2B_SERVICE_KEY") -> dict[str, Any]:
+    """Persist a user-owned API key in a local 0600 env file without echoing it."""
+    if env_name != "G2B_SERVICE_KEY" and not (env_name.startswith("G2B_") and env_name.endswith("_API_KEY")):
+        raise ValueError("env_name must be G2B_SERVICE_KEY or a G2B_*_API_KEY variable")
+    value = str(api_key or "").strip()
+    if not value:
+        raise ValueError("API key must not be empty")
+    env_path = Path(path).expanduser() if path else DEFAULT_API_KEY_ENV_FILE
+    env_path.parent.mkdir(parents=True, exist_ok=True)
+    lines: list[str] = []
+    replaced = False
+    if env_path.exists():
+        for line in env_path.read_text(encoding="utf-8", errors="ignore").splitlines():
+            parsed = _parse_simple_env_line(line)
+            if parsed and parsed[0] == env_name:
+                lines.append(f"{env_name}={value}")
+                replaced = True
+            else:
+                lines.append(line)
+    if not replaced:
+        lines.append(f"{env_name}={value}")
+    env_path.write_text("\n".join(lines).rstrip("\n") + "\n", encoding="utf-8")
+    os.chmod(env_path, 0o600)
+    return {
+        "saved": True,
+        "env_file": str(env_path),
+        "env_name": env_name,
+        "file_mode": "0600",
+        "key_exposed": False,
+        "next_step": f"Run: g2b-mcp --mode stdio --enable-live-fetch --api-key-env-file {env_path}",
+    }
+
+
+def g2b_api_key_setup_instructions() -> dict[str, Any]:
+    """Return safe local setup instructions; never asks for or returns a key."""
+    return {
+        "recommended_cli": "g2b-mcp --setup-api-key",
+        "default_env_file": str(DEFAULT_API_KEY_ENV_FILE),
+        "server_command": "g2b-mcp --mode stdio --enable-live-fetch",
+        "env_name": "G2B_SERVICE_KEY",
+        "safety": {
+            "hidden_prompt": True,
+            "file_mode": "0600",
+            "key_exposed": False,
+            "do_not_commit": True,
+            "mcp_tool_will_not_collect_key": True,
+        },
+        "privacy": _live_privacy(),
+    }
 
 
 def _services() -> list[dict[str, Any]]:
@@ -631,6 +721,7 @@ def _tool_functions() -> list[Callable[..., dict[str, Any]]]:
         g2b_list_services,
         g2b_list_operations,
         g2b_describe_operation,
+        g2b_api_key_setup_instructions,
         g2b_check_api_key,
         g2b_validate_operation_params,
         g2b_build_safe_request_preview,
@@ -672,8 +763,16 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--host", default=os.environ.get("HOST", "127.0.0.1"))
     parser.add_argument("--port", type=int, default=int(os.environ.get("PORT", "8000")))
     parser.add_argument("--artifact-dir", default=os.environ.get("G2B_ARTIFACT_DIR", ""))
+    parser.add_argument("--api-key-env-file", default=os.environ.get("G2B_API_KEY_ENV_FILE", str(DEFAULT_API_KEY_ENV_FILE)), help="Local 0600 env file for user-owned API keys")
+    parser.add_argument("--setup-api-key", action="store_true", help="Prompt securely for a user-owned G2B API key and save it to --api-key-env-file")
     parser.add_argument("--enable-live-fetch", action="store_true", help="Opt in to bounded live reads using a user-owned key from environment")
     args = parser.parse_args(argv)
+    if args.setup_api_key:
+        secret = getpass.getpass("G2B/data.go.kr ServiceKey (input hidden): ")
+        result = setup_api_key_env_file(secret, args.api_key_env_file)
+        print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 0
+    load_env_file(args.api_key_env_file)
     if args.artifact_dir:
         os.environ["G2B_ARTIFACT_DIR"] = args.artifact_dir
     if args.enable_live_fetch:

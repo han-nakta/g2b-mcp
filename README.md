@@ -116,6 +116,14 @@ You do **not** need a G2B/data.go.kr API key to use the default MCP alpha. The d
 
 v0.3 includes an opt-in live-read alpha for small user-owned lookups. To use it, run the local MCP process with `--enable-live-fetch` and set `G2B_SERVICE_KEY` in the process environment. If `G2B_SERVICE_KEY` is absent, the server may use a service-specific catalog env name such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present. Tool outputs never return key values or full authenticated URLs.
 
+For a safer local setup flow, run the hidden-prompt wizard:
+
+```bash
+g2b-mcp --setup-api-key
+```
+
+The wizard saves only to the user's local env file, defaulting to `~/.config/g2b-mcp/.env` with file mode `0600`. The MCP server auto-loads that file at startup, while live calls still require explicit `--enable-live-fetch`.
+
 See [docs/user-api-key.md](docs/user-api-key.md).
 
 ## Run as MCP server
@@ -154,6 +162,13 @@ Bounded live reads require both a user-owned key and an explicit flag:
 G2B_SERVICE_KEY="your-local-data-go-kr-key" g2b-mcp --mode stdio --enable-live-fetch
 ```
 
+Or use the hidden-prompt setup wizard first, then start live mode without putting the key in shell history:
+
+```bash
+g2b-mcp --setup-api-key
+g2b-mcp --mode stdio --enable-live-fetch
+```
+
 Without `--enable-live-fetch`, live tools return `LIVE_FETCH_DISABLED` and make no network request. Live responses are capped, summarized, and sanitized; they do not return raw rows, key values, or authenticated URLs.
 
 ## Public MCP tools
@@ -163,6 +178,7 @@ Artifact/catalog tools:
 - `g2b_list_services`
 - `g2b_list_operations`
 - `g2b_describe_operation`
+- `g2b_api_key_setup_instructions`
 - `g2b_check_api_key`
 - `g2b_validate_operation_params`
 - `g2b_build_safe_request_preview`

@@ -36,6 +36,25 @@ G2B_SERVICE_KEY
 
 `G2B_SERVICE_KEY` is preferred. If it is not set, v0.3 may use a service-specific catalog variable such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present. Tool output reports only whether a key is configured and which env name was used; it never returns the key value.
 
+## Hidden-prompt setup wizard
+
+For users who do not want to paste a key into shell history or MCP chat prompts, use the local setup wizard:
+
+```bash
+g2b-mcp --setup-api-key
+```
+
+The prompt hides input with `getpass`, writes `G2B_SERVICE_KEY` to `~/.config/g2b-mcp/.env` by default, and sets that file to mode `0600`. The command returns only status metadata such as the env file path and never echoes the key.
+
+To use a custom location:
+
+```bash
+g2b-mcp --setup-api-key --api-key-env-file ~/.config/g2b-mcp/private.env
+g2b-mcp --mode stdio --enable-live-fetch --api-key-env-file ~/.config/g2b-mcp/private.env
+```
+
+The MCP server auto-loads the env file at startup, but live network calls still require explicit `--enable-live-fetch`. Existing process environment variables take precedence over file values.
+
 Do not commit real values to this repository. Keep real values in one of:
 
 - a local shell environment
@@ -54,18 +73,16 @@ mcp_servers:
     args: ["--mode", "stdio"]
 ```
 
-For v0.3 opt-in live-read mode, pass the key explicitly to that trusted local process through the MCP client's environment configuration:
+For v0.3 opt-in live-read mode after running `g2b-mcp --setup-api-key`, the server can load the local env file automatically:
 
 ```yaml
 mcp_servers:
   g2b_live_local:
     command: "g2b-mcp"
     args: ["--mode", "stdio", "--enable-live-fetch"]
-    env:
-      G2B_SERVICE_KEY: "put-your-own-local-key-here"
 ```
 
-The `--enable-live-fetch` flag sets `G2B_ENABLE_LIVE_FETCH=1` inside the server process. Live summaries are bounded (`numOfRows` capped at 10), sanitized, and never include full authenticated URLs or raw rows.
+The `--enable-live-fetch` flag sets `G2B_ENABLE_LIVE_FETCH=1` inside the server process. If the key was not saved with the setup wizard, pass `G2B_SERVICE_KEY` through the trusted MCP client's private environment configuration. Live summaries are bounded (`numOfRows` capped at 10), sanitized, and never include full authenticated URLs or raw rows.
 
 ## Safety rules for future live tools
 
@@ -73,7 +90,7 @@ Any future live-fetch feature should keep these rules:
 
 1. Default MCP startup remains public-safe and keyless.
 2. Live fetch requires an explicit opt-in flag or separate command.
-3. API keys are read from environment variables only.
+3. API keys are read from environment variables or the local 0600 env file created by `--setup-api-key`.
 4. Tool output must never include the key, authenticated URL, raw rows, contact values, or private cache paths.
 5. Live tools should return small status/count/schema summaries by default.
 6. Broad backfill remains a local operator workflow, not a public default MCP action.

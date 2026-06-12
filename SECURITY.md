@@ -11,7 +11,7 @@ This repository is a public-safe MCP/package boundary for G2B procurement intell
 
 The MCP server defaults to packaged artifact reads only. It does not perform live fetches or broad collection in default mode, and the default public alpha does not need a user API key.
 
-v0.3 opt-in live-read workflows require `--enable-live-fetch` and user-owned API keys passed through local environment variables or a secret manager. Do not put real keys in committed files, examples, logs, issue bodies, prompts, or MCP tool responses. Live tool responses must remain bounded, sanitized, and free of raw rows, authenticated URLs, contact values, and credential values.
+v0.3 opt-in live-read workflows require `--enable-live-fetch` and user-owned API keys passed through local environment variables, a secret manager, or the local `0600` env file created by `g2b-mcp --setup-api-key`. Do not put real keys in committed files, examples, logs, issue bodies, prompts, or MCP tool responses. Live tool responses must remain bounded, sanitized, and free of raw rows, authenticated URLs, contact values, and credential values.
 
 ## Reporting issues
 
