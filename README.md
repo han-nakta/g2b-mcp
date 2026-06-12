@@ -65,9 +65,10 @@ After `g2b-mcp --setup-api-key` and starting the server with `--enable-live-fetc
 g2b_search_bid_notices(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
 g2b_search_successful_bids(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
 g2b_search_contracts(keyword="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
+g2b_procurement_research(task="market scan", query="노트북", start_date="20260601", end_date="20260612", category="goods", limit=5)
 ```
 
-These tools return counts, field coverage, and sanitized item previews only. They do not return raw rows, key values, authenticated URLs, contacts, business identifiers, or full request URLs.
+`g2b_procurement_research` is the consolidated user-facing router. It accepts natural-ish Korean/English task phrases for bid notices, successful bids, contracts, and market scans; unknown tasks return a `[NOT_FOUND]` marker with suggestions instead of raising. Market scan runs the notice → award → contract summary workflow and returns `workflow_steps`, compact `results`, `next_queries`, and the privacy notice. These tools return counts, field coverage, next-query hints, and sanitized item previews only. They do not return raw rows, key values, authenticated URLs, contacts, business identifiers, or full request URLs.
 
 ## What is included
 
@@ -126,9 +127,9 @@ python3 -m pip install -e '.[mcp]'
 
 You do **not** need a G2B/data.go.kr API key to use the default MCP alpha. The default server is a read-only artifact server: it answers from packaged catalog/evidence JSON and does not perform live API calls.
 
-v0.3 includes an opt-in live-read alpha for small user-owned lookups. To use it, run the local MCP process with `--enable-live-fetch` and set `G2B_SERVICE_KEY` in the process environment. If `G2B_SERVICE_KEY` is absent, the server may use a service-specific catalog env name such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present. Tool outputs never return key values or full authenticated URLs.
+v0.3+ includes an opt-in live-read alpha for small user-owned lookups. To use it, run the local MCP process with `--enable-live-fetch` and a local env file created by the hidden-prompt wizard. If the default `G2B_SERVICE_KEY` is absent, the server may use a service-specific catalog env name such as `G2B_BID_PUBLIC_INFO_API_KEY` when that variable is already present in trusted private environment configuration. Tool outputs never return key values or full authenticated URLs.
 
-For a safer local setup flow, run the hidden-prompt wizard:
+Recommended local setup:
 
 ```bash
 g2b-mcp --setup-api-key
@@ -180,20 +181,63 @@ The smoke script calls only bounded summary reads and reports whether privacy ch
 
 ### Opt-in live-read mode
 
-Bounded live reads require both a user-owned key and an explicit flag:
-
-```bash
-G2B_SERVICE_KEY="your-local-data-go-kr-key" g2b-mcp --mode stdio --enable-live-fetch
-```
-
-Or use the hidden-prompt setup wizard first, then start live mode without putting the key in shell history:
+Bounded live reads require both a user-owned key and an explicit flag. Use the hidden-prompt setup wizard first, then start live mode without putting the key in shell history:
 
 ```bash
 g2b-mcp --setup-api-key
-g2b-mcp --mode stdio --enable-live-fetch
+g2b-mcp --mode stdio --enable-live-fetch --api-key-env-file ~/.config/g2b-mcp/.env
 ```
 
-Without `--enable-live-fetch`, live tools return `LIVE_FETCH_DISABLED` and make no network request. Live responses are capped, summarized, and sanitized; they do not return raw rows, key values, or authenticated URLs.
+Without `--enable-live-fetch`, live tools return marker `[FAILED] LIVE_FETCH_DISABLED` and make no network request. If no local key is configured, they return `[FAILED] API_KEY_NOT_CONFIGURED`. Zero-result live summaries return `[NOT_FOUND] ZERO_RESULTS`. Live responses are capped, summarized, and sanitized; they do not return raw rows, key values, or authenticated URLs.
+
+### MCP client onboarding
+
+First save your key locally via the hidden prompt; do not paste API keys into client JSON:
+
+```bash
+g2b-mcp --setup-api-key
+```
+
+Then configure your MCP client to start the local command with live fetch explicit and the local env file path. Examples use the default `~/.config/g2b-mcp/.env` file created by setup.
+
+Claude Desktop (`claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "g2b-procurement-intelligence": {
+      "command": "g2b-mcp",
+      "args": ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
+    }
+  }
+}
+```
+
+Cursor/Windsurf MCP config:
+
+```json
+{
+  "mcpServers": {
+    "g2b-procurement-intelligence": {
+      "command": "g2b-mcp",
+      "args": ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
+    }
+  }
+}
+```
+
+Hermes Agent profile config follows the same stdio command/args shape:
+
+```json
+{
+  "name": "g2b-procurement-intelligence",
+  "transport": "stdio",
+  "command": "g2b-mcp",
+  "args": ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
+}
+```
+
+For keyless/catalog-only use, omit `--enable-live-fetch` and `--api-key-env-file`; live tools will return failure markers without network access.
 
 ## Public MCP tools
 
@@ -207,6 +251,7 @@ Artifact/catalog tools:
 - `g2b_validate_operation_params`
 - `g2b_build_safe_request_preview`
 - `g2b_call_operation_summary`
+- `g2b_procurement_research`
 - `g2b_search_bid_notices`
 - `g2b_search_successful_bids`
 - `g2b_search_contracts`

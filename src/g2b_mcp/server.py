@@ -293,8 +293,51 @@ def _safe_value(value: Any) -> Any:
     return _redact_sensitive_text(str(value))
 
 
+def _safe_mapping(values: dict[str, Any]) -> dict[str, Any]:
+    return {str(key): _safe_value(value) for key, value in (values or {}).items()}
+
+
 def _live_privacy() -> dict[str, Any]:
     return {**LIVE_PRIVACY_NOTICE, "live_fetch_enabled": _live_fetch_enabled()}
+
+def _failure_marker(code: str, kind: str = "FAILED") -> str:
+    return f"[{kind}] {code}"
+
+def _next_queries(kind: str, query: str = "", start_date: str = "", end_date: str = "", category: str = "goods") -> list[dict[str, Any]]:
+    base = {
+        "query": _safe_value(query),
+        "start_date": _safe_value(start_date),
+        "end_date": _safe_value(end_date),
+        "category": _safe_value(category),
+    }
+    if kind == "bid_notices":
+        return [
+            {"task": "successful_bids", **base, "why": "Check award outcomes for the same topic/date window."},
+            {"task": "contracts", **base, "why": "Check resulting contract summaries for the same topic/date window."},
+            {"task": "market_scan", **base, "why": "Run the consolidated notice→award→contract workflow."},
+        ]
+    if kind == "successful_bids":
+        return [
+            {"task": "contracts", **base, "why": "Trace awards into contract summaries."},
+            {"task": "bid_notices", **base, "why": "Broaden back to originating notices."},
+        ]
+    if kind == "contracts":
+        return [
+            {"task": "bid_notices", **base, "why": "Find upstream/current notices in the same market."},
+            {"task": "successful_bids", **base, "why": "Compare award status before contract summaries."},
+            {"task": "market_scan", **base, "why": "Review notices, awards, and contracts together."},
+        ]
+    if kind == "market_scan":
+        return [
+            {"task": "bid_notices", **base, "why": "Focus on active/open opportunities."},
+            {"task": "successful_bids", **base, "why": "Focus on recent award outcomes."},
+            {"task": "contracts", **base, "why": "Focus on contract history and spend bands."},
+        ]
+    return []
+
+def _attach_next_queries(result: dict[str, Any], kind: str, query: str = "", start_date: str = "", end_date: str = "", category: str = "goods") -> dict[str, Any]:
+    result.setdefault("next_queries", _next_queries(kind, query, start_date, end_date, category))
+    return result
 
 
 def _operation_param_names(op: dict[str, Any]) -> set[str]:
@@ -365,6 +408,7 @@ def g2b_validate_operation_params(service: str, operation: str, params: dict[str
         "service": svc.get("slug", service),
         "operation": op.get("operation", operation),
         "valid": not missing and not unknown,
+        "marker": "" if not missing and not unknown else _failure_marker("INVALID_PARAMS"),
         "missing_required_non_auth_params": missing,
         "unknown_params": unknown,
         "auth_param_policy": auth_policy or {auth: "read_from_env_never_from_params"},
@@ -385,7 +429,7 @@ def g2b_build_safe_request_preview(service: str, operation: str, params: dict[st
     op = _find_operation(svc, operation)
     env_name, _value = _configured_api_key(svc)
     cleaned = _clean_params_for_operation(op, params or {})
-    sanitized = dict(cleaned)
+    sanitized = _safe_mapping(cleaned)
     auth = _auth_param_name(op)
     if env_name:
         sanitized[auth] = "[REDACTED_FROM_ENV]"
@@ -513,10 +557,22 @@ def g2b_call_operation_summary(service: str, operation: str, params: dict[str, A
     op = _find_operation(svc, operation)
     preview = g2b_build_safe_request_preview(service, operation, {**(params or {}), "numOfRows": num_rows})
     if not _live_fetch_enabled():
-        return {"error": {"code": "LIVE_FETCH_DISABLED", "message": "Start with --enable-live-fetch to permit bounded live reads."}, "request": preview, "privacy": _live_privacy()}
+        return {
+            "marker": _failure_marker("LIVE_FETCH_DISABLED"),
+            "error": {"code": "LIVE_FETCH_DISABLED", "message": "Start with --enable-live-fetch to permit bounded live reads."},
+            "request": preview,
+            "privacy": _live_privacy(),
+            "next_queries": _next_queries("market_scan"),
+        }
     env_name, api_key = _configured_api_key(svc)
     if not api_key:
-        return {"error": {"code": "API_KEY_NOT_CONFIGURED", "message": "Set G2B_SERVICE_KEY or the service-specific catalog env locally."}, "request": preview, "privacy": _live_privacy()}
+        return {
+            "marker": _failure_marker("API_KEY_NOT_CONFIGURED"),
+            "error": {"code": "API_KEY_NOT_CONFIGURED", "message": "Set G2B_SERVICE_KEY or the service-specific catalog env locally."},
+            "request": preview,
+            "privacy": _live_privacy(),
+            "next_queries": _next_queries("market_scan"),
+        }
     cleaned = _clean_params_for_operation(op, params or {}, num_rows=num_rows)
     preview = g2b_build_safe_request_preview(service, operation, cleaned)
     url = _build_live_url(str(op.get("endpoint", "")), cleaned, _auth_param_name(op), api_key)
@@ -526,17 +582,25 @@ def g2b_call_operation_summary(service: str, operation: str, params: dict[str, A
             payload = _parse_json_or_xml(response.read())
     except Exception:
         return {
+            "marker": _failure_marker("LIVE_FETCH_FAILED"),
             "error": {
                 "code": "LIVE_FETCH_FAILED",
                 "message": "Live G2B request failed. Credential values, authenticated URLs, and upstream bodies are intentionally redacted.",
             },
             "request": preview,
             "privacy": _live_privacy(),
+            "next_queries": _next_queries("market_scan"),
         }
     summary = _summarize_payload(payload, preview)
     summary.update({"service": svc.get("slug", service), "operation": op.get("operation", operation)})
+    try:
+        if int(summary.get("total_count") or 0) == 0 or int(summary.get("item_count") or 0) == 0:
+            summary["marker"] = _failure_marker("ZERO_RESULTS", kind="NOT_FOUND")
+    except (TypeError, ValueError):
+        pass
     if env_name:
         summary["credential_source"] = env_name
+    summary.setdefault("next_queries", _next_queries("market_scan"))
     return summary
 
 
@@ -601,7 +665,7 @@ def g2b_search_bid_notices(keyword: str, start_date: str, end_date: str, categor
     result["category"] = normalized
     if keyword and not keyword_added:
         result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
-    return result
+    return _attach_next_queries(result, "bid_notices", keyword, start_date, end_date, normalized)
 
 
 def g2b_search_successful_bids(keyword: str = "", start_date: str = "", end_date: str = "", category: str = "goods", limit: int = 10) -> dict[str, Any]:
@@ -621,7 +685,7 @@ def g2b_search_successful_bids(keyword: str = "", start_date: str = "", end_date
     result["category"] = normalized
     if keyword and not keyword_added:
         result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
-    return result
+    return _attach_next_queries(result, "successful_bids", keyword, start_date, end_date, normalized)
 
 
 def g2b_search_contracts(keyword: str = "", start_date: str = "", end_date: str = "", category: str = "goods", limit: int = 10) -> dict[str, Any]:
@@ -641,7 +705,79 @@ def g2b_search_contracts(keyword: str = "", start_date: str = "", end_date: str 
     result["category"] = normalized
     if keyword and not keyword_added:
         result["keyword_note"] = "No cataloged keyword parameter for this operation; searched by date window only."
-    return result
+    return _attach_next_queries(result, "contracts", keyword, start_date, end_date, normalized)
+
+
+def _normalize_research_task(task: str) -> str:
+    text = str(task or "").strip().lower()
+    compact = re.sub(r"[\s_-]+", "", text)
+    if compact in {"bidnotices", "notice", "notices", "bids", "bid", "bidnotice"} or re.search(r"공고|입찰|bid|notice", text, re.I):
+        return "bid_notices"
+    if compact in {"successfulbids", "awards", "award", "scsbid"} or re.search(r"낙찰|award|successful|success", text, re.I):
+        return "successful_bids"
+    if compact in {"contracts", "contract", "cntrct"} or re.search(r"계약|contract", text, re.I):
+        return "contracts"
+    if compact in {"marketscan", "scan", "market", "opportunity", "opportunities"} or re.search(r"시장|기회|market|scan|opportunit", text, re.I):
+        return "market_scan"
+    return ""
+
+
+def g2b_procurement_research(task: str, query: str = "", start_date: str = "", end_date: str = "", category: str = "goods", limit: int = 5) -> dict[str, Any]:
+    """Consolidated procurement research router for notices, awards, contracts, and market scans."""
+    normalized_task = _normalize_research_task(task)
+    normalized_category, _suffix = _category_operation_suffix(category)
+    safe_query = _safe_value(query)
+    safe_task_input = _safe_value(task)
+    safe_start_date = _safe_value(start_date)
+    safe_end_date = _safe_value(end_date)
+    safe_limit = _coerce_num_rows(limit, default=5)
+    if not normalized_task:
+        suggestions = ["bid_notices", "successful_bids", "contracts", "market_scan"]
+        return {
+            "marker": _failure_marker("UNKNOWN_TASK", kind="NOT_FOUND"),
+            "error": {"code": "UNKNOWN_TASK", "message": "Supported tasks: bid_notices, successful_bids, contracts, market_scan."},
+            "input_task": safe_task_input,
+            "suggestions": suggestions,
+            "next_queries": [{"task": item, "query": safe_query, "start_date": safe_start_date, "end_date": safe_end_date, "category": _safe_value(normalized_category)} for item in suggestions],
+            "privacy": _live_privacy(),
+        }
+    if normalized_task == "bid_notices":
+        result = g2b_search_bid_notices(query, start_date, end_date, normalized_category, safe_limit)
+        result["routed_task"] = normalized_task
+        return result
+    if normalized_task == "successful_bids":
+        result = g2b_search_successful_bids(query, start_date, end_date, normalized_category, safe_limit)
+        result["routed_task"] = normalized_task
+        return result
+    if normalized_task == "contracts":
+        result = g2b_search_contracts(query, start_date, end_date, normalized_category, safe_limit)
+        result["routed_task"] = normalized_task
+        return result
+
+    workflow_steps = [
+        {"step": 1, "task": "bid_notices", "tool": "g2b_search_bid_notices"},
+        {"step": 2, "task": "successful_bids", "tool": "g2b_search_successful_bids"},
+        {"step": 3, "task": "contracts", "tool": "g2b_search_contracts"},
+    ]
+    results = {
+        "bid_notices": g2b_search_bid_notices(query, start_date, end_date, normalized_category, safe_limit),
+        "successful_bids": g2b_search_successful_bids(query, start_date, end_date, normalized_category, safe_limit),
+        "contracts": g2b_search_contracts(query, start_date, end_date, normalized_category, safe_limit),
+    }
+    first_marker = next((r.get("marker") for r in results.values() if r.get("marker")), "")
+    return {
+        "task": "market_scan",
+        "routed_task": normalized_task,
+        "query": safe_query,
+        "start_date": safe_start_date,
+        "end_date": safe_end_date,
+        "category": _safe_value(normalized_category),
+        "workflow_steps": workflow_steps,
+        "results": results,
+        "marker": first_marker,
+        "next_queries": _next_queries("market_scan", query, start_date, end_date, normalized_category),
+        "privacy": _live_privacy(),
+    }
 
 
 def g2b_list_services() -> dict[str, Any]:
@@ -793,6 +929,7 @@ def _tool_functions() -> list[Callable[..., dict[str, Any]]]:
         g2b_validate_operation_params,
         g2b_build_safe_request_preview,
         g2b_call_operation_summary,
+        g2b_procurement_research,
         g2b_search_bid_notices,
         g2b_search_successful_bids,
         g2b_search_contracts,

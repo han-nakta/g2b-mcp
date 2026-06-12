@@ -55,6 +55,7 @@ class LiveMcpToolTests(unittest.TestCase):
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         self.assertEqual(result["error"]["code"], "LIVE_FETCH_DISABLED")
+        self.assertEqual(result["marker"], "[FAILED] LIVE_FETCH_DISABLED")
         self.assertFalse(result["privacy"]["live_fetch_enabled"])
         self.assertNotIn("TOPSECRET", repr(result))
         urlopen.assert_not_called()
@@ -68,6 +69,7 @@ class LiveMcpToolTests(unittest.TestCase):
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         self.assertEqual(result["error"]["code"], "API_KEY_NOT_CONFIGURED")
+        self.assertEqual(result["marker"], "[FAILED] API_KEY_NOT_CONFIGURED")
         self.assertFalse(result["privacy"]["key_exposed"])
         urlopen.assert_not_called()
 
@@ -78,6 +80,7 @@ class LiveMcpToolTests(unittest.TestCase):
             {"ServiceKey": "SECRET", "bogus": "x", "numOfRows": 500},
         )
         self.assertFalse(result["valid"])
+        self.assertEqual(result["marker"], "[FAILED] INVALID_PARAMS")
         self.assertIn("inqryDiv", result["missing_required_non_auth_params"])
         self.assertIn("bogus", result["unknown_params"])
         self.assertEqual(result["auth_param_policy"]["ServiceKey"], "ignored_from_params_use_env")
@@ -137,6 +140,7 @@ class LiveMcpToolTests(unittest.TestCase):
         self.assertNotIn("redacted email fixture", serialized)
         self.assertNotIn("Private Officer", serialized)
         self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
+        self.assertIn("next_queries", result)
         urlopen.assert_called_once()
 
     def test_successful_response_values_are_redacted_before_output(self):
@@ -202,6 +206,8 @@ class LiveMcpToolTests(unittest.TestCase):
         self.assertEqual(result["service"], "bid_public_info")
         self.assertEqual(result["operation"], "getBidPblancListInfoThng")
         self.assertEqual(result["category"], "goods")
+        self.assertEqual(result["marker"], "[NOT_FOUND] ZERO_RESULTS")
+        self.assertIn("next_queries", result)
         self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
         self.assertNotIn("TOPSECRET", repr(result))
 
@@ -226,11 +232,76 @@ class LiveMcpToolTests(unittest.TestCase):
         self.assertEqual(contracts["operation"], "getCntrctInfoListThngPPSSrch")
         for result in (bids, contracts):
             self.assertEqual(result["category"], "goods")
+            self.assertIn("next_queries", result)
             self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
             serialized = repr(result)
             self.assertNotIn("TOPSECRET", serialized)
             self.assertNotIn("123-45-67890", serialized)
         self.assertEqual(urlopen.call_count, 2)
+
+    def test_procurement_research_router_aliases_and_unknown_not_found(self):
+        os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        payload = {"response": {"header": {"resultCode": "00", "resultMsg": "OK"}, "body": {"totalCount": 0, "items": []}}}
+        with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)) as urlopen:
+            result = server.g2b_procurement_research("입찰 공고 찾아줘", "laptop", "20240601", "20240602")
+        self.assertEqual(result["routed_task"], "bid_notices")
+        self.assertEqual(result["service"], "bid_public_info")
+        self.assertIn("next_queries", result)
+        self.assertEqual(urlopen.call_count, 1)
+
+        unknown = server.g2b_procurement_research("totally unrelated task", "laptop")
+        self.assertEqual(unknown["marker"], "[NOT_FOUND] UNKNOWN_TASK")
+        self.assertIn("market_scan", unknown["suggestions"])
+
+    def test_procurement_research_market_scan_composes_three_safe_results(self):
+        os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        payload = {
+            "response": {
+                "header": {"resultCode": "00", "resultMsg": "OK"},
+                "body": {"totalCount": 1, "items": [{"bidNtceNm": "Laptop", "dminsttNm": "Seoul Office", "fnlSucsfCorpBizrno": "123-45-67890"}]},
+            }
+        }
+        with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)) as urlopen:
+            result = server.g2b_procurement_research("market scan", "laptop", "20240601", "20240602", limit=5)
+        self.assertEqual(result["routed_task"], "market_scan")
+        self.assertEqual([step["task"] for step in result["workflow_steps"]], ["bid_notices", "successful_bids", "contracts"])
+        self.assertEqual(set(result["results"]), {"bid_notices", "successful_bids", "contracts"})
+        self.assertIn("next_queries", result)
+        self.assertTrue(result["privacy"]["no_raw_rows"])
+        self.assertNotIn("123-45-67890", repr(result))
+        self.assertEqual(urlopen.call_count, 3)
+
+    def test_procurement_research_market_scan_disabled_has_marker_and_no_network(self):
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        with patch("urllib.request.urlopen") as urlopen:
+            result = server.g2b_procurement_research("시장 기회 스캔", "laptop", "20240601", "20240602")
+        self.assertEqual(result["routed_task"], "market_scan")
+        self.assertEqual(result["marker"], "[FAILED] LIVE_FETCH_DISABLED")
+        self.assertEqual(result["results"]["bid_notices"]["marker"], "[FAILED] LIVE_FETCH_DISABLED")
+        urlopen.assert_not_called()
+
+    def test_procurement_research_sanitizes_user_controlled_echoes_and_preview_params(self):
+        os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        email_fixture = "buyer" + "@" + "example.test"
+        phone_fixture = "010" + "-1234" + "-5678"
+        biz_fixture = "123" + "-45" + "-67890"
+        sensitive_query = f"{email_fixture} {phone_fixture} {biz_fixture}"
+        payload = {"response": {"header": {"resultCode": "00", "resultMsg": "OK"}, "body": {"totalCount": 0, "items": []}}}
+        with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)):
+            result = server.g2b_procurement_research("market scan", sensitive_query, "20240601", "20240602", limit=2)
+        preview = server.g2b_build_safe_request_preview(
+            "bid_public_info",
+            "getBidPblancListInfoThng",
+            {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406022359", "bidNtceNm": sensitive_query},
+        )
+        serialized = repr({"research": result, "preview": preview})
+        self.assertNotIn(email_fixture, serialized)
+        self.assertNotIn(phone_fixture, serialized)
+        self.assertNotIn(biz_fixture, serialized)
+        self.assertIn("[REDACTED]", serialized)
 
 
 if __name__ == "__main__":

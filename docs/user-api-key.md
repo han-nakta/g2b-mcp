@@ -22,7 +22,7 @@ A user needs their own API key only for **opt-in live workflows**, such as:
 - collecting or refreshing local private cache
 - generating private derived artifacts from newly fetched data
 
-Those workflows must run in the user's local/private environment and require `--enable-live-fetch`. Without that flag, live tools return `LIVE_FETCH_DISABLED` and do not make network requests.
+Those workflows must run in the user's local/private environment and require `--enable-live-fetch`. Without that flag, live tools return marker `[FAILED] LIVE_FETCH_DISABLED` and do not make network requests. If live fetch is enabled but no local key is configured, tools return `[FAILED] API_KEY_NOT_CONFIGURED`; zero-result summaries return `[NOT_FOUND] ZERO_RESULTS`.
 
 ## Recommended credential model
 
@@ -93,6 +93,40 @@ docker run --rm \
   g2b-live-smoke --env-file /tmp/g2b.env --days 7 --limit 2
 ```
 
+## MCP client configuration examples
+
+Run setup once first; do not paste keys into client JSON/YAML:
+
+```bash
+g2b-mcp --setup-api-key
+```
+
+Claude Desktop, Cursor, and Windsurf use the same stdio command shape:
+
+```json
+{
+  "mcpServers": {
+    "g2b-procurement-intelligence": {
+      "command": "g2b-mcp",
+      "args": ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
+    }
+  }
+}
+```
+
+Hermes Agent can use the same command/args:
+
+```json
+{
+  "name": "g2b-procurement-intelligence",
+  "transport": "stdio",
+  "command": "g2b-mcp",
+  "args": ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
+}
+```
+
+For catalog-only/keyless mode, omit `--enable-live-fetch` and `--api-key-env-file`.
+
 ## Hermes MCP configuration example
 
 For the current public-safe artifact server, no key is required:
@@ -110,10 +144,10 @@ For v0.3 opt-in live-read mode after running `g2b-mcp --setup-api-key`, the serv
 mcp_servers:
   g2b_live_local:
     command: "g2b-mcp"
-    args: ["--mode", "stdio", "--enable-live-fetch"]
+    args: ["--mode", "stdio", "--enable-live-fetch", "--api-key-env-file", "~/.config/g2b-mcp/.env"]
 ```
 
-The `--enable-live-fetch` flag sets `G2B_ENABLE_LIVE_FETCH=1` inside the server process. If the key was not saved with the setup wizard, pass `G2B_SERVICE_KEY` through the trusted MCP client's private environment configuration. Live summaries are bounded (`numOfRows` capped at 10), sanitized, and never include full authenticated URLs or raw rows.
+The `--enable-live-fetch` flag sets `G2B_ENABLE_LIVE_FETCH=1` inside the server process. Prefer the setup wizard's local `0600` env file path over pasting keys into client config. Live summaries are bounded (`numOfRows` capped at 10), sanitized, and never include full authenticated URLs or raw rows. For a user-facing workflow entrypoint, use `g2b_procurement_research(task="market scan", query="...", start_date="YYYYMMDD", end_date="YYYYMMDD")`; it returns workflow steps, sanitized results, and compact `next_queries` hints.
 
 ## Safety rules for future live tools
 

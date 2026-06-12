@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "g2b-procurement-intelligence"
-version = "0.3.3"
+version = "0.3.4"
 description = "Public-safe G2B OpenAPI catalog MCP with opt-in user-key live read summaries."
 readme = "README.md"
 requires-python = ">=3.11"
