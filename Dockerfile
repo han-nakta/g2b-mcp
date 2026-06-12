@@ -9,6 +9,7 @@ WORKDIR /app
 COPY pyproject.toml README.md LICENSE ./
 COPY src ./src
 COPY artifacts ./artifacts
+COPY scripts ./scripts
 
 RUN pip install --no-cache-dir '.[mcp]'
 

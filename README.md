@@ -154,6 +154,18 @@ docker build -t g2b-procurement-intelligence .
 docker run --rm -p 8000:8000 g2b-procurement-intelligence
 ```
 
+For a local-only Docker live smoke with your own secret env file, do **not** copy keys into the repo or command line. Mount/load the env file read-only and keep live fetch explicit:
+
+```bash
+docker run --rm \
+  --env-file ~/.config/g2b-mcp/.env \
+  -v ~/.config/g2b-mcp/.env:/tmp/g2b.env:ro \
+  g2b-procurement-intelligence \
+  g2b-live-smoke --env-file /tmp/g2b.env --days 7 --limit 2
+```
+
+The smoke script calls only bounded summary reads and reports whether privacy checks passed. It does not print key values, authenticated URLs, or raw rows.
+
 ### Opt-in live-read mode
 
 Bounded live reads require both a user-owned key and an explicit flag:
@@ -203,10 +215,22 @@ python3 -m unittest discover -s tests -v
 # Run transport integration too when the optional MCP dependency is installed:
 python3 -m pip install -e '.[mcp]'
 python3 -m unittest tests/test_mcp_transport.py -v
-python3 -m py_compile src/g2b_mcp/server.py src/g2b_openapi/catalog.py src/g2b_graph/relationships.py
+python3 -m py_compile src/g2b_mcp/server.py src/g2b_openapi/catalog.py src/g2b_graph/relationships.py scripts/g2b_live_smoke.py
 uv build
 git diff --check
 ```
+
+Optional local-secret live smoke, skipped from CI by design:
+
+```bash
+g2b-live-smoke \
+  --env-file ~/.config/g2b-mcp/.env \
+  --days 14 \
+  --limit 2 \
+  --output /tmp/g2b_live_smoke_matrix.json
+```
+
+The smoke matrix covers bid notices for goods/services/works plus goods successful-bid and contract summaries. It exits non-zero if any bounded live call fails or if exact secret values, authenticated URLs, email-like values, phone-like values, or business-id-like values appear in the safe JSON report.
 
 ## Deployment posture
 

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "g2b-procurement-intelligence"
-version = "0.3.1"
+version = "0.3.2"
 description = "Public-safe G2B OpenAPI catalog MCP with opt-in user-key live read summaries."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -18,6 +18,7 @@ test = []
 
 [project.scripts]
 g2b-mcp = "g2b_mcp.server:main"
+g2b-live-smoke = "g2b_mcp.live_smoke:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/g2b_mcp", "src/g2b_openapi", "src/g2b_graph"]
@@ -26,4 +27,4 @@ packages = ["src/g2b_mcp", "src/g2b_openapi", "src/g2b_graph"]
 "artifacts" = "g2b_mcp/artifacts"
 
 [tool.hatch.build.targets.sdist]
-include = ["src", "artifacts", "docs", "tests", "README.md", "LICENSE", "SECURITY.md", "DATA_BOUNDARY.md", ".env.example"]
+include = ["src", "artifacts", "docs", "tests", "scripts", "README.md", "LICENSE", "SECURITY.md", "DATA_BOUNDARY.md", ".env.example"]

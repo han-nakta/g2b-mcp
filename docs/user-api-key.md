@@ -58,9 +58,40 @@ The MCP server auto-loads the env file at startup, but live network calls still 
 Do not commit real values to this repository. Keep real values in one of:
 
 - a local shell environment
+- the hidden-prompt wizard's local `0600` env file
 - an ignored `.env` file
 - a secret manager
 - an MCP client/server configuration that is not committed
+
+## Local-secret smoke testing
+
+After setup, users or maintainers can run the repeatable local live smoke script. This is intentionally skipped in CI because it requires a real local API key.
+
+```bash
+g2b-live-smoke \
+  --env-file ~/.config/g2b-mcp/.env \
+  --days 14 \
+  --limit 2 \
+  --output /tmp/g2b_live_smoke_matrix.json
+```
+
+The matrix covers:
+
+- bid notices: goods, services, works
+- successful-bid summaries: goods
+- contract summaries: goods
+
+The script enables live fetch only inside its own process, caps row requests, writes only sanitized summaries, and fails if the safe JSON report contains exact secret values, authenticated URLs, email-like values, phone-like values, or business-id-like values.
+
+Docker live smoke uses the same rule: load the env file, mount it read-only for leak scanning, and never paste the key into the command line.
+
+```bash
+docker run --rm \
+  --env-file ~/.config/g2b-mcp/.env \
+  -v ~/.config/g2b-mcp/.env:/tmp/g2b.env:ro \
+  g2b-procurement-intelligence \
+  g2b-live-smoke --env-file /tmp/g2b.env --days 7 --limit 2
+```
 
 ## Hermes MCP configuration example
 
