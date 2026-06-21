@@ -2,7 +2,7 @@
 
 Privacy-safe MCP/package boundary for a G2B/Nara procurement OpenAPI catalog, relationship evidence graph, ontology artifacts, and dataset-status surface.
 
-> **Status: v0.2 public MCP artifact alpha + v0.3 opt-in live-read alpha.** Default mode is still the keyless, public-safe artifact server. v0.3 adds bounded live lookup tools only when the local user explicitly starts the server with `--enable-live-fetch` and provides their own API key through environment variables. The repo does not include raw rows, credentials, operator cache, or live backfill execution.
+> **Status: v0.3.4 public MCP alpha.** Default mode is still the keyless, public-safe artifact server introduced in v0.2. v0.3.x adds bounded opt-in live lookup tools, safe local API-key setup, repeatable live smoke checks, specialized bid/award/contract search tools, and the `g2b_procurement_research` router. Live reads run only when the local user explicitly starts the server with `--enable-live-fetch` and provides their own API key through environment variables or the local `0600` env file. The repo does not include raw rows, credentials, operator cache, or live backfill execution.
 
 ## What this does
 
@@ -274,7 +274,18 @@ python3 -m unittest discover -s tests -v
 # Run transport integration too when the optional MCP dependency is installed:
 python3 -m pip install -e '.[mcp]'
 python3 -m unittest tests/test_mcp_transport.py -v
-python3 -m py_compile src/g2b_mcp/server.py src/g2b_openapi/catalog.py src/g2b_graph/relationships.py scripts/g2b_live_smoke.py
+python3 -m py_compile \
+  src/g2b_mcp/server.py \
+  src/g2b_mcp/live_smoke.py \
+  src/g2b_openapi/catalog.py \
+  src/g2b_graph/relationships.py \
+  scripts/g2b_live_smoke.py \
+  tests/test_api_key_setup.py \
+  tests/test_artifacts.py \
+  tests/test_live_mcp_tools.py \
+  tests/test_mcp_transport.py \
+  tests/test_privacy_scan.py \
+  tests/test_public_mcp_tools.py
 uv build
 git diff --check
 ```
