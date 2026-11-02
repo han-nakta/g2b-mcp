@@ -21,8 +21,8 @@ class _FakeResponse:
     def __exit__(self, exc_type, exc, tb):
         return False
 
-    def read(self):
-        return self.payload
+    def read(self, size: int = -1):
+        return self.payload if size < 0 else self.payload[:size]
 
 
 class LiveMcpToolTests(unittest.TestCase):
@@ -142,6 +142,21 @@ class LiveMcpToolTests(unittest.TestCase):
         self.assertLessEqual(result["request"]["sanitized_params"]["numOfRows"], 10)
         self.assertIn("next_queries", result)
         urlopen.assert_called_once()
+
+    def test_oversized_live_response_is_rejected_as_fetch_failure(self):
+        os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"
+        os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
+        response = _FakeResponse({})
+        response.payload = b"x" * (server.MAX_LIVE_RESPONSE_BYTES + 1)
+        with patch("urllib.request.urlopen", return_value=response):
+            result = server.g2b_call_operation_summary(
+                "bid_public_info",
+                "getBidPblancListInfoThng",
+                {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
+                num_rows=5,
+            )
+        self.assertEqual(result["error"]["code"], "LIVE_FETCH_FAILED")
+        self.assertNotIn("TOPSECRET", repr(result))
 
     def test_successful_response_values_are_redacted_before_output(self):
         os.environ["G2B_ENABLE_LIVE_FETCH"] = "1"

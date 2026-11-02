@@ -13,6 +13,5 @@ if src.exists():
 
 from g2b_mcp.live_smoke import main  # type: ignore[import-not-found]
 
-
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -2,7 +2,7 @@
 
 작성일: 2026-05-15
 상태: draft / MCP Ver.1.0 공개 전 정리 패키지
-소유 위치: `/Users/han.nakta/eva`
+소유 위치: `<operator-workspace>`
 관련 구현 루트: `skills/g2b-openapi/`, `skills/g2b-procurement-ontology/`
 
 ## 1. 목적
@@ -30,7 +30,7 @@ API evidence phase를 종료한 뒤 G2B 작업을 바로 Vercel/Supabase 제품�
 검증 명령:
 
 ```bash
-cd /Users/han.nakta/eva
+cd <operator-workspace>
 skills/g2b-openapi/.venv/bin/python skills/g2b-openapi/scripts/evaluate_g2b_mcp_readiness.py
 python3 -m py_compile \
   skills/g2b-openapi/scripts/g2b_data_graph.py \

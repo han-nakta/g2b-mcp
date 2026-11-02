@@ -13,7 +13,7 @@ authors = [{name = "han.nakta"}]
 dependencies = []
 
 [project.optional-dependencies]
-mcp = ["mcp>=1.0"]
+mcp = ["mcp>=1.0,<2"]
 test = []
 
 [project.scripts]
@@ -28,3 +28,20 @@ packages = ["src/g2b_mcp", "src/g2b_openapi", "src/g2b_graph"]
 
 [tool.hatch.build.targets.sdist]
 include = ["src", "artifacts", "docs", "tests", "scripts", "README.md", "LICENSE", "SECURITY.md", "DATA_BOUNDARY.md", ".env.example"]
+
+[tool.ruff]
+target-version = "py311"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+mypy_path = "src"
+
+[tool.ruff.lint.per-file-ignores]
+# These files extend sys.path before importing the package, so E402 is intentional.
+"scripts/*" = ["E402"]
+"tests/*" = ["E402"]

@@ -21,7 +21,7 @@ from typing import Any, Callable
 try:  # Optional at import time so artifact tests can run without MCP installed.
     from mcp.server.fastmcp import FastMCP
 except Exception:  # pragma: no cover - depends on optional runtime dependency
-    FastMCP = None  # type: ignore[assignment]
+    FastMCP = None  # type: ignore[assignment,misc]
 
 SENSITIVE_FIELD_PATTERNS = {
     "contact_or_email": re.compile(r"(email|e[-_]?mail|mail)", re.I),
@@ -55,6 +55,7 @@ LIVE_PRIVACY_NOTICE = {
     "sanitized_items_only": True,
 }
 
+MAX_LIVE_RESPONSE_BYTES = 10 * 1024 * 1024
 DEFAULT_API_KEY_ENV_FILE = Path.home() / ".config" / "g2b-mcp" / ".env"
 
 
@@ -139,8 +140,11 @@ def setup_api_key_env_file(api_key: str, path: str | Path | None = None, env_nam
                 lines.append(line)
     if not replaced:
         lines.append(f"{env_name}={value}")
-    env_path.write_text("\n".join(lines).rstrip("\n") + "\n", encoding="utf-8")
-    os.chmod(env_path, 0o600)
+    # Create with 0600 from the start so the key is never readable under a looser default mode.
+    fd = os.open(env_path, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    with os.fdopen(fd, "w", encoding="utf-8") as handle:
+        handle.write("\n".join(lines).rstrip("\n") + "\n")
+    os.chmod(env_path, 0o600)  # also tightens a pre-existing file created with a looser mode
     return {
         "saved": True,
         "env_file": str(env_path),
@@ -579,7 +583,10 @@ def g2b_call_operation_summary(service: str, operation: str, params: dict[str, A
     req = urllib.request.Request(url, method="GET", headers={"User-Agent": "g2b-mcp/0.3-live-alpha"})
     try:
         with urllib.request.urlopen(req, timeout=20) as response:
-            payload = _parse_json_or_xml(response.read())
+            body = response.read(MAX_LIVE_RESPONSE_BYTES + 1)
+            if len(body) > MAX_LIVE_RESPONSE_BYTES:
+                raise ValueError("live response exceeds size limit")
+            payload = _parse_json_or_xml(body)
     except Exception:
         return {
             "marker": _failure_marker("LIVE_FETCH_FAILED"),

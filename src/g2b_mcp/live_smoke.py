@@ -14,7 +14,6 @@ import datetime as dt
 import json
 import os
 import re
-import sys
 from pathlib import Path
 from typing import Any
 
@@ -114,7 +113,7 @@ def run_smoke(env_file: Path | None, days: int, limit: int, include_items: bool)
     summaries = [_case_summary(name, result) for name, result in raw_cases.items()]
     safe_cases = raw_cases if include_items else {name: _case_summary(name, result) for name, result in raw_cases.items()}
 
-    report = {
+    report: dict[str, Any] = {
         "smoke_version": 1,
         "date_window": {"start": start.isoformat(), "end": today.isoformat(), "days": days},
         "limit_per_call": limit,

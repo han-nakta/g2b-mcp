@@ -91,6 +91,12 @@ class ApiKeySetupTests(unittest.TestCase):
         self.assertEqual(result["configured_env"], "G2B_SERVICE_KEY")
         self.assertNotIn("FILESECRET", repr(result))
 
+    def test_existing_loose_permission_file_is_tightened_to_0600(self):
+        self.env_file.write_text("OTHER=1\n", encoding="utf-8")
+        os.chmod(self.env_file, 0o644)
+        server.setup_api_key_env_file("TOPSECRET", self.env_file)
+        self.assertEqual(stat.S_IMODE(self.env_file.stat().st_mode), 0o600)
+
 
 if __name__ == "__main__":
     unittest.main()

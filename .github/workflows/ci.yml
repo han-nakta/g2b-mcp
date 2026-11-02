@@ -16,6 +16,12 @@ jobs:
           python-version: '3.11'
       - name: Install package
         run: python -m pip install -e '.[mcp]'
+      - name: Install lint tools
+        run: python -m pip install ruff mypy
+      - name: Lint (ruff)
+        run: ruff check src tests scripts
+      - name: Type check (mypy)
+        run: mypy src
       - name: Run tests
         run: python -m unittest discover -s tests -v
       - name: Compile sources

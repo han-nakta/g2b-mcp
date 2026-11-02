@@ -50,7 +50,7 @@ skills/g2b-openapi/cache/backfill_probe/bid_public_info_backfill_count_probe_sta
 대표 명령:
 
 ```bash
-cd /Users/han.nakta/eva
+cd <operator-workspace>
 python3 skills/g2b-openapi/scripts/probe_bid_public_info_backfill_counts.py \
   --max-calls 900 \
   --sleep 0.05 \
@@ -83,7 +83,7 @@ getBidPblancListInfoEtc
 대표 명령:
 
 ```bash
-cd /Users/han.nakta/eva
+cd <operator-workspace>
 python3 skills/g2b-openapi/scripts/backfill_bid_public_info_core.py \
   --max-calls 1000 \
   --round-robin \
