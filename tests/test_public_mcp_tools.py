@@ -27,7 +27,7 @@ class PublicMcpToolTests(unittest.TestCase):
         self.assertNotIn("sample_output_fields", op)
 
     def test_describe_operation_can_include_safe_field_names_without_raw_rows(self):
-        result = server.g2b_describe_operation("bid_public_info", "getBidPblancListInfoThng", include_fields=True)
+        result = server.g2b_describe_operation("bid_public_info", "getBidPblancListInfoThng02", include_fields=True)
         operation = result["operation"]
         self.assertIn("safe_response_field_names", operation)
         serialized = repr(result)

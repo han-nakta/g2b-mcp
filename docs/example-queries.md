@@ -42,12 +42,12 @@ g2b_list_operations(service="bid_public_info")
 - 공사/용역/물품/외자/기타 notice-layer operation 구분.
 - change history, PPSSrch, detail 계열이 별도 operation임을 설명.
 
-### Q3. `getBidPblancListInfoCnstwk`는 어떻게 호출해야 해?
+### Q3. `getBidPblancListInfoCnstwk02`는 어떻게 호출해야 해?
 
 권장 tool:
 
 ```text
-g2b_describe_operation(service="bid_public_info", operation="getBidPblancListInfoCnstwk")
+g2b_describe_operation(service="bid_public_info", operation="getBidPblancListInfoCnstwk02")
 ```
 
 기대 답변:

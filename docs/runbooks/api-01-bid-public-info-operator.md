@@ -64,11 +64,11 @@ python3 skills/g2b-openapi/scripts/probe_bid_public_info_backfill_counts.py \
 대표 operation:
 
 ```text
-getBidPblancListInfoServc
-getBidPblancListInfoCnstwk
-getBidPblancListInfoThng
-getBidPblancListInfoFrgcpt
-getBidPblancListInfoEtc
+getBidPblancListInfoServc02
+getBidPblancListInfoCnstwk02
+getBidPblancListInfoThng02
+getBidPblancListInfoFrgcpt02
+getBidPblancListInfoEtc02
 ```
 
 기본 정책:

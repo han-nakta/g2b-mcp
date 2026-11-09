@@ -51,7 +51,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen") as urlopen:
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         self.assertEqual(result["error"]["code"], "LIVE_FETCH_DISABLED")
@@ -65,7 +65,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen") as urlopen:
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         self.assertEqual(result["error"]["code"], "API_KEY_NOT_CONFIGURED")
@@ -76,7 +76,7 @@ class LiveMcpToolTests(unittest.TestCase):
     def test_validate_operation_params_reports_missing_unknown_auth_and_caps(self):
         result = server.g2b_validate_operation_params(
             "bid_public_info",
-            "getBidPblancListInfoThng",
+            "getBidPblancListInfoThng02",
             {"ServiceKey": "SECRET", "bogus": "x", "numOfRows": 500},
         )
         self.assertFalse(result["valid"])
@@ -91,7 +91,7 @@ class LiveMcpToolTests(unittest.TestCase):
         os.environ["G2B_SERVICE_KEY"] = "TOPSECRET"
         result = server.g2b_build_safe_request_preview(
             "bid_public_info",
-            "getBidPblancListInfoThng",
+            "getBidPblancListInfoThng02",
             {"ServiceKey": "SHOULD_NOT_APPEAR", "inqryDiv": "1", "numOfRows": 100},
         )
         self.assertTrue(result["credential_configured"])
@@ -126,7 +126,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)) as urlopen:
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
                 num_rows=50,
             )
@@ -151,7 +151,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen", return_value=response):
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
                 num_rows=5,
             )
@@ -186,7 +186,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)):
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         serialized = repr(result)
@@ -203,7 +203,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen", side_effect=RuntimeError("boom https://example.test?ServiceKey=TOPSECRET")):
             result = server.g2b_call_operation_summary(
                 "bid_public_info",
-                "getBidPblancListInfoThng",
+                "getBidPblancListInfoThng02",
                 {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406012359"},
             )
         self.assertEqual(result["error"]["code"], "LIVE_FETCH_FAILED")
@@ -219,7 +219,7 @@ class LiveMcpToolTests(unittest.TestCase):
         with patch("urllib.request.urlopen", return_value=_FakeResponse(payload)):
             result = server.g2b_search_bid_notices("laptop", "20240601", "20240602", category="goods", limit=25)
         self.assertEqual(result["service"], "bid_public_info")
-        self.assertEqual(result["operation"], "getBidPblancListInfoThng")
+        self.assertEqual(result["operation"], "getBidPblancListInfoThng02")
         self.assertEqual(result["category"], "goods")
         self.assertEqual(result["marker"], "[NOT_FOUND] ZERO_RESULTS")
         self.assertIn("next_queries", result)
@@ -309,7 +309,7 @@ class LiveMcpToolTests(unittest.TestCase):
             result = server.g2b_procurement_research("market scan", sensitive_query, "20240601", "20240602", limit=2)
         preview = server.g2b_build_safe_request_preview(
             "bid_public_info",
-            "getBidPblancListInfoThng",
+            "getBidPblancListInfoThng02",
             {"inqryDiv": "1", "inqryBgnDt": "202406010000", "inqryEndDt": "202406022359", "bidNtceNm": sensitive_query},
         )
         serialized = repr({"research": result, "preview": preview})

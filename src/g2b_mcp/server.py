@@ -658,7 +658,7 @@ def _add_first_supported_keyword(params: dict[str, Any], allowed: set[str], keyw
 def g2b_search_bid_notices(keyword: str, start_date: str, end_date: str, category: str = "goods", limit: int = 10) -> dict[str, Any]:
     """Small opt-in live bid notice search over common notice categories."""
     normalized, suffix = _category_operation_suffix(category)
-    operation = f"getBidPblancListInfo{suffix}"
+    operation = f"getBidPblancListInfo{suffix}02"
     svc = _find_service("bid_public_info")
     op = _find_operation(svc, operation)
     allowed = _operation_param_names(op)

@@ -20,7 +20,7 @@
       "source": {
         "service": "bid_public_info",
         "field": "bidNtceNo",
-        "operation": "getBidPblancListBidPrceCalclAInfo",
+        "operation": "getBidPblancListBidPrceCalclAInfo02",
         "direction": "request"
       },
       "target": {
@@ -45,7 +45,7 @@
       "source": {
         "service": "bid_public_info",
         "field": "bidNtceOrd",
-        "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct",
+        "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02",
         "direction": "request"
       },
       "target": {

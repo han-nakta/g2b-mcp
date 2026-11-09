@@ -14,15 +14,15 @@
           "direction": "response",
           "label": "입찰공고일시",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -31,14 +31,14 @@
           "direction": "response",
           "label": "입찰공고상세URL",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -47,13 +47,13 @@
           "direction": "request",
           "label": "입찰공고명",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -62,18 +62,18 @@
           "direction": "response",
           "label": "입찰공고명",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -82,28 +82,28 @@
           "direction": "request",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -112,29 +112,29 @@
           "direction": "response",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -143,13 +143,13 @@
           "direction": "request",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -158,29 +158,29 @@
           "direction": "response",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -189,12 +189,12 @@
           "direction": "response",
           "label": "입찰공고URL",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "cntrct_procss_intg_open",
@@ -811,9 +811,9 @@
           "direction": "response",
           "label": "낙찰자선정적용기준코드",
           "operations": [
-            "getBidPblancListEvaluationIndstrytyMfrcInfo"
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02"
           ],
-          "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo"
+          "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo02"
         },
         {
           "service": "bid_public_info",
@@ -822,28 +822,28 @@
           "direction": "request",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -852,29 +852,29 @@
           "direction": "response",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -883,13 +883,13 @@
           "direction": "request",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -898,29 +898,29 @@
           "direction": "response",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -929,14 +929,14 @@
           "direction": "response",
           "label": "개찰일시",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -945,10 +945,10 @@
           "direction": "response",
           "label": "개찰장소",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -957,11 +957,11 @@
           "direction": "response",
           "label": "낙찰하한율",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -970,9 +970,9 @@
           "direction": "response",
           "label": "낙찰방법코드",
           "operations": [
-            "getBidPblancListInfoChgHstryCnstwk"
+            "getBidPblancListInfoChgHstryCnstwk02"
           ],
-          "operation": "getBidPblancListInfoChgHstryCnstwk"
+          "operation": "getBidPblancListInfoChgHstryCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -981,10 +981,10 @@
           "direction": "response",
           "label": "낙찰방법명",
           "operations": [
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoEtc"
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoEtc02"
           ],
-          "operation": "getBidPblancListInfoChgHstryCnstwk"
+          "operation": "getBidPblancListInfoChgHstryCnstwk02"
         },
         {
           "service": "cntrct_procss_intg_open",
@@ -1997,12 +1997,12 @@
           "direction": "request",
           "label": "수요기관코드",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -2011,14 +2011,14 @@
           "direction": "response",
           "label": "수요기관코드",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -2027,13 +2027,13 @@
           "direction": "request",
           "label": "수요기관명",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -2042,16 +2042,16 @@
           "direction": "response",
           "label": "수요기관명",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -2060,13 +2060,13 @@
           "direction": "request",
           "label": "공고기관코드",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -2075,15 +2075,15 @@
           "direction": "response",
           "label": "공고기관코드",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -2092,13 +2092,13 @@
           "direction": "request",
           "label": "공고기관명",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -2107,14 +2107,14 @@
           "direction": "response",
           "label": "공고기관명",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -2123,9 +2123,9 @@
           "direction": "response",
           "label": "공고기관담당자이메일주소",
           "operations": [
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoThngPPSSrch"
+          "operation": "getBidPblancListInfoThngPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -2134,12 +2134,12 @@
           "direction": "response",
           "label": "공고기관담당자명",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -2148,11 +2148,11 @@
           "direction": "response",
           "label": "공고기관담당자전화번호",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "cntrct_info",
@@ -3887,15 +3887,15 @@
           "direction": "response",
           "label": "공동수급업체지역제한여부",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "cntrct_info",
@@ -4793,9 +4793,9 @@
           "direction": "request",
           "label": "제조업체명",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -4804,10 +4804,10 @@
           "direction": "response",
           "label": "제조업체명",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -4816,9 +4816,9 @@
           "direction": "response",
           "label": "조달업체등록번호",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
         },
         {
           "service": "usr_info",
@@ -4930,15 +4930,15 @@
           "direction": "response",
           "label": "공동수급업체지역제한여부",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -4947,9 +4947,9 @@
           "direction": "response",
           "label": "가산지역명1",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -4958,9 +4958,9 @@
           "direction": "response",
           "label": "가산지역명4",
           "operations": [
-            "getBidPblancListInfoCnstwk"
+            "getBidPblancListInfoCnstwk02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -4969,9 +4969,9 @@
           "direction": "response",
           "label": "공동도급의무지역명1",
           "operations": [
-            "getBidPblancListInfoServc"
+            "getBidPblancListInfoServc02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -4980,10 +4980,10 @@
           "direction": "response",
           "label": "공동도급의무지역명2",
           "operations": [
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch"
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -4992,9 +4992,9 @@
           "direction": "response",
           "label": "공동도급의무지역명3",
           "operations": [
-            "getBidPblancListInfoServc"
+            "getBidPblancListInfoServc02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -5003,9 +5003,9 @@
           "direction": "response",
           "label": "공고기관담당자이메일주소",
           "operations": [
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoThngPPSSrch"
+          "operation": "getBidPblancListInfoThngPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -5014,12 +5014,12 @@
           "direction": "request",
           "label": "참가제한지역코드",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -5028,12 +5028,12 @@
           "direction": "request",
           "label": "참가제한지역명",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -5042,9 +5042,9 @@
           "direction": "response",
           "label": "참가가능지역명",
           "operations": [
-            "getBidPblancListInfoPrtcptPsblRgn"
+            "getBidPblancListInfoPrtcptPsblRgn02"
           ],
-          "operation": "getBidPblancListInfoPrtcptPsblRgn"
+          "operation": "getBidPblancListInfoPrtcptPsblRgn02"
         },
         {
           "service": "bid_public_info",
@@ -5053,9 +5053,9 @@
           "direction": "response",
           "label": "지역의무공동도급비율",
           "operations": [
-            "getBidPblancListInfoCnstwk"
+            "getBidPblancListInfoCnstwk02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "cntrct_info",
@@ -5515,9 +5515,9 @@
           "direction": "request",
           "label": "지역코드",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -5526,9 +5526,9 @@
           "direction": "response",
           "label": "지역코드",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "usr_info",
@@ -5591,12 +5591,12 @@
           "direction": "response",
           "label": "계약체결방법명",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "cntrct_info",
@@ -7501,12 +7501,12 @@
           "direction": "request",
           "label": "세부품명번호",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -7515,13 +7515,13 @@
           "direction": "response",
           "label": "세부품명번호",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7530,12 +7530,12 @@
           "direction": "response",
           "label": "세부품명",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7544,12 +7544,12 @@
           "direction": "response",
           "label": "물품분류제한여부",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7558,11 +7558,11 @@
           "direction": "response",
           "label": "물품분류번호",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -7571,11 +7571,11 @@
           "direction": "response",
           "label": "품명",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -7584,9 +7584,9 @@
           "direction": "response",
           "label": "물품수량",
           "operations": [
-            "getBidPblancListInfoFrgcptPPSSrch"
+            "getBidPblancListInfoFrgcptPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPPSSrch"
+          "operation": "getBidPblancListInfoFrgcptPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -7595,12 +7595,12 @@
           "direction": "response",
           "label": "물품순번",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7609,11 +7609,11 @@
           "direction": "response",
           "label": "물품규격명",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -7622,11 +7622,11 @@
           "direction": "response",
           "label": "물품단위",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7635,11 +7635,11 @@
           "direction": "response",
           "label": "물품단가",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -7648,11 +7648,11 @@
           "direction": "response",
           "label": "구매대상물품목록",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "cntrct_info",
@@ -9061,9 +9061,9 @@
           "direction": "response",
           "label": "변경후물품속성값",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus"
+            "getLsfgdNdPrdlstChghstlnfoSttus02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9072,9 +9072,9 @@
           "direction": "response",
           "label": "변경후품명",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -9083,11 +9083,11 @@
           "direction": "response",
           "label": "변경후물품분류번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9096,9 +9096,9 @@
           "direction": "response",
           "label": "변경후물품분류번호명",
           "operations": [
-            "getPrdctClsfcNoChgHstry"
+            "getPrdctClsfcNoChgHstry02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9107,9 +9107,9 @@
           "direction": "response",
           "label": "변경전물품속성값",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus"
+            "getLsfgdNdPrdlstChghstlnfoSttus02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9118,11 +9118,11 @@
           "direction": "response",
           "label": "변경전물품분류번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9131,10 +9131,10 @@
           "direction": "response",
           "label": "번경전품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9143,11 +9143,11 @@
           "direction": "request",
           "label": "세부품명번호",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9156,12 +9156,12 @@
           "direction": "response",
           "label": "세부품명번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9170,9 +9170,9 @@
           "direction": "request",
           "label": "세부품명번호시작번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9181,9 +9181,9 @@
           "direction": "request",
           "label": "세부품명번호종료번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9192,9 +9192,9 @@
           "direction": "request",
           "label": "세부영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9203,10 +9203,10 @@
           "direction": "response",
           "label": "세부영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9215,9 +9215,9 @@
           "direction": "request",
           "label": "세부품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9226,10 +9226,10 @@
           "direction": "response",
           "label": "세부품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9238,9 +9238,9 @@
           "direction": "response",
           "label": "세부품명해설",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -9249,9 +9249,9 @@
           "direction": "response",
           "label": "세부품명번호건수",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9260,10 +9260,10 @@
           "direction": "request",
           "label": "한글품목명",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9272,10 +9272,10 @@
           "direction": "response",
           "label": "한글품목명",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9284,9 +9284,9 @@
           "direction": "response",
           "label": "물품변경요청번호",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -9295,9 +9295,9 @@
           "direction": "response",
           "label": "물품분류구분",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -9306,9 +9306,9 @@
           "direction": "response",
           "label": "물품분류구분코드",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -9317,11 +9317,11 @@
           "direction": "request",
           "label": "물품분류번호",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9330,17 +9330,17 @@
           "direction": "response",
           "label": "물품분류번호",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngGuidanceMapInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngGuidanceMapInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9349,12 +9349,12 @@
           "direction": "request",
           "label": "물품분류번호시작번호",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -9363,12 +9363,12 @@
           "direction": "request",
           "label": "물품분류번호종료번호",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -9377,14 +9377,14 @@
           "direction": "request",
           "label": "영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -9393,16 +9393,16 @@
           "direction": "response",
           "label": "영문품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9411,14 +9411,14 @@
           "direction": "request",
           "label": "품명",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -9427,17 +9427,17 @@
           "direction": "response",
           "label": "품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngGuidanceMapInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngGuidanceMapInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9446,13 +9446,13 @@
           "direction": "response",
           "label": "품명해설",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -9461,9 +9461,9 @@
           "direction": "response",
           "label": "물품분류관련설명",
           "operations": [
-            "getThngGuidanceMapInfo"
+            "getThngGuidanceMapInfo02"
           ],
-          "operation": "getThngGuidanceMapInfo"
+          "operation": "getThngGuidanceMapInfo02"
         },
         {
           "service": "thng_list_info",
@@ -9472,11 +9472,11 @@
           "direction": "request",
           "label": "물품식별번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9485,11 +9485,11 @@
           "direction": "response",
           "label": "물품식별번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9498,9 +9498,9 @@
           "direction": "response",
           "label": "물품이미지(대)",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9509,9 +9509,9 @@
           "direction": "response",
           "label": "물품정보변경일자",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus"
+            "getLsfgdNdPrdlstChghstlnfoSttus02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -9520,9 +9520,9 @@
           "direction": "response",
           "label": "제품인증목록",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02"
         },
         {
           "service": "thng_list_info",
@@ -9531,9 +9531,9 @@
           "direction": "request",
           "label": "상위 물품분류번호",
           "operations": [
-            "getThngGuidanceMapInfo"
+            "getThngGuidanceMapInfo02"
           ],
-          "operation": "getThngGuidanceMapInfo"
+          "operation": "getThngGuidanceMapInfo02"
         },
         {
           "service": "usr_info",
@@ -9581,12 +9581,12 @@
           "direction": "response",
           "label": "공고규격서URL1",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9595,11 +9595,11 @@
           "direction": "response",
           "label": "공고규격서URL10",
           "operations": [
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -9608,15 +9608,15 @@
           "direction": "response",
           "label": "공고규격서URL2",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9625,14 +9625,14 @@
           "direction": "response",
           "label": "공고규격서URL3",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9641,13 +9641,13 @@
           "direction": "response",
           "label": "공고규격서URL4",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9656,12 +9656,12 @@
           "direction": "response",
           "label": "공고규격서URL5",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9670,11 +9670,11 @@
           "direction": "response",
           "label": "공고규격서URL6",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -9683,12 +9683,12 @@
           "direction": "response",
           "label": "공고규격서URL7",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -9697,12 +9697,12 @@
           "direction": "response",
           "label": "공고규격서URL8",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -9711,11 +9711,11 @@
           "direction": "response",
           "label": "공고규격서URL9",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -9724,13 +9724,13 @@
           "direction": "response",
           "label": "공고규격파일명1",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -9739,10 +9739,10 @@
           "direction": "response",
           "label": "공고규격파일명10",
           "operations": [
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -9751,11 +9751,11 @@
           "direction": "response",
           "label": "공고규격파일명2",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9764,12 +9764,12 @@
           "direction": "response",
           "label": "공고규격파일명3",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -9778,14 +9778,14 @@
           "direction": "response",
           "label": "공고규격파일명4",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -9794,13 +9794,13 @@
           "direction": "response",
           "label": "공고규격파일명5",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServcPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -9809,13 +9809,13 @@
           "direction": "response",
           "label": "공고규격파일명6",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -9824,11 +9824,11 @@
           "direction": "response",
           "label": "공고규격파일명7",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -9837,11 +9837,11 @@
           "direction": "response",
           "label": "공고규격파일명8",
           "operations": [
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoServc"
+          "operation": "getBidPblancListInfoServc02"
         },
         {
           "service": "bid_public_info",
@@ -9850,11 +9850,11 @@
           "direction": "response",
           "label": "공고규격파일명9",
           "operations": [
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch"
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPPSSrch"
+          "operation": "getBidPblancListInfoFrgcptPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -9863,11 +9863,11 @@
           "direction": "response",
           "label": "물품규격명",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "cntrct_info",
@@ -11091,15 +11091,15 @@
           "direction": "response",
           "label": "입찰공고일시",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -11108,14 +11108,14 @@
           "direction": "response",
           "label": "입찰공고상세URL",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "bid_public_info",
@@ -11124,13 +11124,13 @@
           "direction": "request",
           "label": "입찰공고명",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -11139,18 +11139,18 @@
           "direction": "response",
           "label": "입찰공고명",
           "operations": [
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwk"
+          "operation": "getBidPblancListInfoCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -11159,28 +11159,28 @@
           "direction": "request",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11189,29 +11189,29 @@
           "direction": "response",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11220,13 +11220,13 @@
           "direction": "request",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -11235,29 +11235,29 @@
           "direction": "response",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11266,12 +11266,12 @@
           "direction": "response",
           "label": "입찰공고URL",
           "operations": [
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoEtc"
+          "operation": "getBidPblancListInfoEtc02"
         },
         {
           "service": "cntrct_procss_intg_open",
@@ -11927,9 +11927,9 @@
           "direction": "response",
           "label": "낙찰자선정적용기준코드",
           "operations": [
-            "getBidPblancListEvaluationIndstrytyMfrcInfo"
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02"
           ],
-          "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo"
+          "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11938,28 +11938,28 @@
           "direction": "request",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11968,29 +11968,29 @@
           "direction": "response",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -11999,13 +11999,13 @@
           "direction": "request",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -12014,29 +12014,29 @@
           "direction": "response",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -12045,11 +12045,11 @@
           "direction": "response",
           "label": "낙찰하한율",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoThng"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoThng02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -12058,9 +12058,9 @@
           "direction": "response",
           "label": "낙찰방법코드",
           "operations": [
-            "getBidPblancListInfoChgHstryCnstwk"
+            "getBidPblancListInfoChgHstryCnstwk02"
           ],
-          "operation": "getBidPblancListInfoChgHstryCnstwk"
+          "operation": "getBidPblancListInfoChgHstryCnstwk02"
         },
         {
           "service": "bid_public_info",
@@ -12069,10 +12069,10 @@
           "direction": "response",
           "label": "낙찰방법명",
           "operations": [
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoEtc"
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoEtc02"
           ],
-          "operation": "getBidPblancListInfoChgHstryCnstwk"
+          "operation": "getBidPblancListInfoChgHstryCnstwk02"
         },
         {
           "service": "cntrct_procss_intg_open",
@@ -12864,28 +12864,28 @@
           "direction": "request",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -12894,29 +12894,29 @@
           "direction": "response",
           "label": "입찰공고번호",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPPSSrch",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPPSSrch02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "bid_public_info",
@@ -12925,13 +12925,13 @@
           "direction": "request",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -12940,29 +12940,29 @@
           "direction": "response",
           "label": "입찰공고차수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwk",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoEtcPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwk02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoEtcPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "cntrct_procss_intg_open",
@@ -13316,12 +13316,12 @@
           "direction": "request",
           "label": "세부품명번호",
           "operations": [
-            "getBidPblancListInfoCnstwkPPSSrch",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoCnstwkPPSSrch02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoCnstwkPPSSrch"
+          "operation": "getBidPblancListInfoCnstwkPPSSrch02"
         },
         {
           "service": "bid_public_info",
@@ -13330,13 +13330,13 @@
           "direction": "response",
           "label": "세부품명번호",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -13345,12 +13345,12 @@
           "direction": "response",
           "label": "세부품명",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -13359,12 +13359,12 @@
           "direction": "response",
           "label": "물품분류제한여부",
           "operations": [
-            "getBidPblancListInfoFrgcpt",
-            "getBidPblancListInfoFrgcptPPSSrch",
-            "getBidPblancListInfoServc",
-            "getBidPblancListInfoThngPPSSrch"
+            "getBidPblancListInfoFrgcpt02",
+            "getBidPblancListInfoFrgcptPPSSrch02",
+            "getBidPblancListInfoServc02",
+            "getBidPblancListInfoThngPPSSrch02"
           ],
-          "operation": "getBidPblancListInfoFrgcpt"
+          "operation": "getBidPblancListInfoFrgcpt02"
         },
         {
           "service": "bid_public_info",
@@ -13373,11 +13373,11 @@
           "direction": "response",
           "label": "물품분류번호",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "bid_public_info",
@@ -13386,11 +13386,11 @@
           "direction": "response",
           "label": "품명",
           "operations": [
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThngPurchsObjPrdct"
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThngPurchsObjPrdct02"
           ],
-          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct"
+          "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02"
         },
         {
           "service": "cntrct_info",
@@ -14051,9 +14051,9 @@
           "direction": "response",
           "label": "변경후품명",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -14062,11 +14062,11 @@
           "direction": "response",
           "label": "변경후물품분류번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -14075,9 +14075,9 @@
           "direction": "response",
           "label": "변경후물품분류번호명",
           "operations": [
-            "getPrdctClsfcNoChgHstry"
+            "getPrdctClsfcNoChgHstry02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14086,11 +14086,11 @@
           "direction": "response",
           "label": "변경전물품분류번호",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "thng_list_info",
@@ -14099,10 +14099,10 @@
           "direction": "response",
           "label": "번경전품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo"
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14111,11 +14111,11 @@
           "direction": "request",
           "label": "세부품명번호",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02"
         },
         {
           "service": "thng_list_info",
@@ -14124,12 +14124,12 @@
           "direction": "response",
           "label": "세부품명번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14138,9 +14138,9 @@
           "direction": "request",
           "label": "세부품명번호시작번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14149,9 +14149,9 @@
           "direction": "request",
           "label": "세부품명번호종료번호",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14160,9 +14160,9 @@
           "direction": "request",
           "label": "세부영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14171,10 +14171,10 @@
           "direction": "response",
           "label": "세부영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14183,9 +14183,9 @@
           "direction": "request",
           "label": "세부품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14194,10 +14194,10 @@
           "direction": "response",
           "label": "세부품명",
           "operations": [
-            "getPrdctClsfcNoUnit10Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit10Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14206,9 +14206,9 @@
           "direction": "response",
           "label": "세부품명해설",
           "operations": [
-            "getPrdctClsfcNoUnit10Info"
+            "getPrdctClsfcNoUnit10Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit10Info"
+          "operation": "getPrdctClsfcNoUnit10Info02"
         },
         {
           "service": "thng_list_info",
@@ -14217,9 +14217,9 @@
           "direction": "response",
           "label": "세부품명번호건수",
           "operations": [
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+          "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
         },
         {
           "service": "thng_list_info",
@@ -14228,9 +14228,9 @@
           "direction": "response",
           "label": "물품분류구분",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -14239,9 +14239,9 @@
           "direction": "response",
           "label": "물품분류구분코드",
           "operations": [
-            "getThngListClChangeHistInfo"
+            "getThngListClChangeHistInfo02"
           ],
-          "operation": "getThngListClChangeHistInfo"
+          "operation": "getThngListClChangeHistInfo02"
         },
         {
           "service": "thng_list_info",
@@ -14250,11 +14250,11 @@
           "direction": "request",
           "label": "물품분류번호",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getThngListClChangeHistInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getThngListClChangeHistInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14263,17 +14263,17 @@
           "direction": "response",
           "label": "물품분류번호",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngGuidanceMapInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngGuidanceMapInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14282,12 +14282,12 @@
           "direction": "request",
           "label": "물품분류번호시작번호",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -14296,12 +14296,12 @@
           "direction": "request",
           "label": "물품분류번호종료번호",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -14310,14 +14310,14 @@
           "direction": "request",
           "label": "영문품명",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -14326,16 +14326,16 @@
           "direction": "response",
           "label": "영문품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14344,14 +14344,14 @@
           "direction": "request",
           "label": "품명",
           "operations": [
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoUnit2Info"
+          "operation": "getPrdctClsfcNoUnit2Info02"
         },
         {
           "service": "thng_list_info",
@@ -14360,17 +14360,17 @@
           "direction": "response",
           "label": "품명",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info",
-            "getThngGuidanceMapInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02",
+            "getThngGuidanceMapInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14379,13 +14379,13 @@
           "direction": "response",
           "label": "품명해설",
           "operations": [
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getPrdctClsfcNoUnit8Info"
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getPrdctClsfcNoUnit8Info02"
           ],
-          "operation": "getPrdctClsfcNoChgHstry"
+          "operation": "getPrdctClsfcNoChgHstry02"
         },
         {
           "service": "thng_list_info",
@@ -14394,9 +14394,9 @@
           "direction": "response",
           "label": "물품분류관련설명",
           "operations": [
-            "getThngGuidanceMapInfo"
+            "getThngGuidanceMapInfo02"
           ],
-          "operation": "getThngGuidanceMapInfo"
+          "operation": "getThngGuidanceMapInfo02"
         },
         {
           "service": "thng_list_info",
@@ -14405,9 +14405,9 @@
           "direction": "request",
           "label": "상위 물품분류번호",
           "operations": [
-            "getThngGuidanceMapInfo"
+            "getThngGuidanceMapInfo02"
           ],
-          "operation": "getThngGuidanceMapInfo"
+          "operation": "getThngGuidanceMapInfo02"
         },
         {
           "service": "usr_info",
@@ -15308,26 +15308,26 @@
           "direction": "response",
           "label": "데이터 총 개수",
           "operations": [
-            "getBidPblancListBidPrceCalclAInfo",
-            "getBidPblancListEvaluationIndstrytyMfrcInfo",
-            "getBidPblancListInfoChgHstryCnstwk",
-            "getBidPblancListInfoChgHstryThng",
-            "getBidPblancListInfoCnstwkBsisAmount",
-            "getBidPblancListInfoEorderAtchFileInfo",
-            "getBidPblancListInfoEtc",
-            "getBidPblancListInfoFrgcptPurchsObjPrdct",
-            "getBidPblancListInfoLicenseLimit",
-            "getBidPblancListInfoPrtcptPsblRgn",
-            "getBidPblancListInfoServcBsisAmount",
-            "getBidPblancListInfoServcPPSSrch",
-            "getBidPblancListInfoServcPurchsObjPrdct",
-            "getBidPblancListInfoThng",
-            "getBidPblancListInfoThngBsisAmount",
-            "getBidPblancListInfoThngPurchsObjPrdct",
-            "getBidPblancListInfochgHstryServc",
-            "getBidPblancListPPIFnlRfpIssAtchFileInfo"
+            "getBidPblancListBidPrceCalclAInfo02",
+            "getBidPblancListEvaluationIndstrytyMfrcInfo02",
+            "getBidPblancListInfoChgHstryCnstwk02",
+            "getBidPblancListInfoChgHstryThng02",
+            "getBidPblancListInfoCnstwkBsisAmount02",
+            "getBidPblancListInfoEorderAtchFileInfo02",
+            "getBidPblancListInfoEtc02",
+            "getBidPblancListInfoFrgcptPurchsObjPrdct02",
+            "getBidPblancListInfoLicenseLimit02",
+            "getBidPblancListInfoPrtcptPsblRgn02",
+            "getBidPblancListInfoServcBsisAmount02",
+            "getBidPblancListInfoServcPPSSrch02",
+            "getBidPblancListInfoServcPurchsObjPrdct02",
+            "getBidPblancListInfoThng02",
+            "getBidPblancListInfoThngBsisAmount02",
+            "getBidPblancListInfoThngPurchsObjPrdct02",
+            "getBidPblancListInfoChgHstryServc02",
+            "getBidPblancListPPIFnlRfpIssAtchFileInfo02"
           ],
-          "operation": "getBidPblancListBidPrceCalclAInfo"
+          "operation": "getBidPblancListBidPrceCalclAInfo02"
         },
         {
           "service": "cntrct_info",
@@ -15652,19 +15652,19 @@
           "direction": "response",
           "label": "전체 결과 수",
           "operations": [
-            "getLsfgdNdPrdlstChghstlnfoSttus",
-            "getPrdctClsfcNoChgHstry",
-            "getPrdctClsfcNoUnit10Info",
-            "getPrdctClsfcNoUnit2Info",
-            "getPrdctClsfcNoUnit4Info",
-            "getPrdctClsfcNoUnit6Info",
-            "getThngGuidanceMapInfo",
-            "getThngListClChangeHistInfo",
-            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch",
-            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch"
+            "getLsfgdNdPrdlstChghstlnfoSttus02",
+            "getPrdctClsfcNoChgHstry02",
+            "getPrdctClsfcNoUnit10Info02",
+            "getPrdctClsfcNoUnit2Info02",
+            "getPrdctClsfcNoUnit4Info02",
+            "getPrdctClsfcNoUnit6Info02",
+            "getThngGuidanceMapInfo02",
+            "getThngListClChangeHistInfo02",
+            "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
+            "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02"
           ],
-          "operation": "getLsfgdNdPrdlstChghstlnfoSttus"
+          "operation": "getLsfgdNdPrdlstChghstlnfoSttus02"
         },
         {
           "service": "usr_info",

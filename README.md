@@ -11,7 +11,7 @@ Ask an MCP-capable assistant questions like:
 ```text
 "What G2B OpenAPI services are available?"
 "Show operations for bid_public_info."
-"Describe getBidPblancListInfoThng without exposing credentials."
+"Describe getBidPblancListInfoThng02 without exposing credentials."
 "Which relationship edges are unresolved?"
 "What is this repo allowed to expose publicly?"
 ```
@@ -20,7 +20,7 @@ The server answers from packaged, public-safe artifacts. It is useful for API di
 
 ## Current baseline
 
-- 18 G2B-related OpenAPI services / 191 operations cataloged.
+- 18 G2B-related OpenAPI services / 195 operations cataloged.
 - API-01~17 representative evidence phase closed in the private operator workspace.
 - API-18 `pub_prcrmnt_stat_info` remains `unresolved_period_stat` until public OpenAPI rows are verified.
 - Public MCP server exposes packaged catalog/schema/evidence summaries only.
@@ -33,7 +33,7 @@ The server answers from packaged, public-safe artifacts. It is useful for API di
 ```text
 g2b_list_services()
 g2b_list_operations(service="bid_public_info")
-g2b_describe_operation(service="bid_public_info", operation="getBidPblancListInfoThng")
+g2b_describe_operation(service="bid_public_info", operation="getBidPblancListInfoThng02")
 ```
 
 Use this when an agent needs to understand which G2B operation, date format, or response schema applies before writing code.
