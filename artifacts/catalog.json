@@ -8034,13 +8034,66 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/ThngListInfoService02/getPrdctIndvAtrbInfoList02",
           "status": "schema-pending",
           "auth_param": "ServiceKey",
-          "request_params": [],
+          "request_params": [
+            {
+              "name": "ServiceKey",
+              "name_ko": "ServiceKey",
+              "type": "string",
+              "required": true,
+              "length": 40,
+              "example": "-",
+              "description": "공공데이터포털에서 받은 인증키",
+              "source": "env",
+              "env": "G2B_SHOPPING_MALL_PRDCT_INFO_API_KEY",
+              "placeholder": "[api key]"
+            },
+            {
+              "name": "pageNo",
+              "name_ko": "페이지 번호",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "1",
+              "description": "페이지번호",
+              "default": 1
+            },
+            {
+              "name": "numOfRows",
+              "name_ko": "한 페이지 결과 수",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "10",
+              "description": "한 페이지 결과 수",
+              "default": 10
+            },
+            {
+              "name": "type",
+              "name_ko": "타입",
+              "type": "string",
+              "required": false,
+              "length": 4,
+              "example": "json",
+              "description": "타입",
+              "default": "json"
+            },
+            {
+              "name": "prdctIdntNo",
+              "name_ko": "물품식별번호",
+              "type": "string",
+              "required": false,
+              "length": 8,
+              "example": "23657020",
+              "description": "물품식별번호"
+            }
+          ],
           "sample_output_fields": [],
-          "notes": "Added in the 02 service version; request/response schema not yet captured.",
+          "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; response fields not yet captured.",
           "endpoint_check": "exists",
           "date_format": "",
-          "schema_status": "pending",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "missing"
         },
         {
           "operation": "getThngGuidanceMapInfo02",
@@ -8140,7 +8193,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: `upPrdctClsfcNo=1111` returned totalCount 4.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
@@ -8407,7 +8461,8 @@
           "notes": "조달청 물품목록정보 조회. Live verification: `dtilPrdctClsfcNo=3015159901` and `prdctIdntNo=23060722` returned totalCount 1.",
           "date_format": "YYYYMMDDHHMM",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02",
@@ -8570,7 +8625,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: `prdctClsfcNo=12142106` and `dtilPrdctClsfcNo=1214210601` returned totalCount 1.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
@@ -8760,7 +8816,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: `dtilPrdctClsfcNo=2611160701` and `prdctIdntNo=23062106` returned totalCount 1.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getThngListClChangeHistInfo02",
@@ -8938,7 +8995,8 @@
           "notes": "조달청 물품목록정보 조회. Live verification: `inqryDiv=1`, `prdctClsfcNo=811015`, and sample date window returned totalCount 7.",
           "date_format": "YYYYMMDDHHMM",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getLsfgdNdPrdlstChghstlnfoSttus02",
@@ -9098,7 +9156,8 @@
           "notes": "조달청 물품목록정보 조회. Live verification: `inqryDiv=1`, `prdctIdntNo=10001136`, and sample date window returned totalCount 5.",
           "date_format": "YYYYMMDDHHMM",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoUnit2Info02",
@@ -9249,7 +9308,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: class range `10`-`11` returned totalCount 2.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoUnit4Info02",
@@ -9400,7 +9460,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: class range `1010`-`1013` returned totalCount 4.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoUnit6Info02",
@@ -9551,7 +9612,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: class range `101316`-`101316` returned totalCount 1.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoUnit8Info02",
@@ -9672,7 +9734,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: class range `10131601`-`10131702` returned totalCount 3.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoUnit10Info02",
@@ -9823,7 +9886,8 @@
           "daily_traffic_limit": 100000,
           "notes": "조달청 물품목록정보 조회. Live verification: detail class range `1013160101`-`1013160102` returned totalCount 1.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getPrdctClsfcNoChgHstry02",
@@ -10004,7 +10068,8 @@
           "notes": "조달청 물품목록정보 조회. Live verification: `chgPrdBgnDt=20160501`, `chgPrdEndDt=20160719`, `prdctClsfcNo=53102503` returned totalCount 1.",
           "date_format": "YYYYMMDD",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified"
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         }
       ],
       "catalog_status": "mvp-ready",
@@ -10275,7 +10340,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusThng",
           "status": "mvp-ready",
           "feature_sqno": 1,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 낙찰된 목록 현황 물품조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -10449,7 +10514,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusCnstwk",
           "status": "mvp-ready",
           "feature_sqno": 2,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 낙찰된 목록 현황 공사조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -10627,7 +10692,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusServc",
           "status": "mvp-ready",
           "feature_sqno": 3,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 낙찰된 목록 현황 용역조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -10805,7 +10870,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusFrgcpt",
           "status": "mvp-ready",
           "feature_sqno": 4,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 낙찰된 목록 현황 외자조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -10983,7 +11048,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoThng",
           "status": "mvp-ready",
           "feature_sqno": 5,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 물품 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11141,7 +11206,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoCnstwk",
           "status": "mvp-ready",
           "feature_sqno": 6,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 공사 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11299,7 +11364,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoServc",
           "status": "mvp-ready",
           "feature_sqno": 7,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 용역 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11457,7 +11522,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoFrgcpt",
           "status": "mvp-ready",
           "feature_sqno": 8,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 외자 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11615,7 +11680,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoThngPreparPcDetail",
           "status": "mvp-ready",
           "feature_sqno": 9,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 물품 예비가격상세 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11785,7 +11850,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoCnstwkPreparPcDetail",
           "status": "mvp-ready",
           "feature_sqno": 10,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 공사 예비가격상세 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -11955,7 +12020,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoServcPreparPcDetail",
           "status": "mvp-ready",
           "feature_sqno": 11,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 용역 예비가격상세 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -12121,7 +12186,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoFrgcptPreparPcDetail",
           "status": "mvp-ready",
           "feature_sqno": 12,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 외자 예비가격상세 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -12291,7 +12356,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoOpengCompt",
           "status": "mvp-ready",
           "feature_sqno": 13,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 개찰완료 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -12449,7 +12514,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoFailing",
           "status": "mvp-ready",
           "feature_sqno": 14,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 유찰 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -12567,7 +12632,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoRebid",
           "status": "mvp-ready",
           "feature_sqno": 15,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 개찰결과 재입찰 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -12697,7 +12762,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusThngPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 16,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 낙찰된 목록 현황 물품조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -12970,7 +13035,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusCnstwkPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 17,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 낙찰된 목록 현황 공사조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -13243,7 +13308,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusServcPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 18,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 낙찰된 목록 현황 용역조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -13516,7 +13581,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getScsbidListSttusFrgcptPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 19,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 낙찰된 목록 현황 외자조회 제공자료. 낙찰된 목록 현황 조회 기능.",
           "request_params": [
             {
@@ -13789,7 +13854,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoThngPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 20,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 개찰결과 물품 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -14042,7 +14107,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoCnstwkPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 21,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 개찰결과 공사 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -14295,7 +14360,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoServcPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 22,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 개찰결과 용역 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -14548,7 +14613,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/as/ScsbidInfoService/getOpengResultListInfoFrgcptPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 23,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "data.g2b.go.kr 상세 화면 기준 나라장터 검색조건에 의한 개찰결과 외자 목록 조회 제공자료. 개찰결과 목록/상세 조회 기능.",
           "request_params": [
             {
@@ -27758,14 +27823,104 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancIncntvRgnListInfo02",
           "status": "schema-pending",
           "description": "",
-          "request_params": [],
+          "request_params": [
+            {
+              "name": "numOfRows",
+              "name_ko": "한 페이지 결과 수",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "10",
+              "description": "한 페이지 결과 수",
+              "default": 10
+            },
+            {
+              "name": "pageNo",
+              "name_ko": "페이지 번호",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "1",
+              "description": "페이지 번호",
+              "default": 1
+            },
+            {
+              "name": "ServiceKey",
+              "name_ko": "ServiceKey",
+              "type": "string",
+              "required": true,
+              "length": 40,
+              "example": "공공데이터포탈에서 받은 인증키",
+              "description": "공공데이터포탈에서 받은 인증키",
+              "source": "env",
+              "env": "G2B_SHOPPING_MALL_PRDCT_INFO_API_KEY",
+              "placeholder": "[api key]"
+            },
+            {
+              "name": "type",
+              "name_ko": "타입",
+              "type": "string",
+              "required": false,
+              "length": 4,
+              "example": "json",
+              "description": "오픈API 리턴 타입을 JSON으로 받고 싶을 경우 'json' 으로 지정",
+              "default": "json"
+            },
+            {
+              "name": "inqryDiv",
+              "name_ko": "조회구분",
+              "type": "string",
+              "required": true,
+              "length": 1,
+              "example": "1",
+              "description": "검색하고자하는 조회구분 1:공고게시일시 2:입찰공고번호",
+              "default": "1"
+            },
+            {
+              "name": "inqryBgnDt",
+              "name_ko": "조회시작일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607010000",
+              "description": "검색하고자하는 조회시작일시"
+            },
+            {
+              "name": "inqryEndDt",
+              "name_ko": "조회종료일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607012359",
+              "description": "검색하고자하는 조회종료일시"
+            },
+            {
+              "name": "bidNtceNo",
+              "name_ko": "입찰공고번호",
+              "type": "string",
+              "required": false,
+              "length": 11,
+              "example": "R26BK01551394",
+              "description": "검색하고자 하는 입찰공고번호(조회구분이 '2'인 경우 필수)"
+            },
+            {
+              "name": "bidNtceOrd",
+              "name_ko": "입찰공고차수",
+              "type": "string",
+              "required": false,
+              "length": 2,
+              "example": "1",
+              "description": "검색하고자 하는 입찰공고차수(조회구분이 2인 경우 필수)"
+            }
+          ],
           "sample_output_fields": [],
-          "notes": "Added in the 02 service version; request/response schema not yet captured.",
+          "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; response fields not yet captured.",
           "endpoint_check": "exists",
           "auth_param": "ServiceKey",
           "date_format": "",
-          "schema_status": "pending",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "missing"
         },
         {
           "operation": "getBidPblancListInfoAtchFileInfo02",
@@ -27773,14 +27928,113 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoAtchFileInfo02",
           "status": "schema-pending",
           "description": "",
-          "request_params": [],
+          "request_params": [
+            {
+              "name": "numOfRows",
+              "name_ko": "한 페이지 결과 수",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "10",
+              "description": "한 페이지 결과 수",
+              "default": 10
+            },
+            {
+              "name": "pageNo",
+              "name_ko": "페이지 번호",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "1",
+              "description": "페이지 번호",
+              "default": 1
+            },
+            {
+              "name": "ServiceKey",
+              "name_ko": "ServiceKey",
+              "type": "string",
+              "required": true,
+              "length": 40,
+              "example": "공공데이터포탈에서 받은 인증키",
+              "description": "공공데이터포탈에서 받은 인증키",
+              "source": "env",
+              "env": "G2B_SHOPPING_MALL_PRDCT_INFO_API_KEY",
+              "placeholder": "[api key]"
+            },
+            {
+              "name": "type",
+              "name_ko": "타입",
+              "type": "string",
+              "required": false,
+              "length": 4,
+              "example": "json",
+              "description": "오픈API 리턴 타입을 JSON으로 받고 싶을 경우 'json' 으로 지정",
+              "default": "json"
+            },
+            {
+              "name": "inqryDiv",
+              "name_ko": "조회구분",
+              "type": "string",
+              "required": true,
+              "length": 1,
+              "example": "1",
+              "description": "검색하고자하는 조회구분 1:공고게시일시 2:입찰공고번호",
+              "default": "1"
+            },
+            {
+              "name": "inqryBgnDt",
+              "name_ko": "조회시작일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607010000",
+              "description": "검색하고자하는 조회시작일시"
+            },
+            {
+              "name": "inqryEndDt",
+              "name_ko": "조회종료일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607022359",
+              "description": "검색하고자하는 조회종료일시"
+            },
+            {
+              "name": "bidNtceNo",
+              "name_ko": "입찰공고번호",
+              "type": "string",
+              "required": false,
+              "length": 11,
+              "example": "202607022359",
+              "description": "검색하고자 하는 입찰공고번호(조회구분이 '2'인 경우 필수)"
+            },
+            {
+              "name": "bidNtceOrd",
+              "name_ko": "입찰공고차수",
+              "type": "string",
+              "required": false,
+              "length": 2,
+              "example": "001",
+              "description": "검색하고자 하는 입찰공고차수(조회구분이 2인 경우 필수)"
+            },
+            {
+              "name": "bsnsDivCd",
+              "name_ko": "업무구분코드",
+              "type": "varchar2",
+              "required": false,
+              "length": 2,
+              "example": "1",
+              "description": "업무구분코드가 1이면 물품, 2면 외자, 3이면 공사, 5면 용역"
+            }
+          ],
           "sample_output_fields": [],
-          "notes": "Added in the 02 service version; request/response schema not yet captured.",
+          "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; response fields not yet captured.",
           "endpoint_check": "exists",
           "auth_param": "ServiceKey",
           "date_format": "",
-          "schema_status": "pending",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "missing"
         },
         {
           "operation": "getBidPblancListInfoServcPPSSrch02",
@@ -27788,7 +28042,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoServcPPSSrch02",
           "status": "mvp-ready",
           "feature_sqno": 12,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 용역부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -27921,15 +28175,6 @@
               "length": 100,
               "example": "일반소방공사감리업(전기)",
               "description": "검색하고자하는 업종명\n※ 업종명 일부 입력시에도 조회 가능\n( 연계건의 경우 : 면허제한목록(lcnsLmttList) 내 업종명으로 검색)"
-            },
-            {
-              "name": "masYn",
-              "name_ko": "다수공급경쟁자여부",
-              "type": "string",
-              "required": false,
-              "length": 1,
-              "example": "Y",
-              "description": "검색하고자하는 다수공급경쟁자여부\n(용역업무의 경우 해당 컬럼 검색 불가)"
             },
             {
               "name": "bidNtceNm",
@@ -28220,8 +28465,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoCnstwkPPSSrch02",
@@ -28229,7 +28475,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoCnstwkPPSSrch02",
           "status": "mvp-ready",
           "feature_sqno": 11,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 공사부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -28270,15 +28516,6 @@
               "description": "검색하고자하는 업종명\n※ 업종명 일부 입력시에도 조회 가능\n( 연계건의 경우 : 면허제한목록(lcnsLmttList) 내 업종명으로 검색)"
             },
             {
-              "name": "masYn",
-              "name_ko": "다수공급경쟁자여부",
-              "type": "string",
-              "required": false,
-              "length": 1,
-              "example": "N",
-              "description": "검색하고자하는 다수공급경쟁자여부\n(공사업무의 경우 해당 컬럼 검색 불가)"
-            },
-            {
               "name": "inqryEndDt",
               "name_ko": "조회종료일시",
               "type": "string",
@@ -28295,15 +28532,6 @@
               "length": 200,
               "example": "국토교통부 서울지방국토관리청 수원국토관리사무소",
               "description": "검색하고자하는 공고기관명\n※ 공고기관명 일부 입력시에도 조회 가능"
-            },
-            {
-              "name": "dtilPrdctClsfcNo",
-              "name_ko": "세부품명번호",
-              "type": "string",
-              "required": false,
-              "length": 10,
-              "example": "1012159801",
-              "description": "검색하고자하는 세부품명번호\n(공사업무의 경우 해당 컬럼 검색 불가)"
             },
             {
               "name": "prcrmntReqNo",
@@ -28661,8 +28889,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancSubsiCnsttyIndstrytyListInfo02",
@@ -28670,14 +28899,104 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancSubsiCnsttyIndstrytyListInfo02",
           "status": "schema-pending",
           "description": "",
-          "request_params": [],
+          "request_params": [
+            {
+              "name": "numOfRows",
+              "name_ko": "한 페이지 결과 수",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "10",
+              "description": "한 페이지 결과 수",
+              "default": 10
+            },
+            {
+              "name": "pageNo",
+              "name_ko": "페이지 번호",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "1",
+              "description": "페이지 번호",
+              "default": 1
+            },
+            {
+              "name": "ServiceKey",
+              "name_ko": "ServiceKey",
+              "type": "string",
+              "required": true,
+              "length": 40,
+              "example": "공공데이터포탈에서 받은 인증키",
+              "description": "공공데이터포탈에서 받은 인증키",
+              "source": "env",
+              "env": "G2B_SHOPPING_MALL_PRDCT_INFO_API_KEY",
+              "placeholder": "[api key]"
+            },
+            {
+              "name": "type",
+              "name_ko": "타입",
+              "type": "string",
+              "required": false,
+              "length": 4,
+              "example": "json",
+              "description": "오픈API 리턴 타입을 JSON으로 받고 싶을 경우 'json' 으로 지정",
+              "default": "json"
+            },
+            {
+              "name": "inqryDiv",
+              "name_ko": "조회구분",
+              "type": "string",
+              "required": true,
+              "length": 1,
+              "example": "1",
+              "description": "검색하고자하는 조회구분 1:공고게시일시 2:입찰공고번호",
+              "default": "1"
+            },
+            {
+              "name": "inqryBgnDt",
+              "name_ko": "조회시작일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607010000",
+              "description": "검색하고자하는 조회시작일시"
+            },
+            {
+              "name": "inqryEndDt",
+              "name_ko": "조회종료일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202607102359",
+              "description": "검색하고자하는 조회종료일시"
+            },
+            {
+              "name": "bidNtceNo",
+              "name_ko": "입찰공고번호",
+              "type": "string",
+              "required": false,
+              "length": 11,
+              "example": "R26BK01606866",
+              "description": "검색하고자 하는 입찰공고번호(조회구분이 '2'인 경우 필수)"
+            },
+            {
+              "name": "bidNtceOrd",
+              "name_ko": "입찰공고차수",
+              "type": "string",
+              "required": false,
+              "length": 2,
+              "example": "000",
+              "description": "검색하고자 하는 입찰공고차수(조회구분이 2인 경우 필수)"
+            }
+          ],
           "sample_output_fields": [],
-          "notes": "Added in the 02 service version; request/response schema not yet captured.",
+          "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; response fields not yet captured.",
           "endpoint_check": "exists",
           "auth_param": "ServiceKey",
           "date_format": "",
-          "schema_status": "pending",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "missing"
         },
         {
           "operation": "getBidPblancListInfoServc02",
@@ -28685,7 +29004,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoServc02",
           "status": "mvp-ready",
           "feature_sqno": 2,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 용역부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -28973,8 +29292,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoFrgcpt02",
@@ -28982,7 +29302,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoFrgcpt02",
           "status": "mvp-ready",
           "feature_sqno": 3,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 외자 부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -29270,8 +29590,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoThng02",
@@ -29279,7 +29600,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoThng02",
           "status": "mvp-ready",
           "feature_sqno": 4,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -29567,8 +29888,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoCnstwkBsisAmount02",
@@ -29576,7 +29898,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoCnstwkBsisAmount02",
           "status": "mvp-ready",
           "feature_sqno": 6,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 공사의 기초금액정보 조회",
           "request_params": [
             {
@@ -29839,8 +30161,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListBidPrceCalclAInfo02",
@@ -29848,7 +30171,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListBidPrceCalclAInfo02",
           "status": "mvp-ready",
           "feature_sqno": 24,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시와 입찰공고번호를 입력하여 입찰가격산식 A값 적용 공고의 합산항목인 국민연금보험료, 국민건강보험료, 퇴직공제부금비, 노인장기요양보험료, 산업안전보건관리비, 안전관리비, 품질관리비, 품질관리비 적용대상여부등  입찰가격산식A정보 조회 ( 복수예가는 A값 공개 시 제공)",
           "request_params": [
             {
@@ -30026,8 +30349,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoFrgcptPPSSrch02",
@@ -30035,7 +30359,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoFrgcptPPSSrch02",
           "status": "mvp-ready",
           "feature_sqno": 13,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 외자부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -30467,8 +30791,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoThngPPSSrch02",
@@ -30476,7 +30801,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoThngPPSSrch02",
           "status": "mvp-ready",
           "feature_sqno": 14,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 물품부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -30908,8 +31233,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoThngBsisAmount02",
@@ -30917,7 +31243,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoThngBsisAmount02",
           "status": "mvp-ready",
           "feature_sqno": 5,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등 물품의 기초금액정보 조회",
           "request_params": [
             {
@@ -31150,8 +31476,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoServcBsisAmount02",
@@ -31159,7 +31486,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoServcBsisAmount02",
           "status": "mvp-ready",
           "feature_sqno": 7,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 기초금액 등록일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고명, 기초금액, 기초금액공개일시, 예비가격범위시작율, 평가기준금액, 난이도계수, 기타경비기준율 등의 용역의 기초금액정보 조회",
           "request_params": [
             {
@@ -31397,8 +31724,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoChgHstryThng02",
@@ -31406,7 +31734,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoChgHstryThng02",
           "status": "mvp-ready",
           "feature_sqno": 8,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 변경일시, 입찰공고번호를 입력하여 변경된 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 변경항목명, 변경전후값 등 물품 입찰공고변경 데이터 조회&lt;br/&gt;\n※ 변경이력 추출 대상 항목&lt;br/&gt;\nPQ신청서접수일시, 물품분류제한여부, 제조여부, 입찰서개시일시, 입찰서마감일시, 개찰일시, 입찰자격등록일시, 공동수급협정서마감일시, PQ신청서접수방법명, 참가가능지역, 면허제한코드, 설명회실시일시, 입찰참가제한여부, 공고서, 규격서, 공고규격화일, 공동수급구성방식코드, 입찰계약방법코드, 공동수급구성방식,실적신청서접수일시, 공고명, 재입찰허용여부, 실적신청서접수방법코드,예가방법구분코드, 집행관코드, 추첨복수예가개수, 배정예산금액,총예가개수, 추정가격, 내역입찰여부, 지사투찰허용여부",
           "request_params": [
             {
@@ -31574,8 +31902,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoChgHstryCnstwk02",
@@ -31583,7 +31912,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoChgHstryCnstwk02",
           "status": "mvp-ready",
           "feature_sqno": 9,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 변경일시, 입찰공고번호를 입력하여 변경된 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 변경항목명, 변경전후값 등 공사 입찰공고변경 데이터 조회&lt;br/&gt;\n※ 변경이력 추출 대상 항목&lt;br/&gt;\nPQ신청서접수일시, 물품분류제한여부, 제조여부, 입찰서개시일시, 입찰서마감일시, 개찰일시, 입찰자격등록일시, 공동수급협정서마감일시, PQ신청서접수방법명, 참가가능지역, 면허제한코드, 설명회실시일시, 입찰참가제한여부, 공고서, 규격서, 공고규격화일, 공동수급구성방식코드, 입찰계약방법코드, 공동수급구성방식,실적신청서접수일시, 공고명, 재입찰허용여부, 실적신청서접수방법코드,예가방법구분코드, 집행관코드, 추첨복수예가개수, 배정예산금액,총예가개수, 추정가격, 내역입찰여부, 지사투찰허용여부",
           "request_params": [
             {
@@ -31761,8 +32090,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoChgHstryServc02",
@@ -31770,7 +32100,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoChgHstryServc02",
           "status": "mvp-ready",
           "feature_sqno": 10,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 변경일시, 입찰공고번호를 입력하여 변경된 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 변경항목명, 변경전후값 등 용역 입찰공고변경 데이터 조회&lt;br/&gt;\n※ 변경이력 추출 대상 항목&lt;br/&gt;\nPQ신청서접수일시, 물품분류제한여부, 제조여부, 입찰서개시일시, 입찰서마감일시, 개찰일시, 입찰자격등록일시, 공동수급협정서마감일시, PQ신청서접수방법명, 참가가능지역, 면허제한코드, 설명회실시일시, 입찰참가제한여부, 공고서, 규격서, 공고규격화일, 공동수급구성방식코드, 입찰계약방법코드, 공동수급구성방식,실적신청서접수일시, 공고명, 재입찰허용여부, 실적신청서접수방법코드,예가방법구분코드, 집행관코드, 추첨복수예가개수, 배정예산금액,총예가개수, 추정가격, 내역입찰여부, 지사투찰허용여부",
           "request_params": [
             {
@@ -31938,8 +32268,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoLicenseLimit02",
@@ -31947,7 +32278,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoLicenseLimit02",
           "status": "mvp-ready",
           "feature_sqno": 15,
-          "day_max": 1000000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 제한그룹번호, 제한순번, 면허제한명, 허용업종목록, 등록일시를 포함한 면허제한정보 조회",
           "request_params": [
             {
@@ -32114,8 +32445,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoPrtcptPsblRgn02",
@@ -32123,7 +32455,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoPrtcptPsblRgn02",
           "status": "mvp-ready",
           "feature_sqno": 16,
-          "day_max": 1000000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 제한그룹번호, 참가가능지역명, 등록일시 등 참가가능지역정보조회",
           "request_params": [
             {
@@ -32275,8 +32607,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoThngPurchsObjPrdct02",
@@ -32284,7 +32617,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoThngPurchsObjPrdct02",
           "status": "mvp-ready",
           "feature_sqno": 17,
-          "day_max": 1000000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, 물품분류번호, 품명, 세부품명번호, 세부품명, 수량, 단위, 단가, 납품기한일시, 납품일수, 납품장소, 인도조건명 등 물품 구매대상물품 정보 조회",
           "request_params": [
             {
@@ -32501,8 +32834,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoServcPurchsObjPrdct02",
@@ -32510,7 +32844,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoServcPurchsObjPrdct02",
           "status": "mvp-ready",
           "feature_sqno": 18,
-          "day_max": 1000000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, 물품분류번호, 품명, 세부품명번호, 세부품명, 수량, 단위, 단가, 납품기한일시, 납품일수, 납품장소, 인도조건명 등 용역 구매대상물품 정보 조회",
           "request_params": [
             {
@@ -32727,8 +33061,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02",
@@ -32736,7 +33071,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoFrgcptPurchsObjPrdct02",
           "status": "mvp-ready",
           "feature_sqno": 19,
-          "day_max": 1000000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 물품순번, 수요기관코드, 수요기관명, HSK번호, 세부품명번호, 세부품명, 수량, 단위, 배정금액, 배정금액통화 등 외자 구매대상물품 정보 조회",
           "request_params": [
             {
@@ -32953,8 +33288,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoEorderAtchFileInfo02",
@@ -32962,7 +33298,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoEorderAtchFileInfo02",
           "status": "mvp-ready",
           "feature_sqno": 20,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시범위(통합입찰공고)와 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 첨부순번, e발주문서구분명, e발주첨부파일명, e발주첨부파일URL 정보 조회",
           "request_params": [
             {
@@ -33105,8 +33441,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoEtc02",
@@ -33114,7 +33451,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoEtc02",
           "status": "mvp-ready",
           "feature_sqno": 21,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시, 입찰공고번호를 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 기타공고정보를 조회",
           "request_params": [
             {
@@ -33402,8 +33739,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListInfoEtcPPSSrch02",
@@ -33411,7 +33749,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoEtcPPSSrch02",
           "status": "mvp-ready",
           "feature_sqno": 22,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 공고게시일시, 개찰일시 범위, 공고기관, 수요기관, 참조번호 등을 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 공사부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -33489,24 +33827,6 @@
               "length": 105,
               "example": "0",
               "description": "검색하고자하는 참조번호"
-            },
-            {
-              "name": "presmptPrceBgn",
-              "name_ko": "추정가격시작",
-              "type": "string",
-              "required": false,
-              "length": 25,
-              "example": "8500000",
-              "description": "검색하고자하는 추정가격범위시작금액이상(원화,원)"
-            },
-            {
-              "name": "presmptPrceEnd",
-              "name_ko": "추정가격종료",
-              "type": "string",
-              "required": false,
-              "length": 25,
-              "example": "8500000",
-              "description": "검색하고자하는 추정가격범위종료금액이하(원화,원)"
             },
             {
               "name": "inqryEndDt",
@@ -33762,8 +34082,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListPPIFnlRfpIssAtchFileInfo02",
@@ -33771,7 +34092,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListPPIFnlRfpIssAtchFileInfo02",
           "status": "mvp-ready",
           "feature_sqno": 23,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "낙찰자결정방법이 [경쟁적 대화에 의한 낙찰자 선정 낙찰방법] 일경우 검색조건에 등록일시, 입찰공고번호, 교부일시를 입력하여 혁신장터에서 교부된 최종제안요청서 첨부파일정보를 조회함",
           "request_params": [
             {
@@ -33924,8 +34245,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo02",
@@ -33933,7 +34255,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListEvaluationIndstrytyMfrcInfo02",
           "status": "mvp-ready",
           "feature_sqno": 25,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시와 입찰공고번호를 입력하여 입찰 평가대상주력분야의 건산법적용여부, 건설업역상호진출가능여부, 건설업역구분코드, 낙찰자선정적용기준코드, 공종유형명, 공사대상업종명, 업종주력분야명, 추정금액, 추정가격, 부가가치세, 평가비율을 조회",
           "request_params": [
             {
@@ -34111,8 +34433,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         },
         {
           "operation": "getBidPblancJntcontrctDutyRgnListInfo02",
@@ -34120,14 +34443,104 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancJntcontrctDutyRgnListInfo02",
           "status": "schema-pending",
           "description": "",
-          "request_params": [],
+          "request_params": [
+            {
+              "name": "numOfRows",
+              "name_ko": "한 페이지 결과 수",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "10",
+              "description": "한 페이지 결과 수",
+              "default": 10
+            },
+            {
+              "name": "pageNo",
+              "name_ko": "페이지 번호",
+              "type": "integer",
+              "required": false,
+              "length": 4,
+              "example": "1",
+              "description": "페이지 번호",
+              "default": 1
+            },
+            {
+              "name": "ServiceKey",
+              "name_ko": "ServiceKey",
+              "type": "string",
+              "required": true,
+              "length": 40,
+              "example": "공공데이터포탈에서 받은 인증키",
+              "description": "공공데이터포탈에서 받은 인증키",
+              "source": "env",
+              "env": "G2B_SHOPPING_MALL_PRDCT_INFO_API_KEY",
+              "placeholder": "[api key]"
+            },
+            {
+              "name": "type",
+              "name_ko": "타입",
+              "type": "string",
+              "required": false,
+              "length": 4,
+              "example": "json",
+              "description": "오픈API 리턴 타입을 JSON으로 받고 싶을 경우 'json' 으로 지정",
+              "default": "json"
+            },
+            {
+              "name": "inqryDiv",
+              "name_ko": "조회구분",
+              "type": "string",
+              "required": true,
+              "length": 1,
+              "example": "1",
+              "description": "검색하고자하는 조회구분 1:공고게시일시 2:입찰공고번호",
+              "default": "1"
+            },
+            {
+              "name": "inqryBgnDt",
+              "name_ko": "조회시작일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202603010000",
+              "description": "검색하고자하는 조회시작일시"
+            },
+            {
+              "name": "inqryEndDt",
+              "name_ko": "조회종료일시",
+              "type": "string",
+              "required": false,
+              "length": 12,
+              "example": "202603032359",
+              "description": "검색하고자하는 조회종료일시"
+            },
+            {
+              "name": "bidNtceNo",
+              "name_ko": "입찰공고번호",
+              "type": "string",
+              "required": false,
+              "length": 11,
+              "example": "R26BK01343362",
+              "description": "검색하고자 하는 입찰공고번호(조회구분이 '2'인 경우 필수)"
+            },
+            {
+              "name": "bidNtceOrd",
+              "name_ko": "입찰공고차수",
+              "type": "string",
+              "required": false,
+              "length": 2,
+              "example": "000",
+              "description": "검색하고자 하는 입찰공고차수(조회구분이 2인 경우 필수)"
+            }
+          ],
           "sample_output_fields": [],
-          "notes": "Added in the 02 service version; request/response schema not yet captured.",
+          "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; response fields not yet captured.",
           "endpoint_check": "exists",
           "auth_param": "ServiceKey",
           "date_format": "",
-          "schema_status": "pending",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "missing"
         },
         {
           "operation": "getBidPblancListInfoCnstwk02",
@@ -34135,7 +34548,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ad/BidPublicInfoService02/getBidPblancListInfoCnstwk02",
           "status": "mvp-ready",
           "feature_sqno": 1,
-          "day_max": 1000,
+          "day_max": 100000,
           "description": "검색조건에 등록일시, 입찰공고번호, 변경일시를 입력하여 나라장터와 연계기관의 입찰공고번호, 공고명, 발주기관, 수요기관, 계약체결방법명 등 공사부분의 입찰공고정보를 조회함",
           "request_params": [
             {
@@ -34423,8 +34836,9 @@
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
-          "schema_status": "carried_over_from_previous_version_unverified",
-          "daily_traffic_limit": 100000
+          "daily_traffic_limit": 100000,
+          "request_params_verified": "2026-11-09",
+          "response_fields_status": "carried_over_unverified"
         }
       ],
       "catalog_status": "mvp-ready",
@@ -46781,7 +47195,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtScsbidListSttus",
           "status": "mvp-ready",
           "feature_sqno": 1,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 조회구분, 조회시작일시, 조회종료일시, 입찰공고번호를 입력하여 업무구분코드 입찰공고번호, 입찰공고차수, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 실개찰일시, 참가업체수, 최종낙찰금액, 최종낙찰률, 최종낙찰업체명, 최종낙찰업체대표자명, 최종낙찰업체주소, 최종낙찰업체전화번호 등의 누리장터시스템에 등록된 낙찰 정보 조회",
@@ -47005,7 +47419,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtOpengResultListInfo",
           "status": "mvp-ready",
           "feature_sqno": 2,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 조회구분, 조회시작일시, 조회종료일시, 입찰공고번호를 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 개찰일시, 참가업체수, 진행구분코드명, 개찰업체정보, 결과코드, 결과메세지, 한 페이지 결과 수, 페이지 번호, 데이터 총 개수, 입찰공고차수, 입찰분류번호, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 개찰일시, 참가업체수, 진행구분코드명, 개찰업체정보 등의 누리장터시스템에 등록된 개찰결과 정보 조회",
@@ -47196,7 +47610,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtScsbidListSttusPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 3,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "나라장터 검색조건으로 업무구분코드 입찰공고번호, 입찰공고차수, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 실개찰일시, 참가업체수, 최종낙찰금액, 최종낙찰률, 최종낙찰업체명, 최종낙찰업체대표자명, 최종낙찰업체주소, 최종낙찰업체전화번호 등의 누리장터시스템에 등록된 낙찰 정보 조회",
@@ -47555,7 +47969,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtOpengResultListInfoPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 4,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "나라장터 검색조건을 입력하여 입찰공고번호, 입찰공고차수, 입찰분류번호, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 개찰일시, 참가업체수, 진행구분코드명, 개찰업체정보, 결과코드, 결과메세지, 한 페이지 결과 수, 페이지 번호, 데이터 총 개수, 입찰공고차수, 입찰분류번호, 재입찰번호, 입찰공고명, 수요기관코드, 수요기관명, 개찰일시, 참가업체수, 진행구분코드명, 개찰업체정보 등의 누리장터시스템에 등록된 개찰결과 정보 조회",
@@ -47884,7 +48298,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtOpengResultListInfoOpengCompt",
           "status": "mvp-ready",
           "feature_sqno": 5,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 입찰공고번호, 입찰공고차수, 재입찰번호를 입력하여 개찰결과구분명, 입찰공고번호, 입찰공고차수, 재입찰번호, 개찰순위, 투찰업체사업자등록번호, 투찰업체명, 투찰업체대표자명, 투찰금액, 투찰률, 비고, 투찰일시등 개찰완료 정보를 조회",
@@ -48071,7 +48485,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtOpengResultListInfoFailing",
           "status": "mvp-ready",
           "feature_sqno": 6,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 입찰공고번호, 입찰공고차수, 재입찰번호를 입력하여 개찰결과구분명, 입찰공고번호, 입찰공고차수, 재입찰번호, 유찰사유 등 유찰 정보를 조회",
@@ -48216,7 +48630,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtScsbidInfoService/getPrvtOpengResultListInfoRebid",
           "status": "mvp-ready",
           "feature_sqno": 7,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 입찰공고번호, 입찰공고차수, 재입찰번호를 입력하여 개찰결과구분명, 입찰공고번호, 입찰공고차수, 재입찰번호, 유찰사유 등 재입찰 정보를 조회",
@@ -48393,7 +48807,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtCntrctInfoService/getPrvtCntrctInfoList",
           "status": "mvp-ready",
           "feature_sqno": 1,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건을 등록일시, 통합계약번호로 하여 통합계약번호, 업무구분명, 확정계약번호, 계약참조번호, 계약명, 공동계약여부, 계약체결일자, 계약기간, 총계약금액 등의 누리장터시스템에 등록된 계약 정보 조회",
@@ -48674,7 +49088,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtCntrctInfoService/getPrvtCntrctInfoListPPSSrch",
           "status": "mvp-ready",
           "feature_sqno": 2,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDD",
           "description": "검색조건을 계약일자, 기관코드, 기관명, 계약번호, 공고번호로하여 통합계약번호, 업무구분명, 확정계약번호, 계약참조번호, 계약명, 공동계약여부, 계약체결일자, 계약기간, 총계약금액 등의 누리장터시스템에 등록된 계약 정보 조회",
@@ -49000,7 +49414,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtCntrctInfoService/getPrvtCntrctInfoListChgHstry",
           "status": "mvp-ready",
           "feature_sqno": 3,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건을 변경일시, 통합계약번호로 하여 통합계약번호, 업무구분명, 확정계약번호, 계약참조번호, 계약명, 공동계약여부, 계약체결일자, 계약기간, 총계약금액 등의 누리장터시스템에 등록된 계약변경정보 조회",
@@ -49281,7 +49695,7 @@
           "endpoint": "https://apis.data.go.kr/1230000/ao/PrvtCntrctInfoService/getPrvtCntrctInfoListDltHstry",
           "status": "mvp-ready",
           "feature_sqno": 4,
-          "day_max": 1000,
+          "day_max": 100000,
           "auth_param": "ServiceKey",
           "date_format": "YYYYMMDDHHMM",
           "description": "검색조건에 삭제일시, 통합계약번호를 입력하여 민간 계약삭제이력정보(삭제일시, 변경구분명, 통합계약번호, 확정계약번호, 계약참조번호) 조회",
@@ -50584,7 +50998,7 @@
     "operation_count": 195,
     "endpoint_exists": 195,
     "daily_traffic_limit_source": "data.go.kr 활용신청 현황 (운영계정) per-operation 일일 트래픽: 100000 for most services, 1000000 for usr_info and pub_data_opn_std.",
-    "schema_note": "Operations marked schema_status carried_over_from_previous_version_unverified keep the request/response schema of the previous service version; schema-pending operations have none yet. Neither has been validated against live responses.",
+    "schema_note": "The 42 operations of the 02 service versions (bid_public_info, thng_list_info) have request_params checked against data.go.kr 활용신청 현황 on 2026-11-09 (parameter names match except 3 PPSSrch operations that dropped parameters, and 5 new operations whose parameters were added). Their response fields (sample_output_fields) are carried over from the previous version or missing, and no response has been validated against live data.",
     "note": "endpoint_check reflects gateway routing only (NO_OPENAPI_SERVICE_ERROR vs key-required); it does not validate parameters or response contents."
   }
 }
