@@ -783,9 +783,16 @@
           "daily_traffic_limit": 100000,
           "notes": "등록/변경 일시 범위와 품명/물품식별번호/계약업체명으로 종합쇼핑몰 계약 품목을 조회한다.",
           "endpoint_check": "exists",
-          "output_field_count": 88,
+          "output_field_count": 89,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 88,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getUcntrctPrdctInfoList",
@@ -1537,7 +1544,14 @@
           "endpoint_check": "exists",
           "output_field_count": 88,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 88,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThptyUcntrctPrdctInfoList",
@@ -2289,7 +2303,14 @@
           "endpoint_check": "exists",
           "output_field_count": 88,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 88,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getDlvrReqInfoList",
@@ -2616,14 +2637,29 @@
               "sample": "13",
               "description": "본 납품요구의 차수와 직전차수를 비교하여 얼마만큼 증가 또는 감소했는지에 따라 수량이 결정되는 것으로 조회기간동안에 가감된 수량을 의미",
               "in_reference_doc": false
+            },
+            {
+              "name": "corpEntrprsDivNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "`inqryDiv=1` 날짜 범위 조회가 대표 happy-path이며 `YYYYMMDD` 형식의 `inqryBgnDate`/`inqryEndDate`를 사용한다.",
           "endpoint_check": "exists",
-          "output_field_count": 30,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 30,
+            "fields_added_from_live": [
+              "corpEntrprsDivNm"
+            ]
+          }
         },
         {
           "operation": "getDlvrReqDtlInfoList",
@@ -3022,7 +3058,14 @@
           "endpoint_check": "exists",
           "output_field_count": 39,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 39,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getShoppingMallPrdctInfoList",
@@ -3406,7 +3449,14 @@
           "endpoint_check": "exists",
           "output_field_count": 33,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 33,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getVntrPrdctOrderDealDtlsInfoList",
@@ -3630,7 +3680,14 @@
           "endpoint_check": "exists",
           "output_field_count": 14,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 14,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getSpcifyPrdlstPrcureInfoList",
@@ -4119,7 +4176,12 @@
           "endpoint_check": "exists",
           "output_field_count": 38,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getSpcifyPrdlstPrcureTotList",
@@ -4532,7 +4594,12 @@
           "endpoint_check": "exists",
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -4799,14 +4866,85 @@
               "description": "시설공통자재(토목)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시설공통자재 가격정보는 물품분류번호/품명/물품식별번호/규격명 중심 검색이다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListFcltyCmmnMtrilBildng",
@@ -5047,14 +5185,85 @@
               "description": "시설공통자재(건축)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시설공통자재 가격정보는 물품분류번호/품명/물품식별번호/규격명 중심 검색이다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListFcltyCmmnMtrilMchnEqp",
@@ -5295,14 +5504,85 @@
               "description": "시설공통자재(기계설비)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시설공통자재 가격정보는 물품분류번호/품명/물품식별번호/규격명 중심 검색이다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListFcltyCmmnMtrilElctyIrmc",
@@ -5543,14 +5823,85 @@
               "description": "시설공통자재(전기,정보통신)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시설공통자재 가격정보는 물품분류번호/품명/물품식별번호/규격명 중심 검색이다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListMrktCnstrctPcEngrk",
@@ -5798,14 +6149,78 @@
               "sample": "N/A",
               "description": "조경수목전용",
               "in_reference_doc": false
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시장시공가격 가격정보는 `prdctClsfcNo=0` 샘플로 정상 rows를 확인했다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListMrktCnstrctPcBildng",
@@ -6046,14 +6461,85 @@
               "description": "시장시공가격(건축)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시장시공가격 가격정보는 `prdctClsfcNo=0` 샘플로 정상 rows를 확인했다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getPriceInfoListMrktCnstrctPcMchnEqp",
@@ -6294,14 +6780,85 @@
               "description": "시장시공가격(기계설비)의 결제조건",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "시장시공가격 가격정보는 `prdctClsfcNo=0` 샘플로 정상 rows를 확인했다.",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getCnsttyClsfcInfoList",
@@ -6513,7 +7070,14 @@
           "endpoint_check": "exists",
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getStdMarkUprcinfoList",
@@ -6678,7 +7242,14 @@
           "endpoint_check": "exists",
           "output_field_count": 12,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 12,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPriceInfoListFcltyCmmnMtrilTotal",
@@ -6912,15 +7483,86 @@
               "description": "",
               "length": 100,
               "occurrence": "0"
+            },
+            {
+              "name": "cntrctCorpNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctCorpTelNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "prodctFld",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "treekndNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specThtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbBtLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specWtrtbLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specBhtDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "specRootDmLen",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "DataHub URL/sample은 토목 시장시공가격 endpoint를 가리키지만 function name은 `getPriceInfoListFcltyCmmnMtrilTotal`; live Total endpoint는 날짜 범위 조회에서 `resultCode=00`으로 정상 응답하지만 검증 시점 rows는 0건이었다.",
           "date_format": "YYYYMMDD",
           "endpoint_check": "exists",
-          "output_field_count": 23,
+          "output_field_count": 32,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": [
+              "cntrctCorpNm",
+              "cntrctCorpTelNo",
+              "prodctFld",
+              "treekndNo",
+              "specThtLen",
+              "specWtrtbBtLen",
+              "specWtrtbLen",
+              "specBhtDmLen",
+              "specRootDmLen"
+            ]
+          }
         },
         {
           "operation": "getNetRsceinfoList",
@@ -7132,7 +7774,14 @@
           "endpoint_check": "exists",
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -7410,7 +8059,12 @@
           "endpoint_check": "exists",
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctProcssIntgOpenThng",
@@ -7662,7 +8316,12 @@
           "endpoint_check": "exists",
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctProcssIntgOpenServc",
@@ -7914,7 +8573,12 @@
           "endpoint_check": "exists",
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctProcssIntgOpenCnstwk",
@@ -8166,7 +8830,12 @@
           "endpoint_check": "exists",
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -8312,7 +8981,14 @@
           "endpoint_check": "exists",
           "output_field_count": 6,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -8449,7 +9125,12 @@
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getThngGuidanceMapInfo02",
@@ -8558,7 +9239,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 7
+          "output_field_count": 7,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdlstSearch02",
@@ -8814,7 +9502,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 17
+          "output_field_count": 17,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 17,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoPrdnmSearch02",
@@ -8957,7 +9652,12 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 8
+          "output_field_count": 8,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getThngPrdnmLocplcAccotListInfoInfoLocplcSearch02",
@@ -9151,7 +9851,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 14
+          "output_field_count": 14,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 14,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngListClChangeHistInfo02",
@@ -9311,7 +10018,12 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 10
+          "output_field_count": 10,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getLsfgdNdPrdlstChghstlnfoSttus02",
@@ -9450,7 +10162,12 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 7
+          "output_field_count": 7,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getPrdctClsfcNoUnit2Info02",
@@ -9579,7 +10296,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrdctClsfcNoUnit4Info02",
@@ -9708,7 +10432,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrdctClsfcNoUnit6Info02",
@@ -9837,7 +10568,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrdctClsfcNoUnit8Info02",
@@ -9966,7 +10704,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrdctClsfcNoUnit10Info02",
@@ -10095,7 +10840,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 6
+          "output_field_count": 6,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrdctClsfcNoChgHstry02",
@@ -10260,7 +11012,14 @@
           "endpoint_check": "exists",
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.2_2026-05",
-          "output_field_count": 12
+          "output_field_count": 12,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 12,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -10482,7 +11241,14 @@
           "endpoint_check": "exists",
           "output_field_count": 12,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 12,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -10581,7 +11347,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 20,
+          "output_field_count": 22,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -10738,7 +11504,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusCnstwk",
@@ -10958,7 +11731,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusServc",
@@ -11178,7 +11958,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusFrgcpt",
@@ -11251,7 +12038,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 20,
+          "output_field_count": 21,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -11403,7 +12190,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoThng",
@@ -11476,7 +12270,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 16,
+          "output_field_count": 17,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -11600,7 +12394,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoCnstwk",
@@ -11673,7 +12474,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 16,
+          "output_field_count": 17,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -11797,7 +12598,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoServc",
@@ -11870,7 +12678,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 16,
+          "output_field_count": 17,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -11994,7 +12802,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoFrgcpt",
@@ -12067,7 +12882,7 @@
               "description": "조회구분이 입찰공고번호인 경우 필수"
             }
           ],
-          "output_field_count": 16,
+          "output_field_count": 17,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -12191,7 +13006,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoThngPreparPcDetail",
@@ -12264,7 +13086,7 @@
               "description": "조회구분이 2인 경우 필수"
             }
           ],
-          "output_field_count": 19,
+          "output_field_count": 20,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -12409,7 +13231,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoCnstwkPreparPcDetail",
@@ -12482,7 +13311,7 @@
               "description": "조회구분이 2인 경우 필수"
             }
           ],
-          "output_field_count": 19,
+          "output_field_count": 21,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -12632,7 +13461,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoServcPreparPcDetail",
@@ -12705,7 +13541,7 @@
               "description": "조회구분이 2인 경우 필수"
             }
           ],
-          "output_field_count": 19,
+          "output_field_count": 21,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -12855,7 +13691,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoFrgcptPreparPcDetail",
@@ -12928,7 +13771,7 @@
               "description": "조회구분이 2인 경우 필수"
             }
           ],
-          "output_field_count": 19,
+          "output_field_count": 21,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -13078,7 +13921,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoOpengCompt",
@@ -13294,7 +14144,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getOpengResultListInfoFailing",
@@ -13412,7 +14267,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getOpengResultListInfoRebid",
@@ -13556,7 +14416,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getScsbidListSttusThngPPSSrch",
@@ -13871,7 +14736,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusCnstwkPPSSrch",
@@ -14186,7 +15058,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusServcPPSSrch",
@@ -14501,7 +15380,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getScsbidListSttusFrgcptPPSSrch",
@@ -14821,7 +15707,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getOpengResultListInfoThngPPSSrch",
@@ -15108,7 +15999,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoCnstwkPPSSrch",
@@ -15395,7 +16293,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoServcPPSSrch",
@@ -15682,7 +16587,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOpengResultListInfoFrgcptPPSSrch",
@@ -15969,7 +16881,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -16364,9 +17283,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 39,
+          "output_field_count": 41,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 39,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListThngDetail",
@@ -16585,7 +17511,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 19,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListThngPPSSrch",
@@ -17032,9 +17965,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 39,
+          "output_field_count": 41,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 39,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListThngChgHstry",
@@ -17358,7 +18298,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 34,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListThngDltHstry",
@@ -17493,7 +18438,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListCnstwk",
@@ -17876,6 +18826,13 @@
               "name": "pubPrcrmntMidClsfcNm",
               "name_ko": "공공조달중분류명",
               "in_reference_doc": false
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntLrgclsfcNm"
             }
           ],
           "default_params": {
@@ -17883,9 +18840,18 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 43,
+          "output_field_count": 45,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 43,
+            "fields_added_from_live": [
+              "pubPrcrmntLrgClsfcNm"
+            ]
+          }
         },
         {
           "operation": "getCntrctInfoListCnstwkServcInfo",
@@ -17993,7 +18959,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListCnstwkPPSSrch",
@@ -18464,6 +19437,13 @@
               "name": "pubPrcrmntMidClsfcNm",
               "name_ko": "공공조달중분류명",
               "in_reference_doc": false
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntLrgclsfcNm"
             }
           ],
           "default_params": {
@@ -18471,9 +19451,18 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 43,
+          "output_field_count": 45,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 43,
+            "fields_added_from_live": [
+              "pubPrcrmntLrgClsfcNm"
+            ]
+          }
         },
         {
           "operation": "getCntrctInfoListCnstwkChgHstry",
@@ -18825,7 +19814,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 38,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListCnstwkDltHstry",
@@ -18960,7 +19954,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListServc",
@@ -19336,6 +20335,13 @@
               "name": "pubPrcrmntMidClsfcNm",
               "name_ko": "공공조달중분류명",
               "in_reference_doc": false
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntLrgclsfcNm"
             }
           ],
           "default_params": {
@@ -19343,9 +20349,18 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 42,
+          "output_field_count": 44,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 42,
+            "fields_added_from_live": [
+              "pubPrcrmntLrgClsfcNm"
+            ]
+          }
         },
         {
           "operation": "getCntrctInfoListGnrlServcServcInfo",
@@ -19456,9 +20471,16 @@
           ],
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 7,
+          "output_field_count": 8,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListTechServcServcInfo",
@@ -19566,7 +20588,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListServcPPSSrch",
@@ -20042,9 +21071,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 42,
+          "output_field_count": 44,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 42,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListServcChgHstry",
@@ -20389,7 +21425,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 37,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListServcDltHstry",
@@ -20524,7 +21565,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListFrgcpt",
@@ -20855,7 +21901,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 35,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 35,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListFrgcptDetail",
@@ -21088,7 +22141,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 21,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListFrgcptPPSSrch",
@@ -21499,7 +22559,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 35,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 35,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getCntrctInfoListFrgcptChgHstry",
@@ -21823,7 +22890,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 34,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctInfoListFrgcptDltHstry",
@@ -21958,7 +23030,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -22530,7 +23607,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getOrderPlanSttusListCnstwk",
@@ -23071,7 +24153,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getOrderPlanSttusListServc",
@@ -23612,7 +24699,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getOrderPlanSttusListFrgcpt",
@@ -24153,7 +25245,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getOrderPlanSttusListThngPPSSrch",
@@ -24713,9 +25810,16 @@
           ],
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 59,
+          "output_field_count": 61,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 59,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getOrderPlanSttusListCnstwkPPSSrch",
@@ -25285,7 +26389,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getOrderPlanSttusListServcPPSSrch",
@@ -25855,7 +26964,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getOrderPlanSttusListFrgcptPPSSrch",
@@ -26417,7 +27531,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 59,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -26700,7 +27819,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getInsttAcctoThngListInfoThng",
@@ -26949,9 +28075,16 @@
           "notes": "data.g2b.go.kr 상세 메타데이터 기준으로 요청변수와 제공자료 컬럼을 반영했다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 22,
+          "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngDetailMetaInfoThng",
@@ -27209,9 +28342,16 @@
           "notes": "data.g2b.go.kr 상세 메타데이터 기준으로 요청변수와 제공자료 컬럼을 반영했다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 22,
+          "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoFrgcpt",
@@ -27456,7 +28596,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getInsttAcctoThngListInfoFrgcpt",
@@ -27700,7 +28847,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngDetailMetaInfoFrgcpt",
@@ -27935,7 +29089,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoServc",
@@ -28187,7 +29348,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getInsttAcctoThngListInfoServc",
@@ -28438,7 +29606,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngDetailMetaInfoServc",
@@ -28698,7 +29873,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoCnstwk",
@@ -28943,7 +30125,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getInsttAcctoThngListInfoCnstwk",
@@ -29187,7 +30376,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getThngDetailMetaInfoCnstwk",
@@ -29422,7 +30618,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoThngPPSSrch",
@@ -29746,7 +30949,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoFrgcptPPSSrch",
@@ -30054,7 +31264,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoServcPPSSrch",
@@ -30378,7 +31595,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngInfoCnstwkPPSSrch",
@@ -30677,7 +31901,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 22,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngOpinionInfoThng",
@@ -30880,7 +32111,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 16,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngOpinionInfoFrgcpt",
@@ -31074,7 +32312,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 16,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngOpinionInfoServc",
@@ -31277,7 +32522,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 16,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPublicPrcureThngOpinionInfoCnstwk",
@@ -31480,7 +32732,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 16,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 16,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -31655,7 +32914,14 @@
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.3_2026-10-22",
-          "output_field_count": 5
+          "output_field_count": 5,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 5,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoAtchFileInfo02",
@@ -31827,7 +33093,14 @@
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.3_2026-10-22",
-          "output_field_count": 8
+          "output_field_count": 8,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoServcPPSSrch02",
@@ -32053,7 +33326,7 @@
               "default": "json"
             }
           ],
-          "output_field_count": 113,
+          "output_field_count": 116,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -32845,13 +34118,44 @@
               "description": "",
               "length": 40,
               "occurrence": "0"
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntLrgclsfcNm"
+            },
+            {
+              "name": "pubPrcrmntMidClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntMidclsfcNm"
+            },
+            {
+              "name": "pubPrcrmntClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 114,
+            "fields_added_from_live": [
+              "pubPrcrmntLrgClsfcNm",
+              "pubPrcrmntMidClsfcNm",
+              "pubPrcrmntClsfcNm"
+            ]
+          }
         },
         {
           "operation": "getBidPblancListInfoCnstwkPPSSrch02",
@@ -34076,7 +35380,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 143,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancSubsiCnsttyIndstrytyListInfo02",
@@ -34232,7 +35543,14 @@
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
           "response_fields_status": "reference_doc_v1.3_2026-10-22",
-          "output_field_count": 7
+          "output_field_count": 7,
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoServc02",
@@ -34323,7 +35641,7 @@
               "default": "json"
             }
           ],
-          "output_field_count": 114,
+          "output_field_count": 116,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -35122,13 +36440,37 @@
               "description": "",
               "length": 40,
               "occurrence": "0"
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntLrgclsfcNm"
+            },
+            {
+              "name": "pubPrcrmntMidClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "pubPrcrmntMidclsfcNm"
             }
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 114,
+            "fields_added_from_live": [
+              "pubPrcrmntLrgClsfcNm",
+              "pubPrcrmntMidClsfcNm"
+            ]
+          }
         },
         {
           "operation": "getBidPblancListInfoFrgcpt02",
@@ -35905,7 +37247,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 97,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoThng02",
@@ -36710,7 +38059,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 101,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoCnstwkBsisAmount02",
@@ -36801,7 +38157,7 @@
               "default": "json"
             }
           ],
-          "output_field_count": 32,
+          "output_field_count": 33,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -37038,7 +38394,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 32,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListBidPrceCalclAInfo02",
@@ -37129,7 +38492,7 @@
               "description": "검색하고자 하는 입찰공고번호\n(조회구분 '2' 선택시 필수)"
             }
           ],
-          "output_field_count": 6,
+          "output_field_count": 18,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -37232,13 +38595,35 @@
               "name_ko": "퇴직공제부금비",
               "description": "퇴직공제부금비(원화,원)",
               "in_reference_doc": false
+            },
+            {
+              "name": "smkpAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "smkpAmtYn",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 15,
+            "fields_added_from_live": [
+              "smkpAmt",
+              "smkpAmtYn"
+            ]
+          }
         },
         {
           "operation": "getBidPblancListInfoFrgcptPPSSrch02",
@@ -38159,7 +39544,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 97,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoThngPPSSrch02",
@@ -39108,7 +40500,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 101,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoThngBsisAmount02",
@@ -39374,7 +40773,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 24,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoServcBsisAmount02",
@@ -39654,7 +41060,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 26,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoChgHstryThng02",
@@ -39829,7 +41242,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoChgHstryCnstwk02",
@@ -39920,7 +41340,7 @@
               "default": "json"
             }
           ],
-          "output_field_count": 11,
+          "output_field_count": 13,
           "sample_output_fields": [
             {
               "name": "bsnsDivNm",
@@ -40016,7 +41436,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoChgHstryServc02",
@@ -40191,7 +41618,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoLicenseLimit02",
@@ -40361,7 +41795,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 9,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoPrtcptPsblRgn02",
@@ -40510,7 +41951,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoThngPurchsObjPrdct02",
@@ -40750,7 +42198,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoServcPurchsObjPrdct02",
@@ -40990,7 +42445,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 19,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoFrgcptPurchsObjPrdct02",
@@ -41090,7 +42552,7 @@
               "default": "json"
             }
           ],
-          "output_field_count": 14,
+          "output_field_count": 22,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -41243,7 +42705,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 14,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoEorderAtchFileInfo02",
@@ -41383,7 +42852,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoEtc02",
@@ -41474,7 +42950,7 @@
               "description": "검색하고자하는 등록일시 조회종료일시 \"YYYYMMDDHHMM\"\n(조회구분 '1' 선택시 필수)"
             }
           ],
-          "output_field_count": 38,
+          "output_field_count": 39,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -41753,7 +43229,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 38,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListInfoEtcPPSSrch02",
@@ -41889,7 +43372,7 @@
               "default": "1"
             }
           ],
-          "output_field_count": 38,
+          "output_field_count": 39,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -42168,7 +43651,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22_plus_catalog_only_fields",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 38,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getBidPblancListPPIFnlRfpIssAtchFileInfo02",
@@ -42322,7 +43812,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getBidPblancListEvaluationIndstrytyMfrcInfo02",
@@ -42413,7 +43908,7 @@
               "default": 10
             }
           ],
-          "output_field_count": 18,
+          "output_field_count": 27,
           "sample_output_fields": [
             {
               "name": "pageNo",
@@ -42504,13 +43999,92 @@
               "name": "numOfRows",
               "name_ko": "한 페이지 결과 수",
               "description": "한 페이지 결과 수"
+            },
+            {
+              "name": "bidNtceDt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "ciblAplYn",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "CiblAplYn"
+            },
+            {
+              "name": "cnstrtWkaraMtltyAdvcPsblYn",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "CnstrtWkaraMtltyAdvcPsblYn"
+            },
+            {
+              "name": "cnstrtWkrarDivCd",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "CnstrtWkrarDivCd"
+            },
+            {
+              "name": "bidwinrSlctnBssCd",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "BidwinrSlctnBssCd"
+            },
+            {
+              "name": "cnsttyTyNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "CnsttyTyNm"
+            },
+            {
+              "name": "indstrytyMfrcFldNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "IndstrytyMfrcFldNm"
+            },
+            {
+              "name": "presmptAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "PresmptAmt"
+            },
+            {
+              "name": "evlRt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response",
+              "case_variant_of": "EvlRt"
             }
           ],
           "notes": "data.g2b.go.kr 상세 화면에서 추출한 요청변수 schema. status=mvp-ready는 날짜범위/조회구분 기반 샘플 호출 검증 대상이다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "carried_over_unverified"
+          "response_fields_status": "live_response_observed",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 14,
+            "fields_added_from_live": [
+              "bidNtceDt",
+              "ciblAplYn",
+              "cnstrtWkaraMtltyAdvcPsblYn",
+              "cnstrtWkrarDivCd",
+              "bidwinrSlctnBssCd",
+              "cnsttyTyNm",
+              "indstrytyMfrcFldNm",
+              "presmptAmt",
+              "evlRt"
+            ]
+          }
         },
         {
           "operation": "getBidPblancJntcontrctDutyRgnListInfo02",
@@ -42608,14 +44182,66 @@
               "description": "검색하고자 하는 입찰공고차수(조회구분이 2인 경우 필수)"
             }
           ],
-          "sample_output_fields": [],
+          "sample_output_fields": [
+            {
+              "name": "bidNtceNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "bidNtceOrd",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "ntceNticeDt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "sno",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "rgnDutyJntcontrctRt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "JntcontrctDutyRgnNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            }
+          ],
           "notes": "Added in the 02 service version; request parameters captured from data.go.kr 활용신청 현황 on 2026-11-09; not covered by reference document v1.3, so response fields are missing.",
           "endpoint_check": "exists",
           "auth_param": "ServiceKey",
           "date_format": "",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "missing"
+          "response_fields_status": "live_response_observed",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": [
+              "bidNtceNo",
+              "bidNtceOrd",
+              "ntceNticeDt",
+              "sno",
+              "rgnDutyJntcontrctRt",
+              "JntcontrctDutyRgnNm"
+            ]
+          },
+          "output_field_count": 6
         },
         {
           "operation": "getBidPblancListInfoCnstwk02",
@@ -43714,7 +45340,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "request_params_verified": "2026-11-09",
-          "response_fields_status": "reference_doc_v1.3_2026-10-22"
+          "response_fields_status": "reference_doc_v1.3_2026-10-22",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 143,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -44009,7 +45642,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 24,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 24,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListThngDetail",
@@ -44177,7 +45817,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListThngPPSSrch",
@@ -44499,7 +46144,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 24,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 24,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListCnstwk",
@@ -44800,7 +46452,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 30,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 30,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListCnstwkPPSSrch",
@@ -45137,7 +46796,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 30,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 30,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListGnrlServc",
@@ -45396,7 +47062,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 24,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 24,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListGnrlServcPPSSrch",
@@ -45718,7 +47391,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 24,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 24,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListTechServc",
@@ -45991,7 +47671,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 26,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 26,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListTechServcPPSSrch",
@@ -46284,14 +47971,57 @@
               "description": "입력일시 \"YYYY-MM-DD HH:MM:SS\"",
               "length": 19,
               "occurrence": "1"
+            },
+            {
+              "name": "thtmContrctAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cnstwkPrearngAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cnstwkConstGvspAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cnstwkPrtmConrAmt",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "presmptPrce",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "notes": "inqryDiv=1은 입력일시/접수일시 기준 기간 조회, inqryDiv=2는 조달요청번호(prcrmntReqNo) 기준 조회 패턴이다. 나라장터 검색조건형 operation으로 기관/접수지청/품목분류/요청구분/규격서 여부 등 추가 검색조건을 지원한다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 26,
+          "output_field_count": 31,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 30,
+            "fields_added_from_live": [
+              "thtmContrctAmt",
+              "cnstwkPrearngAmt",
+              "cnstwkConstGvspAmt",
+              "cnstwkPrtmConrAmt",
+              "presmptPrce"
+            ]
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListFrgcpt",
@@ -46459,7 +48189,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 11,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListFrgcptDetail",
@@ -46676,7 +48413,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 21,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrcrmntReqInfoListFrgcptPPSSrch",
@@ -46889,7 +48631,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 11,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -47034,7 +48783,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getInsttDivAccotPrcrmntSttus",
@@ -47281,7 +49035,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 25,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getEntrprsDivAccotPrcrmntSttus",
@@ -47472,7 +49231,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 17,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getCntrctMthdAccotSttus",
@@ -47649,7 +49413,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getRgnLmtSttus",
@@ -47777,7 +49546,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 8,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getRgnDutyCmmnCntrctSttus",
@@ -47905,7 +49679,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 8,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrcrmntObjectBsnsObjAccotSttus",
@@ -48082,7 +49861,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getDminsttAccotEntrprsDivAccotArslt",
@@ -48309,7 +50093,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 17,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getDminsttAccotCntrctMthdAccotArslt",
@@ -48536,7 +50325,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 17,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getDminsttAccotBsnsObjAccotArslt",
@@ -48749,7 +50543,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getDminsttAccotSystmTyAccotArslt",
@@ -48948,7 +50747,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 13,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrcrmntEntrprsAccotCntrctMthdAccotArslt",
@@ -49166,7 +50970,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 17,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrcrmntEntrprsAccotBsnsObjAccotArslt",
@@ -49370,7 +51179,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrdctIdntNoServcAccotArslt",
@@ -49574,7 +51388,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 15,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -50195,7 +52014,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoThng",
@@ -50783,7 +52609,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoCnstwk",
@@ -51371,7 +53204,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoEtc",
@@ -51952,7 +53792,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 70,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoLicenseLimit",
@@ -52101,7 +53946,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoPrtcptPsblRgn",
@@ -52248,9 +54100,16 @@
           "notes": "면허제한/참가가능지역 부가정보 조회 operation. 날짜 조회 외에 bidNtceNo 및 bidNtceOrd 조건을 지원한다. 실제 JSON 검증에서 제공자료 메타데이터와 달리 prtcptPsblRgnNm 필드가 반환되는 것을 확인했다.",
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 5,
+          "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 5,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoServcPPSSrch",
@@ -52982,7 +54841,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoThngPPSSrch",
@@ -53714,7 +55580,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoCnstwkPPSSrch",
@@ -54446,7 +56319,14 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 71,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 71,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtBidPblancListInfoEtcPPSSrch",
@@ -55171,7 +57051,12 @@
           "daily_traffic_limit": 100000,
           "output_field_count": 70,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -55398,7 +57283,12 @@
           "daily_traffic_limit": 1000000,
           "output_field_count": 17,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getDminsttInfo02",
@@ -55688,7 +57578,14 @@
           "daily_traffic_limit": 1000000,
           "output_field_count": 28,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 28,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntCorpBasicInfo02",
@@ -55936,7 +57833,14 @@
           "daily_traffic_limit": 1000000,
           "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 23,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrcrmntCorpIndstrytyInfo02",
@@ -56086,7 +57990,12 @@
           "daily_traffic_limit": 1000000,
           "output_field_count": 10,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getPrcrmntCorpSplyPrdctInfo02",
@@ -56215,7 +58124,12 @@
           "daily_traffic_limit": 1000000,
           "output_field_count": 7,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -56456,7 +58370,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getPrvtOpengResultListInfo",
@@ -56630,7 +58549,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtScsbidListSttusPPSSrch",
@@ -56976,7 +58902,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrvtOpengResultListInfoPPSSrch",
@@ -57294,7 +59225,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 11,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtOpengResultListInfoOpengCompt",
@@ -57465,7 +59403,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 12,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtOpengResultListInfoFailing",
@@ -57587,7 +59532,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 5,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtOpengResultListInfoRebid",
@@ -57716,7 +59668,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 6,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -58021,7 +59980,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 26,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtCntrctInfoListPPSSrch",
@@ -58345,7 +60311,14 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 26,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getPrvtCntrctInfoListChgHstry",
@@ -58624,7 +60597,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         },
         {
           "operation": "getPrvtCntrctInfoListDltHstry",
@@ -58756,7 +60734,12 @@
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "empty_result"
+          }
         }
       ],
       "catalog_status": "mvp-ready"
@@ -59225,7 +61208,14 @@
           "endpoint_check": "exists",
           "output_field_count": 53,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 53,
+            "fields_added_from_live": []
+          }
         },
         {
           "operation": "getDataSetOpnStdScsbidInfo",
@@ -59572,7 +61562,12 @@
           "endpoint_check": "exists",
           "output_field_count": 38,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "not_verified",
+            "reason": "call_error:unknown"
+          }
         },
         {
           "operation": "getDataSetOpnStdCntrctInfo",
@@ -59952,7 +61947,14 @@
           "endpoint_check": "exists",
           "output_field_count": 44,
           "response_fields_status": "reference_doc_2026-11",
-          "request_params_verified": "2026-11-09"
+          "request_params_verified": "2026-11-09",
+          "live_response_check": {
+            "date": "2026-11-10",
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 44,
+            "fields_added_from_live": []
+          }
         }
       ],
       "catalog_status": "mvp-ready",
@@ -59966,11 +61968,20 @@
     "operation_count": 195,
     "endpoint_exists": 195,
     "daily_traffic_limit_source": "data.go.kr 활용신청 현황 (운영계정) per-operation 일일 트래픽: 100000 for most services, 1000000 for usr_info and pub_data_opn_std.",
-    "schema_note": "Request parameter names of all operations in the 18 services were compared with data.go.kr 활용신청 현황 (selectParamterList) on 2026-11-09; operations with request_params_verified carry that check (names only, required flags in the provider reference documents are not reliable). Response fields of operations with response_fields_status reference_doc_* come from the provider's OpenAPI reference documents (envelope fields resultCode/resultMsg/numOfRows/pageNo/totalCount excluded); fields marked in_reference_doc=false exist only in the earlier catalog and were kept so privacy checks do not lose them. Operations marked carried_over_unverified or missing have no reference-document coverage. No response has been validated against live data.",
+    "schema_note": "Request parameter names of all operations in the 18 services were compared with data.go.kr 활용신청 현황 (selectParamterList) on 2026-11-09; operations with request_params_verified carry that check (names only, required flags in the provider reference documents are not reliable). Response fields of operations with response_fields_status reference_doc_* come from the provider's OpenAPI reference documents (envelope fields resultCode/resultMsg/numOfRows/pageNo/totalCount excluded); fields marked in_reference_doc=false exist only in the earlier catalog and were kept so privacy checks do not lose them. Operations marked carried_over_unverified or missing have no reference-document coverage. Operations with live_response_check.result other than not_verified were compared with one live response item on 2026-11-10 (field names only).",
     "note": "endpoint_check reflects gateway routing only (NO_OPENAPI_SERVICE_ERROR vs key-required); it does not validate parameters or response contents.",
     "schema_counts": {
       "request_params_verified_ops": 195,
       "response_fields_from_reference_doc_ops": 193
+    },
+    "live_response_check": {
+      "date": "2026-11-10",
+      "method": "one call per operation with numOfRows=1 using the operator's own key; only field names compared, no values stored",
+      "operations_total": 195,
+      "verified_with_data": 139,
+      "empty_result": 44,
+      "call_error": 12,
+      "note": "A single sampled item can omit optional fields, so catalog fields absent from the sample are not treated as wrong. Fields present in the live response but missing from the catalog were added with source=live_response."
     }
   }
 }
