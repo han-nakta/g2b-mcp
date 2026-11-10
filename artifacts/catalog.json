@@ -4169,18 +4169,29 @@
               "sample": "20210806",
               "description": "물품 등이 납품되어야 하는 기한",
               "in_reference_doc": false
+            },
+            {
+              "name": "prdctSno",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "daily_traffic_limit": 100000,
           "notes": "DataHub sample uses `inqryDiv=1`, `inqryBgnDate=20220101`, `inqryEndDate=20220430`, `inqryPrdctDiv=1`, `prdctClsfcNoNm=책상`.",
           "endpoint_check": "exists",
-          "output_field_count": 38,
+          "output_field_count": 40,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 39,
+            "fields_added_from_live": [
+              "prdctSno"
+            ],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -4592,13 +4603,16 @@
           "daily_traffic_limit": 100000,
           "notes": "Although DataHub sample omits `inqryDiv`, live JSON calls require `inqryDiv=1`; sample `prdctClsfcNo=50467001` with 2022-04 window returns rows. DataHub metadata labels the response selector as `Type`, but live calls were verified with lowercase `type=json`.",
           "endpoint_check": "exists",
-          "output_field_count": 22,
+          "output_field_count": 23,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 22,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         }
       ],
@@ -8063,7 +8077,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -8319,8 +8333,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 21,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -8577,7 +8594,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -8834,7 +8851,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         }
       ],
@@ -9129,7 +9146,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -9655,8 +9672,11 @@
           "output_field_count": 8,
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 8,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -10021,8 +10041,11 @@
           "output_field_count": 10,
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 10,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -10165,8 +10188,11 @@
           "output_field_count": 7,
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -14147,8 +14173,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -14271,7 +14300,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -14420,7 +14449,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -15555,7 +15584,7 @@
               "required": false
             }
           ],
-          "output_field_count": 20,
+          "output_field_count": 21,
           "sample_output_fields": [
             {
               "name": "bidNtceNo",
@@ -15710,8 +15739,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 20,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -18289,6 +18321,36 @@
               "description": "",
               "length": 1,
               "occurrence": "0"
+            },
+            {
+              "name": "pubPrcrmntClsfcNo",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "pubPrcrmntClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "pubPrcrmntMidClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "pubPrcrmntLrgClsfcNm",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
+            },
+            {
+              "name": "cntrctDate",
+              "name_ko": "",
+              "description": "",
+              "source": "live_response"
             }
           ],
           "default_params": {
@@ -18296,13 +18358,22 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 34,
+          "output_field_count": 39,
           "response_fields_status": "reference_doc_2026-11",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "extra_fields_added",
+            "items_sampled": 1,
+            "live_field_count": 39,
+            "fields_added_from_live": [
+              "pubPrcrmntClsfcNo",
+              "pubPrcrmntClsfcNm",
+              "pubPrcrmntMidClsfcNm",
+              "pubPrcrmntLrgClsfcNm",
+              "cntrctDate"
+            ],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -18442,7 +18513,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -19818,7 +19889,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -19958,7 +20029,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -21429,7 +21500,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -21569,7 +21640,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -22894,7 +22965,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -23034,7 +23105,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         }
       ],
@@ -23605,13 +23676,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 59,
+          "output_field_count": 61,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 59,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -24151,13 +24225,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 59,
+          "output_field_count": 61,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 59,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -24697,13 +24774,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 59,
+          "output_field_count": 61,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 59,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -25243,13 +25323,16 @@
           },
           "endpoint_check": "exists",
           "daily_traffic_limit": 100000,
-          "output_field_count": 59,
+          "output_field_count": 61,
           "response_fields_status": "reference_doc_2026-11_plus_catalog_only_fields",
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 59,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -26393,7 +26476,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -26968,7 +27051,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -27535,7 +27618,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         }
       ],
@@ -43816,7 +43899,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -45820,8 +45903,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 15,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -48417,7 +48503,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -48787,7 +48873,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49039,7 +49125,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49235,7 +49321,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49417,7 +49503,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49550,7 +49636,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49683,7 +49769,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -49865,7 +49951,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -50097,7 +50183,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -50329,7 +50415,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -50547,7 +50633,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -50751,7 +50837,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -50974,7 +51060,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -51183,7 +51269,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -51392,7 +51478,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         }
       ],
@@ -53796,7 +53882,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         },
         {
@@ -57055,7 +57141,7 @@
           "live_response_check": {
             "date": "2026-11-10",
             "result": "not_verified",
-            "reason": "empty_result"
+            "reason": "empty_result_after_retries (service returned no rows for the windows and identifiers tried)"
           }
         }
       ],
@@ -57286,8 +57372,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 17,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -57993,8 +58082,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 10,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -58127,8 +58219,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 7,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         }
       ],
@@ -58373,8 +58468,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 15,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -58905,8 +59003,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 15,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -60600,8 +60701,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 26,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -60737,8 +60841,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "empty_result"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 5,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         }
       ],
@@ -61565,8 +61672,11 @@
           "request_params_verified": "2026-11-09",
           "live_response_check": {
             "date": "2026-11-10",
-            "result": "not_verified",
-            "reason": "call_error:unknown"
+            "result": "exact_match_no_extra_fields",
+            "items_sampled": 1,
+            "live_field_count": 38,
+            "fields_added_from_live": [],
+            "required_input_note": "needed chained identifiers or an operation-specific filter/window"
           }
         },
         {
@@ -61978,10 +62088,10 @@
       "date": "2026-11-10",
       "method": "one call per operation with numOfRows=1 using the operator's own key; only field names compared, no values stored",
       "operations_total": 195,
-      "verified_with_data": 139,
-      "empty_result": 44,
-      "call_error": 12,
-      "note": "A single sampled item can omit optional fields, so catalog fields absent from the sample are not treated as wrong. Fields present in the live response but missing from the catalog were added with source=live_response."
+      "verified_with_data": 161,
+      "note": "A single sampled item can omit optional fields, so catalog fields absent from the sample are not treated as wrong. Fields present in the live response but missing from the catalog were added with source=live_response.",
+      "not_verified": 34,
+      "not_verified_note": "Remaining operations returned 00/normal with zero rows (statistics, change/delete history, private-market and some open-result operations) for every window and identifier tried, or need inputs not available here."
     }
   }
 }
