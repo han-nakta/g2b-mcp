@@ -20,9 +20,9 @@ The server answers from packaged, public-safe artifacts. It is useful for API di
 
 ## Current baseline
 
-- 18 G2B-related OpenAPI services / 195 operations cataloged.
+- 18 G2B-related OpenAPI services / 195 operations cataloged. Request parameters and response fields were verified in Nov 2026; 161 operations were also compared with a live response (field names only) and 34 returned no rows. See [docs/catalog-verification.md](docs/catalog-verification.md).
 - API-01~17 representative evidence phase closed in the private operator workspace.
-- API-18 `pub_prcrmnt_stat_info` remains `unresolved_period_stat` until public OpenAPI rows are verified.
+- API-18 `pub_prcrmnt_stat_info` remains `unresolved_period_stat`: all 14 operations returned zero rows for every period tried on 2026-11-10.
 - Public MCP server exposes packaged catalog/schema/evidence summaries only.
 - Vercel/Supabase-style product surfaces remain deferred until the MCP and public/private boundaries stay stable.
 
@@ -83,6 +83,7 @@ artifacts/
 docs/
   mcp-tool-contract.md
   example-queries.md
+  catalog-verification.md
   publication-plan.md
   runbooks/api-01-bid-public-info-operator.md
 src/
